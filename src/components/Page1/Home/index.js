@@ -1,12 +1,13 @@
 import bottlePage1 from 'src/assets/pictures/bottle_page1.png';
 import secondLogo from 'src/assets/pictures/second_logo.png';
 import { forwardRef } from 'react';
+import PropTypes from 'prop-types';
 
 const Home = forwardRef((props, ref) => (
   <>
     <header className="home__header">
       <h1 className="home__header__title">Château Buzet</h1>
-      <p className="home__header__slogan">| <span> La renaissance d'un patrimoine millénaire</span> |</p>
+      <p className="home__header__slogan">| <span> {props.data.slogan}</span> |</p>
     </header>
     <div className="home__container">
       <div className="container__img">
@@ -14,14 +15,20 @@ const Home = forwardRef((props, ref) => (
       </div>
       <div className="container__present">
         <img className="presentation__img" src={secondLogo} alt="preprésente une grappe de raisins" />
-        <h3 className="presentation__title">Et si vous laissiez vos snes s'épanouir ?</h3>
+        <h3 className="presentation__title">{props.data.subtitle}?</h3>
         <p className="presentation__para" ref={ref}>
-          ing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec,
-          ultricies sed, dolor. Cras elementum ultrices diam. Maecenas
+          {props.data.text}
         </p>
       </div>
     </div>
   </>
 ));
 
+Home.propTypes = {
+  data: PropTypes.shape({
+    slogan: PropTypes.string.isRequired,
+    subtitle: PropTypes.string.isRequired,
+    text: PropTypes.string.isRequired,
+  }).isRequired,
+};
 export default Home;

@@ -11,9 +11,9 @@ body {
 }
 
 main {
-  height: calc(100vh - 150px);
-  padding-bottom: 30px;
+  height: calc(100vh - 110px);
   overflow: hidden;
+  position: relative;
 }
 
 .page1 {
@@ -31,6 +31,7 @@ main {
     .home__header {
       position: relative;
       z-index: 5;
+      margin-bottom: 20px;
       .home__header__title {
         font-weight: 800;
         text-align: center;
@@ -56,10 +57,7 @@ main {
       .container__present {
         padding: 10px;
         width: 50%;
-        display: flex;
-        align-items: flex-start;
-        flex-direction: column;
-        margin-bottom: 150px;
+        margin-bottom: 200px;
   
         .presentation__img {
           height: 120px;
@@ -72,10 +70,10 @@ main {
           position: relative;
         }
         .presentation__para {
-          max-width: 550px;
-          margin-top: 2em;
+          margin-top: 1em ;
           font-size: 1.5em;
           line-height: 1.5em;
+          max-width: 650px;
         }
       }
       .container__img {
@@ -87,59 +85,231 @@ main {
         img{
           position: relative;
           height: 100%;
-          transform: scale(1) translateY(-40px);
+          transform: scale(1.1) translateY(-70px);
           z-index: 1;
         }
       }
       
     }
-  }
-  
+  }  
   .winery {
     width: 100%;
     height: 100%;
     position: absolute;
     top: 0;
     left: 0;
-    
-    .video__container {
-      width: 100%;
-      height: calc(100vh - 150px);
-      position: relative;
-      .video__play {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        height: 80px;
-        width: 80px;
-        border-radius: 50%;
-        border: 8px solid black
-      }
+  }
+}
+
+.page3 {
+  .page3__header {
+    margin-top: 60px;
+    .header__img {
+      height: 100px;
+      display: block;
+      margin: auto;
     }
-    .video__muted {
-      position: absolute;
-      left: 30px;
-      bottom: 55px;
-      background-color: black;
-      border: solid 4px white;
-      color: white;
-      height: 50px;
-      width: 50px;
-      border-radius: 50%;
+    .header__title {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 2em;
+    }
+  }
+  .page3__section {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    .section__testing {
+      margin: 30px;
+      .testing__imgContainer {
+        display: block;
+        background-color: brown;
+        padding: 20px;
+        border-radius: 50%;
+        .testing__img {
+          display: block;
+          width: 200px;
+          height: 200px;
+          border-radius: 50%;
+          filter: sepia(130%) saturate(123%);
+          transition: 0.5s;
+          &:hover {
+            filter: sepia(0) saturate(100%);
+          }
+        }
+      }
+      .testing__title {
+        margin-top: 40px;
+        font-size: 1.2em;
+        text-align: center;
+        font-weight: 100;
+      }
     }
   }
 }
 
+.video__container {
+  width: 100%;
+  height: calc(100vh - 110px);
+  position: relative;
+  .video__play {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    border: 8px solid black
+  }
+}
+
+.video--vanish {
+  animation: videoVanish 0.8s forwards;
+}
+
+.button__muted {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: 30px;
+  bottom: 55px;
+  background-color: vars.$mainColor;
+  border: solid 4px white;
+  color: white;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  font-size: 2rem;
+}
+
+.page__nav {
+  height: calc(100vh - 110px);
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.page__nav--appear {
+  animation: navAppear 0.8s forwards;
+}
+
+.button__container {
+  border: 2px solid black;
+  position: absolute;
+  z-index: 40;
+  padding: 6px 6px;
+  background-color: rgba(240, 248, 255, 0);
+  &:after {
+    content:'\00279D';
+    display: block;
+    position: absolute;
+    right: -25px ;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2rem;
+    font-weight: 100;
+    opacity: 0;
+    transition: 0.6s;
+  }
+
+  &:hover .button{
+    box-shadow: 1px 1px 4px black;
+  }
+}
+
+.button__container--hover {
+  &:hover:after {
+    opacity: 1;
+  }
+}
+
+.button__container--winery {
+  top: 50%;
+  left: 50%;
+  transform: translate(-125px, -50%);
+}
+.button__container--winery--en {
+  transform: translate(-115px, -50%);
+}
+.button__container--replay {
+  top: 50%;
+  right: 50%;
+  transform: translate( 130px , calc(-50% - 40px));
+  cursor: pointer;
+  &:after {
+    content:'\00279D';
+    display: block;
+    position: absolute;
+    left: -25px ;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2rem;
+    font-weight: 100;
+    opacity: 0;
+  }
+}
+.button__container--next {
+  top: 50%;
+  left: 50%;
+  transform: translate(-130px, calc(-50% + 78px));
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 2em;
+  padding: 10px 0 10px 28px;
+  background-color: vars.$mainColor;
+  box-shadow: 1px 1px 2px black;
+}
+.button--winery {
+  padding-left: 53px;
+}
+.button--replay {
+  justify-content: flex-end;
+  padding-right: 67px;
+}
+.button--replay--en {
+  padding-right: 72px;
+}
+
+.button--next {
+  padding-left: 85px;
+}
+.button--next--en {
+  padding-left: 98px;
+}
+
+.button--opacity {
+  overflow: hidden;
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  opacity: 0;
+  width: 490px;
+  background:none;
+  border: none;
+  box-shadow: none;
+  animation: opacityWinery 0.8s forwards;
+}
+.button--opacity2 {
+ animation: opacityHome 0.8s forwards;
+}
+
 .header {
-  border-top: 10px solid vars.$mainColor;
-  height: 120px;
+  border-top: 8px solid vars.$mainColor;
+  height: 80px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 50px;
   .header__img {
-    height: 100px;
+    height: 70px;
   }
   .header__title {
     font-weight: 800;
@@ -172,7 +342,6 @@ main {
     }
   }
 }
-
 .footer {
   height: 30px;
   color: white;
@@ -192,70 +361,6 @@ main {
   }
 }
 
-.button__container {
-  border: 2px solid black;
-  position: relative;
-  z-index: 40;
-  padding: 6px 6px;
-
-  &:hover .button{
-    box-shadow: 1px 1px 4px black;
-  }
-}
-
-.button__container--hover {
-  &:hover .button:after {
-    opacity: 1;
-  }
-}
-
-
-.button {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  font-size: 2em;
-  padding: 10px 28px 10px 28px;
-  background-color: vars.$mainColor;
-  box-shadow: 1px 1px 2px black;
-  &:after {
-    content:'\00279D';
-    display: block;
-    position: absolute;
-    font-family: 'Courier New', Courier, monospace;
-    right: -25px ;
-    top: 0;
-    font-size: 2em;
-    font-weight: 100;
-    opacity: 0;
-    transition: 0.3s;
-  }
-}
-
-.button--winery {
-  opacity: 0;
-  display: none;
-}
-
-.button--opacity {
-  overflow: hidden;
-  position: absolute;
-  top: 6px;
-  left: 6px;
-  opacity: 0;
-  width: 490px;
-  background:none;
-  border: none;
-  box-shadow: none;
-  animation: opacityWinery 0.5s forwards;
-  
- 
-}
-.button--opacity2 {
- animation: opacityHome 0.5s forwards;
- 
-}
-
 @keyframes opacityWinery {
  from {
     opacity: 0;
@@ -273,6 +378,24 @@ main {
      opacity: 0;
    }
  }
+
+@keyframes videoVanish {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes navAppear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
  
 @media (max-width: 1300px) {
   .page1 {
@@ -313,7 +436,7 @@ main {
 
 @media (max-width: 600px) {
   .main {
-    height: calc(100vh - 160px);
+    height: calc(100vh - 110px);
     
   }
   .page1 {
@@ -365,13 +488,30 @@ main {
   .header {
     padding: 10px;
     height: 80px;
-    margin-bottom: 30px;
     .header__img {
       height: 60px;
+      width: 60px;
+    }
+    .header__title {
+      font-size: 1em;
+      text-align: center;
+      .title__separator {
+        display: none;
+      }
+      .title__slogan {
+        display: block;
+        font-size: 0.8em;
+      }
+    }
+    .header__nav {
+      height: 60px;
+      font-size: 0.8em;
+      text-align: center;
+
     }
   }
   .footer {
-    height: 80px;
+    height: 30px;
   }
   .button__container {
     .button {
