@@ -10,7 +10,7 @@ const useResizeWindow = (homeRef, pageNumber, langage) => {
       setTopButton(
         homeRef.current.getBoundingClientRect().top
         + homeRef.current.getBoundingClientRect().height
-        + 20,
+        + 40,
       );
       setRightHomeButton(homeRef.current.getBoundingClientRect().left);
     }
@@ -20,7 +20,7 @@ const useResizeWindow = (homeRef, pageNumber, langage) => {
         setRightHomeButton(window.innerWidth - 415);
       }
       else {
-        setRightHomeButton(window.innerWidth - 550);
+        setRightHomeButton(window.innerWidth - 600);
       }
     }
   };

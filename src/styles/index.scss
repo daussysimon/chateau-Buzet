@@ -1,17 +1,18 @@
 @use 'reset';
 @use 'vars';
 
-
+* {
+  font-family: 'Roboto', sans-serif;
+}
 
 body {
-  font-family: sans-serif;
   width: 100%;
   height: 100vh;
   overflow: hidden;
 }
 
 main {
-  height: calc(100vh - 110px);
+  height: calc(100vh - 164px);
   overflow: hidden;
   position: relative;
 }
@@ -33,15 +34,17 @@ main {
       z-index: 5;
       margin-bottom: 20px;
       .home__header__title {
-        font-weight: 800;
+        margin-top: 0;
+        font-weight: 100;
         text-align: center;
-        font-size: 8em;
-        font-family: serif;
+        font-size: 110px;
       }
       .home__header__slogan {
-        font-size: 2em;
+        font-size: 40px;
+        font-weight: 100;
+        margin-top: 20px;
         text-align: center;
-        color: vars.$mainColor;
+        color: vars.$color4;
         span {
           color: black;
         }
@@ -60,19 +63,19 @@ main {
         margin-bottom: 200px;
   
         .presentation__img {
-          height: 120px;
+          height: 107px;
         }
         .presentation__title {
-          margin-top: 20px;
-          font-family: serif;
-          font-size: 2em;
-          font-weight: 800;
+          font-weight: 400;
+          margin-top: 25px;
+          font-size: 36px;
           position: relative;
         }
         .presentation__para {
-          margin-top: 1em ;
-          font-size: 1.5em;
-          line-height: 1.5em;
+          font-weight: 100;
+          margin-top: 20px ;
+          font-size: 23px;
+          line-height: 1.7em;
           max-width: 650px;
         }
       }
@@ -85,7 +88,8 @@ main {
         img{
           position: relative;
           height: 100%;
-          transform: scale(1.1) translateY(-70px);
+          transform: scale(1.2) translateY(-70px);
+          bottom: -20px;
           z-index: 1;
         }
       }
@@ -151,17 +155,25 @@ main {
 
 .video__container {
   width: 100%;
-  height: calc(100vh - 110px);
+  height: calc(100vh - 164px);
   position: relative;
   .video__play {
     position: absolute;
+    cursor: pointer;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    height: 80px;
-    width: 80px;
-    border-radius: 50%;
-    border: 8px solid black
+    height: 145px;
+    width: 145px;
+      img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        transition: 0.8s;
+        &:hover {
+          transform: scale(1.1);
+        }
+      }
   }
 }
 
@@ -169,28 +181,49 @@ main {
   animation: videoVanish 0.8s forwards;
 }
 
-.button__muted {
+.button__song {
   position: absolute;
   display: flex;
   align-items: center;
   justify-content: center;
-  left: 30px;
-  bottom: 55px;
-  background-color: vars.$mainColor;
-  border: solid 4px white;
+  left: 170px;
+  bottom: 40px;
+  background-color: White;
+  border: none;
   color: white;
-  height: 50px;
-  width: 50px;
+  height: 60px;
+  width: 60px;
   border-radius: 50%;
   font-size: 2rem;
+  img {
+    height: 50%;
+    width: 50%;
+  }
+}
+
+.button__song--muted {
+  border : solid 2px vars.$color6;
+  span {
+    position: absolute;
+    transform: rotate(-25deg);
+    display: block;
+    height: 4px;
+    width: 60px;
+    background-color: vars.$color6;
+  }
 }
 
 .page__nav {
-  height: calc(100vh - 110px);
+  height: calc(100vh - 164px);
+  background-size: contain;
   width: 100%;
-  position: absolute;
   top: 0;
   left: 0;
+  background-color: rgba(255, 255, 255, 0.555);
+  .nav__white {
+    background-color: white;
+    opacity: 0.6;
+  }
 }
 
 .page__nav--appear {
@@ -201,7 +234,7 @@ main {
   border: 2px solid black;
   position: absolute;
   z-index: 40;
-  padding: 6px 6px;
+  padding: 8px;
   background-color: rgba(240, 248, 255, 0);
   &:after {
     content:'\00279D';
@@ -262,13 +295,18 @@ main {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  font-size: 2em;
-  padding: 10px 0 10px 28px;
-  background-color: vars.$mainColor;
-  box-shadow: 1px 1px 2px black;
+  font-size: 28px;
+  font-weight: 200;
+  padding: 10px 0 10px 40px;
+  background-color: vars.$color4;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.486);
+}
+.button--buzet {
+  padding-left: 34px;
+  font-size: 28px;
 }
 .button--winery {
-  padding-left: 53px;
+  padding-left: 60px;
 }
 .button--replay {
   justify-content: flex-end;
@@ -277,7 +315,6 @@ main {
 .button--replay--en {
   padding-right: 72px;
 }
-
 .button--next {
   padding-left: 85px;
 }
@@ -302,62 +339,74 @@ main {
 }
 
 .header {
-  border-top: 8px solid vars.$mainColor;
-  height: 80px;
+  border-top: 10px solid vars.$color4;
+  height: 124px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 50px;
   .header__img {
-    height: 70px;
+    height: 84px;
+    margin-left: 140px;
   }
   .header__title {
-    font-weight: 800;
-    font-size: 1.6em;
-    font-family: serif;
+    font-weight: 500;
+    font-size: 23px;
+    color: vars.$color6;
     .title__separator {
-      color: vars.$secondColor
+      color: vars.$color4
     }
     .title__slogan {
-      font-family: sans-serif;
-      font-weight: 300;
-      font-size: 1.2rem;
+      font-weight: 100;
+      font-size: 23px;
+      color: vars.$color6;
     }
   }
   .header__nav {
+    margin-right: 165px;
+    font-size: 23px;
     .nav__button {
       border: none;
       background: none;
-      font-size: 1.2em;
+      font-weight: 100;
+      font-size: 20px;
+      padding: 4px;
     }
     .nav__button--selected {
-      font-weight: 800;
+      font-weight: 500;
       &:after {
         content: '';
         display: block;
         height: 2px;
         width: 100%;
-        background-color: vars.$mainColor;
+        background-color: vars.$color4;
       }
     }
   }
 }
 .footer {
-  height: 30px;
+  height: 40px;
   color: white;
-  background: rgb(42, 25, 2);
+  background: vars.$color6;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
+  font-family: 'Roboto';
   &__para {
     text-transform: uppercase;
+    font-weight: 100;
+    font-size: 15px;
   }
   &__link {
     position: absolute;
+    font-weight: bold;
     right: 50px;
     top: 50%;
     transform: translateY(-50%);
+    transform:  0.5s;
+    &:hover {
+      text-decoration: underline;
+    }
   }
 }
 
@@ -518,7 +567,6 @@ main {
       padding: 10px 5px;
       text-align: center;
       justify-content: center;
-      font-family: serif;
       font-size: 1.4em;
       font-weight: 600;
     }

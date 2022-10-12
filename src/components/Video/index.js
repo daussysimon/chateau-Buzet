@@ -1,7 +1,8 @@
 import PropTypes from 'prop-types';
 import ReactPlayer from 'react-player';
 import { useEffect, useRef, useState } from 'react';
-import { TbVolume, TbVolumeOff } from 'react-icons/tb';
+import playLogo from 'src/assets/pictures/playLogo.png';
+import songIcon from 'src/assets/pictures/songIcon.png';
 
 const Video = (
   {
@@ -34,25 +35,23 @@ const Video = (
         />
         {!playing
         && (
-        <button
-          type="button"
+        <div
           className="video__play"
           onClick={() => setPlaying(true)}
         >
-          Play
-        </button>
+          <img src={playLogo} alt="play" />
+        </div>
         )}
       </div>
       <button
         type="button"
-        className="button__muted"
+        className={muted ? 'button__song button__song--muted' : 'button__song'}
         onClick={() => {
           setMuted(!muted);
         }}
       >
-        {muted
-          ? <TbVolumeOff />
-          : <TbVolume />}
+        <img src={songIcon} alt="song" />
+        {muted && <span> </span>}
       </button>
     </>
   );

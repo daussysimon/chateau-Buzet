@@ -5,6 +5,7 @@ import videoFr from 'src/assets/videos/videotest.mp4';
 import useStateComponent from 'src/hooks/useStateComponent';
 import { buttonWidth, className } from 'src/utils/functions';
 import PropTypes from 'prop-types';
+import bgNav from 'src/assets/pictures/bgNav.jpg';
 import Video from 'src/components/Video';
 
 const Winery = ({
@@ -26,7 +27,7 @@ const Winery = ({
   }, [ended]);
 
   const buttonStyle = useSpring({
-    width: buttonWidth(hover, isMobile, langage, 250, 250, 230, 230),
+    width: buttonWidth(hover, isMobile, langage, 244, 250, 230, 230),
     config: {
       duration: duration(), mass: 7, tension: 200, friction: 30,
     },
@@ -48,7 +49,10 @@ const Winery = ({
        )}
       { state !== VISIBLE
       && (
-      <nav className={state === VANISH ? 'page__nav--appear pave__nav' : 'page__nav'}>
+      <nav
+        className={state === VANISH ? 'page__nav--appear pave__nav' : 'page__nav'}
+        style={{ background: `center / contain no-repeat url(${bgNav})` }}
+      >
         <a.div
           style={buttonStyle}
           className={className('winery', hover, langage)}

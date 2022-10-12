@@ -6,8 +6,8 @@ import PropTypes from 'prop-types';
 const Home = forwardRef((props, ref) => (
   <>
     <header className="home__header">
-      <h1 className="home__header__title">Château Buzet</h1>
-      <p className="home__header__slogan">| <span> {props.data.slogan}</span> |</p>
+      <h1 className="home__header__title">Château de Buzet</h1>
+      <p className="home__header__slogan">- <span> {props.data.slogan}</span> -</p>
     </header>
     <div className="home__container">
       <div className="container__img">

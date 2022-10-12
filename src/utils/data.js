@@ -1,7 +1,7 @@
 const data = {
   fr: {
     page1: {
-      slogan: "La renaissance d'un patrimoine millénaire",
+      slogan: "Renaissance d'un patrimoine millénaire",
       subtitle: "Et si vous laissiez vos sens s'epanoir",
       text: 'Excepteur magna amet magna ea reprehenderit quis cillum pariatur aliquip dolor. Amet voluptate consequat exercitation deserunt aliquip consectetur. Culpa tempor deserunt est excepteur mollit.',
       buttonHome: "Démarrer l'expérience",
@@ -41,6 +41,15 @@ const data = {
         subtitle: 'Enim anim nisi ad pariatur non sint exercitation consectetur dolor.',
         text: 'Fugiat qui aliqua adipisicing labore officia do. Velit do culpa magna veniam quis cillum do anim amet id aute consectetur commodo. Sint sunt consectetur culpa magna duis nisi culpa. Amet pariatur aliquip ea irure ea fugiat. Voluptate tempor exercitation exercitation incididunt exercitation aliqua ipsum proident reprehenderit culpa dolore pariatur elit.',
       },
+    },
+
+    footer: {
+      para: '',
+      link: '',
+    },
+
+    header: {
+      subtitle: '',
     },
   },
   en: {
@@ -85,6 +94,14 @@ const data = {
         subtitle: 'Enim anim nisi ad pariatur non sint exercitation consectetur dolor.',
         text: 'Fugiat qui aliqua adipisicing labore officia do. Velit do culpa magna veniam quis cillum do anim amet id aute consectetur commodo. Sint sunt consectetur culpa magna duis nisi culpa. Amet pariatur aliquip ea irure ea fugiat. Voluptate tempor exercitation exercitation incididunt exercitation aliqua ipsum proident reprehenderit culpa dolore pariatur elit.',
       },
+    },
+    footer: {
+      para: '',
+      link: '',
+    },
+
+    header: {
+      subtitle: '',
     },
 
   },

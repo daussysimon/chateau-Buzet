@@ -54,8 +54,8 @@ const Page1 = ({ setPageNumber, pageNumber, data, langage }) => {
     top: top,
     left: right,
     width: pageNumber === 1
-      ? buttonWidth(hover, isMobile, langage, 334, 230, 310, 210)
-      : buttonWidth(hover, isMobile, langage, 505, 330, 370, 300),
+      ? buttonWidth(hover, isMobile, langage, 362, 230, 310, 210)
+      : buttonWidth(hover, isMobile, langage, 520, 330, 370, 300),
     config: { duration: duration(), mass: 7, tension: 200, friction: 30 },
   });
   const propsHomePage = useSpring({
@@ -121,7 +121,7 @@ const Page1 = ({ setPageNumber, pageNumber, data, langage }) => {
             )}
         { state !== VISIBLE
             && (
-              <Link to="/degustation" className={state === VANISH ? 'button--opacity button' : 'button'}>{data.buttonWinery}</Link>
+              <Link to="/degustation" className={state === VANISH ? 'button--opacity button button--buzet' : 'button button--buzet'}>{data.buttonWinery}</Link>
             )}
       </a.button>
       )}
