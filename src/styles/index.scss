@@ -2,7 +2,7 @@
 @use 'vars';
 
 * {
-  font-family: 'Roboto', sans-serif;
+  font-family: vars.$font_main;
 }
 
 body {
@@ -66,9 +66,10 @@ main {
           height: 107px;
         }
         .presentation__title {
-          font-weight: 400;
+          font-weight: 100;
           margin-top: 25px;
           font-size: 36px;
+          font-family: vars.$font_second;
           position: relative;
         }
         .presentation__para {
@@ -106,17 +107,21 @@ main {
 }
 
 .page3 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: vars.$color6;
   .page3__header {
-    margin-top: 60px;
     .header__img {
-      height: 100px;
+      width: 110px;
       display: block;
       margin: auto;
     }
     .header__title {
       text-align: center;
-      margin-top: 40px;
-      font-size: 2em;
+      font-family: vars.$font_second;
+      margin-top: 60px;
+      font-size: 36px;
     }
   }
   .page3__section {
@@ -125,16 +130,22 @@ main {
     justify-content: center;
     flex-wrap: wrap;
     .section__testing {
-      margin: 30px;
+      margin: 20px 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
       .testing__imgContainer {
-        display: block;
-        background-color: brown;
-        padding: 20px;
-        border-radius: 50%;
+        width: 200px;
+        height: 200px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-bottom: 4px;
+        padding-right: 4px;
         .testing__img {
-          display: block;
-          width: 200px;
-          height: 200px;
+          height: 80%;
+          width: 80%;
           border-radius: 50%;
           filter: sepia(130%) saturate(123%);
           transition: 0.5s;
@@ -144,8 +155,8 @@ main {
         }
       }
       .testing__title {
-        margin-top: 40px;
-        font-size: 1.2em;
+        margin-top: 20px;
+        font-size: 20px;
         text-align: center;
         font-weight: 100;
       }
@@ -231,7 +242,7 @@ main {
 }
 
 .button__container {
-  border: 2px solid black;
+  border: 2px solid vars.$color6;;
   position: absolute;
   z-index: 40;
   padding: 8px;
@@ -240,7 +251,7 @@ main {
     content:'\00279D';
     display: block;
     position: absolute;
-    right: -25px ;
+    left: 100%;
     top: 50%;
     transform: translateY(-50%);
     font-size: 2rem;
@@ -277,9 +288,10 @@ main {
     content:'\00279D';
     display: block;
     position: absolute;
-    left: -25px ;
+    left: 0;
+    right: 100%;
     top: 50%;
-    transform: translateY(-50%);
+    transform: rotate(180deg) translateY(50%);
     font-size: 2rem;
     font-weight: 100;
     opacity: 0;
@@ -296,14 +308,14 @@ main {
   align-items: center;
   justify-content: flex-start;
   font-size: 28px;
-  font-weight: 200;
-  padding: 10px 0 10px 40px;
+  padding: 10px 0 10px 35px;
   background-color: vars.$color4;
+  font-family: vars.$font_second;
+  color: vars.$color6;
   box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.486);
 }
 .button--buzet {
-  padding-left: 34px;
-  font-size: 28px;
+  padding-left: 42px;
 }
 .button--winery {
   padding-left: 60px;
@@ -344,6 +356,7 @@ main {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  color: vars.$color6;
   .header__img {
     height: 84px;
     margin-left: 140px;
@@ -351,14 +364,14 @@ main {
   .header__title {
     font-weight: 500;
     font-size: 23px;
-    color: vars.$color6;
+    font-family: vars.$font_second;
     .title__separator {
       color: vars.$color4
     }
     .title__slogan {
       font-weight: 100;
       font-size: 23px;
-      color: vars.$color6;
+      font-family: vars.$font_main;
     }
   }
   .header__nav {
@@ -373,6 +386,7 @@ main {
     }
     .nav__button--selected {
       font-weight: 500;
+      color: vars.$color6;
       &:after {
         content: '';
         display: block;

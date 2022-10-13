@@ -1,12 +1,17 @@
-import testing from 'src/assets/pictures/testing.png';
 import glaces from 'src/assets/pictures/glaces.jpeg';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import rondPhoto from 'src/assets/pictures/rond-photo.png';
+import bouche from 'src/assets/pictures/bouche.png';
+import bg3 from 'src/assets/pictures/bg3.jpg';
 
 const Page3 = ({ setAssociation, data }) => (
-  <main className="main page3">
+  <main
+    className="main page3"
+    style={{ background: `center / contain no-repeat url(${bg3})` }}
+  >
     <header className="page3__header">
-      <img className="header__img" src={testing} alt="une bouche faisant référence á la degustation du vin" />
+      <img className="header__img" src={bouche} alt="une bouche faisant référence á la degustation du vin" />
       <h2 className="header__title">{data.title}</h2>
     </header>
     <section className="page3__section">
@@ -17,6 +22,7 @@ const Page3 = ({ setAssociation, data }) => (
           onClick={() => {
             setAssociation('celebration');
           }}
+          style={{ background: `center / contain no-repeat url(${rondPhoto})` }}
         >
           <img className="testing__img" src={glaces} alt="représentation de la degustation" />
         </Link>
@@ -29,6 +35,7 @@ const Page3 = ({ setAssociation, data }) => (
           onClick={() => {
             setAssociation('gourmand');
           }}
+          style={{ background: `center / contain no-repeat url(${rondPhoto})` }}
         >
           <img className="testing__img" src={glaces} alt="représentation de la degustation" />
         </Link>
@@ -41,6 +48,7 @@ const Page3 = ({ setAssociation, data }) => (
           onClick={() => {
             setAssociation('exeption');
           }}
+          style={{ background: `center / contain no-repeat url(${rondPhoto})` }}
         >
           <img className="testing__img" src={glaces} alt="représentation de la degustation" />
         </Link>
@@ -49,6 +57,7 @@ const Page3 = ({ setAssociation, data }) => (
       <div className="section__testing">
         <Link
           className="testing__imgContainer"
+          style={{ background: `center / contain no-repeat url(${rondPhoto})` }}
           to="/association"
           onClick={() => {
             setAssociation('campagne');

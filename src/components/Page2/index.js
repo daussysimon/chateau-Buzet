@@ -5,6 +5,7 @@ import videoFr from 'src/assets/videos/videotest.mp4';
 import useStateComponent from 'src/hooks/useStateComponent';
 import { a, useSpring } from '@react-spring/web';
 import PropTypes from 'prop-types';
+import bgVideo2 from 'src/assets/pictures/bgVideo2.jpg';
 
 const Page2 = ({ data, langage }) => {
   const [playing, setPlaying] = useState(false);
@@ -50,7 +51,10 @@ const Page2 = ({ data, langage }) => {
         )}
       { state !== VISIBLE
         && (
-          <nav className={state === VANISH ? 'page__nav--appear pave__nav' : 'page__nav'}>
+          <nav
+            className={state === VANISH ? 'page__nav--appear pave__nav' : 'page__nav'}
+            style={{ background: `center / contain no-repeat url(${bgVideo2})` }}
+          >
             <a.div
               style={propsReplay}
               className={hover ? 'button__container button__container--replay button__container--hover' : 'button__container button__container--replay'}
