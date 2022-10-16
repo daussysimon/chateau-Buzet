@@ -37,10 +37,10 @@ main {
         margin-top: 0;
         font-weight: 100;
         text-align: center;
-        font-size: 110px;
+        font-size: 5vmax;
       }
       .home__header__slogan {
-        font-size: 40px;
+        font-size: 1.8vmax;
         font-weight: 100;
         margin-top: 20px;
         text-align: center;
@@ -60,24 +60,25 @@ main {
       .container__present {
         padding: 10px;
         width: 50%;
-        margin-bottom: 200px;
+        margin-bottom: 150px;
   
         .presentation__img {
           height: 107px;
         }
         .presentation__title {
           font-weight: 100;
-          margin-top: 25px;
-          font-size: 36px;
+          margin-top: 40px;
+          font-size: 2vw;
           font-family: vars.$font_second;
           position: relative;
         }
         .presentation__para {
           font-weight: 100;
+          margin-right: 20%;
           margin-top: 20px ;
-          font-size: 23px;
+          font-size: 1.2vw;
           line-height: 1.7em;
-          max-width: 650px;
+          max-width: 850px;
         }
       }
       .container__img {
@@ -89,7 +90,8 @@ main {
         img{
           position: relative;
           height: 100%;
-          transform: scale(1.2) translateY(-70px);
+          max-width: 700px;
+          transform: scale(1.2)  translateY(-70px);
           bottom: -20px;
           z-index: 1;
         }
@@ -128,7 +130,6 @@ main {
     margin-top: 50px;
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
     .section__testing {
       margin: 20px 40px;
       display: flex;
@@ -147,10 +148,10 @@ main {
           height: 80%;
           width: 80%;
           border-radius: 50%;
-          filter: sepia(130%) saturate(123%);
+          filter: sepia(100%) grayscale(12%) brightness(0.80);
           transition: 0.5s;
           &:hover {
-            filter: sepia(0) saturate(100%);
+            filter: sepia(0) grayscale(0) brightness(1);
           }
         }
       }
@@ -160,6 +161,54 @@ main {
         text-align: center;
         font-weight: 100;
       }
+    }
+  }
+}
+
+.page4 {
+  display: flex;
+  .association__aside {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    img {
+      display: block;
+      height: 70%;
+    }
+  }
+  .association__container {
+    padding: 30px 0 150px 0  ;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+    
+    h1 {
+      font-family: vars.$font_second;
+      font-size: 3vw;
+      line-height: 3.4vw;
+    }
+    .association__logo {
+      width: 5.5vw;
+      margin: 2vw 0 ;
+    }
+    .association__title {
+      font-family: vars.$font_second;
+      max-width: 850px;
+      font-size: 1.9vw;
+      margin-right: 20%;
+    
+    }
+    .association__para {
+      font-weight: 100;
+      margin-right: 20%;
+      margin-top: 20px ;
+      font-size: 1vw;
+      line-height: 1.8vw;
+      max-width: 850px;
     }
   }
 }
@@ -197,8 +246,8 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
-  left: 170px;
-  bottom: 40px;
+  left: 5%;
+  bottom: 3%;
   background-color: White;
   border: none;
   color: white;
@@ -226,19 +275,9 @@ main {
 
 .page__nav {
   height: calc(100vh - 164px);
-  background-size: contain;
   width: 100%;
   top: 0;
   left: 0;
-  background-color: rgba(255, 255, 255, 0.555);
-  .nav__white {
-    background-color: white;
-    opacity: 0.6;
-  }
-}
-
-.page__nav--appear {
-  animation: navAppear 0.8s forwards;
 }
 
 .button__container {
@@ -303,6 +342,11 @@ main {
   transform: translate(-130px, calc(-50% + 78px));
 }
 
+.button__container--testing {
+  bottom: 7%;
+  left: 80%;
+}
+
 .button {
   display: flex;
   align-items: center;
@@ -334,6 +378,10 @@ main {
   padding-left: 98px;
 }
 
+.button--thx {
+  padding-left: 70px;
+}
+
 .button--opacity {
   overflow: hidden;
   position: absolute;
@@ -359,23 +407,23 @@ main {
   color: vars.$color6;
   .header__img {
     height: 84px;
-    margin-left: 140px;
+    margin-left: 5%;
   }
   .header__title {
     font-weight: 500;
-    font-size: 23px;
+    font-size: 2.8vh;
     font-family: vars.$font_second;
     .title__separator {
       color: vars.$color4
     }
     .title__slogan {
       font-weight: 100;
-      font-size: 23px;
+      font-size:  2.8vh;
       font-family: vars.$font_main;
     }
   }
   .header__nav {
-    margin-right: 165px;
+    margin-right: 5%;
     font-size: 23px;
     .nav__button {
       border: none;
@@ -409,7 +457,7 @@ main {
   &__para {
     text-transform: uppercase;
     font-weight: 100;
-    font-size: 15px;
+    font-size: 1.3vh;
   }
   &__link {
     position: absolute;
@@ -417,7 +465,7 @@ main {
     right: 50px;
     top: 50%;
     transform: translateY(-50%);
-    transform:  0.5s;
+    transition: 0.5s;
     &:hover {
       text-decoration: underline;
     }
@@ -451,144 +499,47 @@ main {
   }
 }
 
-@keyframes navAppear {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
- 
-@media (max-width: 1300px) {
-  .page1 {
-    .home{
-      .home__header {
-        .home__header__title {
-          font-size: 4em;
-        }
-      }
-      .home__container {
-        display: block;
-        position: relative;
-        
-        .container__img {
-          img {
-            transform: scale(1);
-          }
-        }
-        .container__present {
-          align-items: center;
-          width: auto;
-          max-width: 900px;
-          position: absolute;
-          left: 20%;
-          top: 40%;
-          transform: translateY(-50%);
-          z-index: 40;
-          background-color: rgba(255, 255, 255, 0.63);
-  
-        }
-      }
-    }
-  }
+@media (max-width: 1050px) {
   .header {
-    padding: 10px;
-  }
-}
-
-@media (max-width: 600px) {
-  .main {
-    height: calc(100vh - 110px);
-    
-  }
-  .page1 {
-    .home{
-      .home__header {
-        .home__header__title {
-          font-size: 3em;
-        }
-        .home__header__slogan {
-          font-size: 1em;
-        }
-      }
-      .home__container {
-        display: block;
-        position: relative;
-        
-        .container__img {
-          img {
-            transform: scale(1);
-          }
-        }
-        .container__present {
-          align-items: center;
-          justify-content: flex-start;
-          width: 90%;
-          position: absolute;
-          left: 50%;
-          top: 40%;
-          transform: translate(-50%, -50%);
-          margin-bottom: 0;
-          .presentation__title {
-            font-size: 1.5em;
-            text-align: center;
-          }
-          .presentation__para {
-            width: 90%;
-            margin-top: 15px;
-            font-size: 1.4em;
-            line-height: 1em;
-            text-shadow: 0px 0px 1px black ;
-          }
-          .presentation__img {
-            height: 70px;
-          }
-        }
-      }
-    }
-  }
-  .header {
-    padding: 10px;
-    height: 80px;
-    .header__img {
-      height: 60px;
-      width: 60px;
-    }
     .header__title {
-      font-size: 1em;
+      font-weight: 500;
+      font-size: 2.8vh;
+      font-family: vars.$font_second;
       text-align: center;
       .title__separator {
-        display: none;
+        color: vars.$color4
       }
       .title__slogan {
+        margin-top: 10px;
+        font-weight: 100;
+        font-size:  2.8vh;
+        font-family: vars.$font_main;
         display: block;
-        font-size: 0.8em;
       }
-    }
-    .header__nav {
-      height: 60px;
-      font-size: 0.8em;
-      text-align: center;
-
     }
   }
   .footer {
-    height: 30px;
-  }
-  .button__container {
-    .button {
-      padding: 10px 5px;
-      text-align: center;
-      justify-content: center;
-      font-size: 1.4em;
-      font-weight: 600;
+    height: 40px;
+    color: white;
+    background: vars.$color6;
+    align-items: center;
+    justify-content: space-evenly;
+    font-family: 'Roboto';
+    &__para {
+      text-transform: uppercase;
+      font-weight: 100;
+    }
+    &__link {
+      display: block;
+      position: unset;
+      transform: none;
+      font-weight: bold;
+      &:hover {
+        text-decoration: underline;
+      }
     }
   }
 }
-
-
-
 /* 
   // or you can import your own font
   @font-face {

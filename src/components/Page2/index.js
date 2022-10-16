@@ -36,7 +36,10 @@ const Page2 = ({ data, langage }) => {
   });
 
   return (
-    <main className="main">
+    <main
+      className="main"
+      style={{ background: `center / contain no-repeat url(${bgVideo2})` }}
+    >
       { state !== DELETE
         && (
           <div className={state === VANISH ? 'video--vanish' : ''}>
@@ -53,7 +56,6 @@ const Page2 = ({ data, langage }) => {
         && (
           <nav
             className={state === VANISH ? 'page__nav--appear pave__nav' : 'page__nav'}
-            style={{ background: `center / contain no-repeat url(${bgVideo2})` }}
           >
             <a.div
               style={propsReplay}

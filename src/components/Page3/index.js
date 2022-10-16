@@ -1,9 +1,14 @@
-import glaces from 'src/assets/pictures/glaces.jpeg';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+
 import rondPhoto from 'src/assets/pictures/rond-photo.png';
 import bouche from 'src/assets/pictures/bouche.png';
 import bg3 from 'src/assets/pictures/bg3.jpg';
+
+import cadreException from 'src/assets/pictures/degustation/cadre-exception.jpg';
+import celebration from 'src/assets/pictures/degustation/celebration.jpg';
+import champetre from 'src/assets/pictures/degustation/champetre.jpg';
+import rendezvousGourmand from 'src/assets/pictures/degustation/rendezvous-gourmand.jpg';
 
 const Page3 = ({ setAssociation, data }) => (
   <main
@@ -24,7 +29,7 @@ const Page3 = ({ setAssociation, data }) => (
           }}
           style={{ background: `center / contain no-repeat url(${rondPhoto})` }}
         >
-          <img className="testing__img" src={glaces} alt="représentation de la degustation" />
+          <img className="testing__img" src={celebration} alt="représentation de la degustation" />
         </Link>
         <h3 className="testing__title">{data.option1}</h3>
       </div>
@@ -37,7 +42,7 @@ const Page3 = ({ setAssociation, data }) => (
           }}
           style={{ background: `center / contain no-repeat url(${rondPhoto})` }}
         >
-          <img className="testing__img" src={glaces} alt="représentation de la degustation" />
+          <img className="testing__img" src={rendezvousGourmand} alt="représentation de la degustation" />
         </Link>
         <h3 className="testing__title">{data.option2}</h3>
       </div>
@@ -46,11 +51,11 @@ const Page3 = ({ setAssociation, data }) => (
           className="testing__imgContainer"
           to="/association"
           onClick={() => {
-            setAssociation('exeption');
+            setAssociation('exception');
           }}
           style={{ background: `center / contain no-repeat url(${rondPhoto})` }}
         >
-          <img className="testing__img" src={glaces} alt="représentation de la degustation" />
+          <img className="testing__img" src={cadreException} alt="représentation de la degustation" />
         </Link>
         <h3 className="testing__title">{data.option3}</h3>
       </div>
@@ -63,7 +68,7 @@ const Page3 = ({ setAssociation, data }) => (
             setAssociation('campagne');
           }}
         >
-          <img className="testing__img" src={glaces} alt="représentation de la degustation" />
+          <img className="testing__img" src={champetre} alt="représentation de la degustation" />
         </Link>
         <h3 className="testing__title">{data.option4}</h3>
       </div>

@@ -30,7 +30,9 @@ const Page1 = ({ setPageNumber, pageNumber, data, langage }) => {
       setEnded(false);
     }
   }, [location]);
+
   let sliceTimout = null;
+
   useEffect(() => {
     if (slice) {
       sliceTimout = setTimeout(() => {
@@ -49,10 +51,12 @@ const Page1 = ({ setPageNumber, pageNumber, data, langage }) => {
     }
     return 0;
   };
+
   const propsHome = useSpring({
     position: 'absolute',
     top: top,
     left: right,
+    right: 'auto',
     width: pageNumber === 1
       ? buttonWidth(hover, isMobile, langage, 362, 230, 310, 210)
       : buttonWidth(hover, isMobile, langage, 520, 330, 370, 300),

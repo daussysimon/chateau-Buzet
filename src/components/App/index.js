@@ -14,7 +14,9 @@ function App() {
   const [langage, setLangage] = useState('fr');
   const [association, setAssociation] = useState('');
   const location = useLocation();
+
   useEffect(() => {
+    window.addEventListener('load', () => console.log('test'));
     if (location.pathname !== '/') {
       setPageNumber(2);
     }

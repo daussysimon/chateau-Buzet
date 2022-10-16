@@ -10,17 +10,19 @@ const useResizeWindow = (homeRef, pageNumber, langage) => {
       setTopButton(
         homeRef.current.getBoundingClientRect().top
         + homeRef.current.getBoundingClientRect().height
-        + 40,
+        + (window.innerHeight * 0.025),
       );
       setRightHomeButton(homeRef.current.getBoundingClientRect().left);
     }
     else {
-      setTopButton(window.innerHeight - 150);
+      setTopButton(window.innerHeight - (window.innerHeight * 0.15));
       if (langage === 'en') {
         setRightHomeButton(window.innerWidth - 415);
       }
       else {
-        setRightHomeButton(window.innerWidth - 600);
+        setRightHomeButton(
+          window.innerWidth - 560,
+        );
       }
     }
   };

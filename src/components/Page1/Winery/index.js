@@ -12,9 +12,11 @@ const Winery = ({
   setHover, setOut, hover, isMobile, duration, ended, setEnded, data, langage,
 }) => {
   const [playing, setPlaying] = useState(false);
+
   const {
     state, setState, VISIBLE, VANISH, DELETE,
   } = useStateComponent();
+
   const buttonRef = useRef(null);
 
   useEffect(() => {
@@ -34,7 +36,7 @@ const Winery = ({
   });
 
   return (
-    <>
+    <div style={{ background: `center / contain no-repeat url(${bgNav})` }} >
       { state !== DELETE
        && (
        <div className={state === VANISH ? 'video--vanish' : ''}>
@@ -51,7 +53,6 @@ const Winery = ({
       && (
       <nav
         className={state === VANISH ? 'page__nav--appear pave__nav' : 'page__nav'}
-        style={{ background: `center / contain no-repeat url(${bgNav})` }}
       >
         <a.div
           style={buttonStyle}
@@ -66,7 +67,7 @@ const Winery = ({
         </a.div>
       </nav>
       )}
-    </>
+    </div>
   );
 };
 

@@ -37,7 +37,7 @@ const data = {
         Les légères notes boisées de la cuvée Château de Buzet renforceront le côté épicé de ce plat. Le canard étant une viande puissante et savoureuse, il s’accordera parfaitement avec notre Château de Buzet, à la fois puissant et fruité. 
         `,
       },
-      exeption: {
+      exception: {
         title: 'Cadre d’exception : Planche de charcuterie fine et fromages affinés',
         text: 'Dans un cadre d’exception, un met en toute simplicité saura sublimer notre Château de Buzet. C’est un vin rouge équilibré avec beaucoup de rondeur dont le gras et la souplesse se marieront à merveille avec l’onctuosité des fromages affinés. Les arômes de fruits présents dans cette cuvée magnifieront les saveurs de charcuteries fines. ',
       },
@@ -46,7 +46,7 @@ const data = {
         text: 'Un déjeuner en pleine campagne ? Profitez-en pour proposer à vos convives un plat réconfortant. La complexité aromatique et les notes de fruits noirs du Château de Buzet se mêleront parfaitement aux notes subtiles de sous-bois présentes dans notre Tourte de pommes de terre aux cèpes.',
       },
 
-      button: 'Merci!',
+      button: 'Merci !',
     },
 
     page5: {
