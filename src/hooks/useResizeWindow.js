@@ -17,31 +17,22 @@ const useResizeWindow = (homeRef, pageNumber, langage) => {
     else {
       setTopButton(window.innerHeight - (window.innerHeight * 0.15));
       if (langage === 'en') {
-        setRightHomeButton(window.innerWidth - 415);
+        setRightHomeButton(window.innerWidth - 450);
       }
       else {
         setRightHomeButton(
-          window.innerWidth - 560,
+          window.innerWidth - 580,
         );
       }
     }
   };
 
   useEffect(() => {
-    if (window.innerWidth <= 600) {
-      setIsMobile(true);
-    }
-    else {
-      setIsMobile(false);
-    }
     ButtonPosition();
     window.addEventListener('resize', () => {
-      if (window.innerWidth <= 600) {
-        setIsMobile(true);
-      }
-      else {
-        setIsMobile(false);
-      }
+      ButtonPosition();
+    });
+    return window.removeEventListener('resize', () => {
       ButtonPosition();
     });
   }, [pageNumber, langage]);

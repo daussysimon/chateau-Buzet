@@ -4,9 +4,9 @@ import prune from 'src/assets/pictures/prune.png';
 import { useSpring, a } from '@react-spring/web';
 import useHover from 'src/hooks/useHover';
 
-import cadreException from 'src/assets/pictures/degustation/cadre-exception.jpg';
-import celebration from 'src/assets/pictures/degustation/celebration.jpg';
-import champetre from 'src/assets/pictures/degustation/champetre.jpg';
+import cadreException from 'src/assets/pictures/degustation/cadre-exception-nb.jpg';
+import celebration from 'src/assets/pictures/degustation/celebration-nb.jpg';
+import champetre from 'src/assets/pictures/degustation/champetre-nb.jpg';
 import rendezvousGourmand from 'src/assets/pictures/degustation/rendezvous-gourmand-nb.jpg';
 import deguBackground from 'src/assets/pictures/deguBackground.png';
 import { useEffect, useState } from 'react';
@@ -37,6 +37,9 @@ const Page4 = ({ association, data }) => {
 
   useEffect(() => {
     window.addEventListener('resize', () => {
+      setTop(window.innerWidth - 290);
+    });
+    return window.removeEventListener('resize', () => {
       setTop(window.innerWidth - 290);
     });
   }, []);
@@ -71,7 +74,7 @@ const Page4 = ({ association, data }) => {
         }}
         onMouseEnter={() => setHover(true)}
       >
-        <Link to="/" className="button button--thx">
+        <Link to="/socialMedia" className="button button--thx">
           {data.button}
         </Link>
       </a.div>

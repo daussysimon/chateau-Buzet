@@ -3,11 +3,9 @@ const data = {
     page1: {
       slogan: 'La renaissance d’un patrimoine millénaire',
       subtitle: 'Et si vous laissiez vos sens s’épanouir ?',
-      text: `Ouïe, toucher, vue, goût… ${<br />}
-      Accordez-vous un instant. Immergez-vous dans l’univers d’exceptions de notre vin Château de Buzet.${<br />}
-      Libérez vos sens grâce à une expérience de dégustation vivante et multisensorielle.${<br />}
-      Belle dégustation
-      `,
+      text: `<p>Ouïe, toucher, vue, goût…</p>
+      <p>Accordez-vous un instant. Immergez-vous dans l’univers d’exceptions de notre vin Château de Buzet. Libérez vos sens grâce à une expérience de dégustation vivante et multisensorielle. </p>
+      Belle dégustation`,
       buttonHome: "Démarrer l'expérience",
       buttonWinery: 'Aller directement á la degustation',
       buttonTesting: 'Déguster',
@@ -20,26 +18,26 @@ const data = {
       title: 'Quel contexte de dégustation associeriez-vous à ce vin ?',
       option1: 'Célébration',
       option2: 'Rendez-vous gourmand',
-      option3: "Cadre d'exeption",
+      option3: 'Cadre d’exception',
       option4: 'Repas champêtre',
     },
     page4: {
-      title: 'Quel contect de dégustation associériez-vous á ce vin',
+      title: 'Découvrez votre accord met-vin privilégié',
       celebration: {
         title: 'Célébration : Tournedos Rossini',
-        text: `aites en sorte que l’accord met et vin marque autant les esprits que l’instant à célébrer en optant pour un Tournedos Rossini.${<br />}
-        La structure tannique et complexe saura relever les arômes et la saveur du bœuf tandis que les notes épicées sublimeront le foie gras poêlé.
+        text: `Faites en sorte que l’accord met et vin marque autant les esprits que l’instant à célébrer en optant pour un Tournedos Rossini.
+        La structure tannique et complexe saura relever les arômes et la saveur du bœuf tandis que les notes épicées sublimeront le foie gras poêlé.        
         `,
       },
       gourmand: {
         title: 'Rendez-vous gourmand : Magret de canard aux pêches et aux épices',
-        text: `Laissez-vous tenter par une association sucrée/salée.${<br />}
+        text: `Laissez-vous tenter par une association sucrée/salée.
         Les légères notes boisées de la cuvée Château de Buzet renforceront le côté épicé de ce plat. Le canard étant une viande puissante et savoureuse, il s’accordera parfaitement avec notre Château de Buzet, à la fois puissant et fruité. 
         `,
       },
       exception: {
         title: 'Cadre d’exception : Planche de charcuterie fine et fromages affinés',
-        text: 'Dans un cadre d’exception, un met en toute simplicité saura sublimer notre Château de Buzet. C’est un vin rouge équilibré avec beaucoup de rondeur dont le gras et la souplesse se marieront à merveille avec l’onctuosité des fromages affinés. Les arômes de fruits présents dans cette cuvée magnifieront les saveurs de charcuteries fines. ',
+        text: 'Dans un cadre d’exception, un met en toute simplicité saura sublimer notre Château de Buzet. C’est un vin rouge équilibré avec beaucoup de rondeur dont le gras et la souplesse se marieront à merveille avec l’onctuosité des fromages affinés. Les arômes de fruits présents dans cette cuvée magnifieront les saveurs de charcuteries fines.',
       },
       campagne: {
         title: 'Repas champêtre : Tourte de pommes de terre aux cèpes',
@@ -50,8 +48,9 @@ const data = {
     },
 
     page5: {
-      subtitle: 'Suivez le collectif!',
+      subtitle: ' Suivez le collectif ',
       title: 'NOUS LES VIGNERONS DE BUZET',
+      button: 'VISITER NOTRE SITE',
     },
 
     footer: {

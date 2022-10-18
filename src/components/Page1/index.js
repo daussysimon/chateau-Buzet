@@ -29,6 +29,9 @@ const Page1 = ({ setPageNumber, pageNumber, data, langage }) => {
       setState(VISIBLE);
       setEnded(false);
     }
+    return () => {
+      setState(VISIBLE); setEnded(false);
+    };
   }, [location]);
 
   let sliceTimout = null;

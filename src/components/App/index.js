@@ -6,6 +6,7 @@ import Page1 from 'src/components/Page1';
 import Page2 from 'src/components/Page2';
 import Page3 from 'src/components/Page3';
 import Page4 from 'src/components/Page4';
+import Page5 from 'src/components/Page5';
 import { useEffect, useState } from 'react';
 import { Route, Routes, useLocation } from 'react-router-dom';
 // == Composant
@@ -30,6 +31,7 @@ function App() {
         <Route path="/degustation" element={<Page2 data={data[langage].page2} langage={langage} />} />
         <Route path="/saveurs" element={<Page3 setAssociation={setAssociation} data={data[langage].page3} />} />
         <Route path="/association" element={<Page4 association={association} data={data[langage].page4} />} />
+        <Route path="/socialmedia" element={<Page5 data={data[langage].page5} />} />
       </Routes>
       <Footer pageNumber={pageNumber} />
     </div>

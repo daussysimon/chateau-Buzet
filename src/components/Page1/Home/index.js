@@ -16,9 +16,7 @@ const Home = forwardRef((props, ref) => (
       <div className="container__present">
         <img className="presentation__img" src={secondLogo} alt="preprésente une grappe de raisins" />
         <h3 className="presentation__title">{props.data.subtitle}?</h3>
-        <p className="presentation__para" ref={ref}>
-          {props.data.text}
-        </p>
+        <div className="presentation__para" ref={ref} dangerouslySetInnerHTML={{ __html: props.data.text }} />
       </div>
     </div>
   </>
