@@ -38,7 +38,7 @@ const Page404 = () => {
         </div>
         <div className="container__text">
           <h3 className="text__title"><span>Oups!</span> La page que vous recherchez semble introuvable</h3>
-          <p className="text__para" ref={ref}>Il se peut que l'URL saisie soit mal orthographié ou que la page que vous rechercez n'existe plus</p>
+          <p className="text__para" ref={ref}>Il se peut que l'URL saisie soit mal orthographié ou que la page que vous recherchez n'existe plus</p>
         </div>
       </div>
       <a.button
@@ -50,7 +50,7 @@ const Page404 = () => {
         }}
         onMouseEnter={() => setHover(true)}
       >
-        <Link to="/degustation" className="button button--404">Retouner á la page d'accueil</Link>
+        <Link to="/" className="button button--404">Retouner á la page d'accueil</Link>
       </a.button>
     </main>
   );
