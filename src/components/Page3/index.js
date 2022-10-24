@@ -23,7 +23,7 @@ const Page3 = ({ setAssociation, data }) => (
       <div className="section__testing">
         <Link
           className="testing__imgContainer"
-          to="/association"
+          to="/context_degustation/celebration"
           onClick={() => {
             setAssociation('celebration');
           }}
@@ -36,7 +36,7 @@ const Page3 = ({ setAssociation, data }) => (
       <div className="section__testing">
         <Link
           className="testing__imgContainer"
-          to="/association"
+          to="/context_degustation/rdv_gourmand"
           onClick={() => {
             setAssociation('gourmand');
           }}
@@ -49,7 +49,7 @@ const Page3 = ({ setAssociation, data }) => (
       <div className="section__testing">
         <Link
           className="testing__imgContainer"
-          to="/association"
+          to="/context_degustation/cadre_exception"
           onClick={() => {
             setAssociation('exception');
           }}
@@ -63,7 +63,7 @@ const Page3 = ({ setAssociation, data }) => (
         <Link
           className="testing__imgContainer"
           style={{ background: `center / contain no-repeat url(${rondPhoto})` }}
-          to="/association"
+          to="/context_degustation/repas_champetre"
           onClick={() => {
             setAssociation('campagne');
           }}

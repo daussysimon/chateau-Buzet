@@ -53,6 +53,46 @@ const data = {
       button: 'VISITER NOTRE SITE',
     },
 
+    page404: {
+
+    },
+
+    pageMentions: {
+      title: 'Mentions Légales',
+      date: 'En vigueur au 02/11/2022',
+      contain: {
+        p1: 'Conformément aux dispositions des Articles 6-III et 19 de la Loi n°2004-575 du 21 juin 2004 pour la Confiance dans l’économie numérique, dite L.C.E.N., il est porté à la connaissance des utilisateurs et visiteurs, ci-après l""Utilisateur", du site www.chateaudebuzet.fr , ci-après le "Site", les présentes mentions légales.',
+        p2: 'La connexion et la navigation sur le Site par l’Utilisateur implique acceptation intégrale et sans réserve des présentes mentions légales.',
+        p3: 'Ces dernières sont accessibles sur le Site à la rubrique « Mentions légales ».',
+        subtitle1: 'EDITEUR',
+        p4: "L'édition du Site est assurée par Les Vignerons de Buzet Société coopérative agricole au capital de 514984 euros, immatriculée au Registre du Commerce et des Sociétés de Agen sous le numéro 782162119 dont le siège social est situé au 56 av. des Côtes de Buzet 47160 BUZET-SUR-BAISE,",
+        p5: 'Numéro de téléphone : 0553847430, ',
+        p6: 'Adresse e-mail : contact@vignerons-buzet.fr.',
+        p7: 'N° de TVA intracommunautaire : FR12782162119',
+        subtitle2: 'DIRECTEUR DE LA PUBLICATION ',
+        p8: 'Sébastien Bourguignon',
+        p9: 'Directeur marketing',
+        subtitle3: 'CONCEPTION ET CRÉATION',
+        p10: 'DONOMA',
+        p11: 'www.agence-donoma.fr',
+        subtitle4: 'HEBERGEUR',
+        p12: "L'hébergeur du Site est la société OVH, dont le siège social est situé au 2 rue Kellermann, 59100 ROUBAIX, avec le numéro de téléphone : 0972101007",
+        subtitle5: 'COLLECTE DES DONNEES',
+        p13: 'Le site est exempté de déclaration à la Commission Nationale Informatique et Libertés (CNIL) dans la mesure où il ne collecte aucune donnée concernant les utilisateurs. Toute utilisation, reproduction, diffusion, commercialisation, modification de toute ou partie du Site﻿, sans autorisation de l’Editeur est prohibée et pourra entraînée des actions et poursuites judiciaires telles que notamment prévues par le Code de la propriété intellectuelle et le Code civil.',
+        subtitle6: 'CRÉDITS PHOTOS',
+        p14: 'Adobe Stock',
+        p15: 'Unsplash',
+        subtitle7: 'PROPRIÉTÉ INTELLECTUELLE',
+        p16: 'Toute reproduction totale ou partielle de ce site internet ou de son contenu, y compris des documents téléchargeables et des représentations iconographiques et photographiques, par quelques procédés que ce soient, est interdite au sens de l’article L.122-4 du Code de la propriété intellectuelle. ',
+        p17: 'Les marques de la société, ainsi que celles de nos partenaires, figurant sur le site, sont des marques déposées.',
+        subtitle8: 'ACCÈS AU SITE',
+        p18: 'La société s’engage à tout mettre en œuvre pour assurer la disponibilité du site à tout moment. Elle ne  saurait être tenu responsable en cas d’indisponibilité du site, pour quelque cause que ce soit ou de toutes conséquences directes ou indirectes pouvant résulter de l’utilisation et de la consultation du site.',
+        p19: 'En accédant au site, l’utilisateur reconnait disposer d’un accès à Internet et des capacités techniques. Il reconnait également avoir pris connaissance des présentes mentions légales et s’engage à s’y conformer.',
+        subtitle9: 'MODIFICATION',
+        p20: 'La société se réserve le droit de modifier le contenu de ces mentions légales en fonction des évolutions de la règlementation et des pratiques internes. Il est recommandé de les consulter régulièrement.',
+      },
+    },
+
     footer: {
       para: '',
       link: '',
@@ -64,56 +104,110 @@ const data = {
   },
   en: {
     page1: {
-      slogan: 'The rebirth of a thousand-year-old heritage',
-      subtitle: 'And if you let your senses run wild',
-      text: 'Excepteur magna amet magna ea reprehenderit quis cillum pariatur aliquip dolor. Amet voluptate consequat exercitation deserunt aliquip consectetur. Culpa tempor deserunt est excepteur mollit.',
-      buttonHome: '  Start the experience',
-      buttonWinery: 'Go straight to the tasting',
-      buttonTesting: 'Testing',
+      slogan: 'Renaissance of a thousand-year-old heritage',
+      subtitle: 'Why not give free rein to your senses?',
+      text: `<p>Smell, touch, sight, taste... </p>
+      <p>Take a moment to yourself immersed in the unique world of our Château de Buzet wine…
+      Unleash your senses in a living, multi-sensory wine tasting experience!
+       </p>
+       Enjoy!`,
+      buttonHome: 'START THE EXPERIENCE',
+      buttonWinery: 'GO DIRECTLY TO THE TASTING',
+      buttonTesting: 'TASTE',
     },
     page2: {
-      buttonReplay: 'Replay',
-      buttonOut: 'Out',
+      buttonReplay: 'REPLAY THE EXPERIENCE',
+      buttonOut: 'EXIT',
     },
     page3: {
-      title: 'What tasting context did you associate with this wine?',
+      title: 'What is your drinking occasion or setting?',
       option1: 'Celebration',
-      option2: 'gourmet appointment',
-      option3: 'Exeptional frame',
-      option4: 'Campaigning',
+      option2: 'A gourmet meal',
+      option3: 'An exceptional setting',
+      option4: 'Meal in the countryside ',
     },
     page4: {
-      title: 'Quel contect de dégustation associériez-vous á ce vin',
+      title: 'Discover the perfect food and wine pairing',
       celebration: {
-        title: 'Célébration',
-        subtitle: 'Enim anim nisi ad pariatur non sint exercitation consectetur dolor.',
-        text: 'Fugiat qui aliqua adipisicing labore officia do. Velit do culpa magna veniam quis cillum do anim amet id aute consectetur commodo. Sint sunt consectetur culpa magna duis nisi culpa. Amet pariatur aliquip ea irure ea fugiat. Voluptate tempor exercitation exercitation incididunt exercitation aliqua ipsum proident reprehenderit culpa dolore pariatur elit.',
+        title: 'Celebration: Tournedos Rossini',
+        text: `Ensure that your food and wine pairing is as memorable as the occasion you are celebrating by opting for a Tournedos Rossini.
+        The wine’s complex, tannic structure will bring out the aromas and flavour of the beef while its spicy notes will nicely set off the pan-fried foie gras.
+                
+        `,
       },
       gourmand: {
-        title: 'Rendez-vous gourmand',
-        subtitle: 'Enim anim nisi ad pariatur non sint exercitation consectetur dolor.',
-        text: 'Fugiat qui aliqua adipisicing labore officia do. Velit do culpa magna veniam quis cillum do anim amet id aute consectetur commodo. Sint sunt consectetur culpa magna duis nisi culpa. Amet pariatur aliquip ea irure ea fugiat. Voluptate tempor exercitation exercitation incididunt exercitation aliqua ipsum proident reprehenderit culpa dolore pariatur elit.',
+        title: 'A gourmet meal: Duck breast with peaches and spice ',
+        text: `Why not go for a sweet-and-sour combination?
+        Château de Buzet’s light oaky notes will accentuate the spicy character of this dish. As duck meat is strong and flavoursome, it pairs perfectly with our fruity and powerful Château de Buzet.
+        
+        `,
       },
-      exeption: {
-        title: "Cade d'exeption",
-        subtitle: 'Enim anim nisi ad pariatur non sint exercitation consectetur dolor.',
-        text: 'Fugiat qui aliqua adipisicing labore officia do. Velit do culpa magna veniam quis cillum do anim amet id aute consectetur commodo. Sint sunt consectetur culpa magna duis nisi culpa. Amet pariatur aliquip ea irure ea fugiat. Voluptate tempor exercitation exercitation incididunt exercitation aliqua ipsum proident reprehenderit culpa dolore pariatur elit.',
+      exception: {
+        title: 'An exceptional setting: A platter of fine charcuterie and mature cheeses',
+        text: "In an exceptional setting, some simple food will be enough to bring out all the flavours of our Château de Buzet. This is a well-balanced red wine with a smooth, round body, whose softness and fat will complement the creaminess of the matured cheeses. The wine's fruity aromas will bring out the flavours of the fine charcuterie.",
       },
       campagne: {
-        title: 'Partie de campagne',
-        subtitle: 'Enim anim nisi ad pariatur non sint exercitation consectetur dolor.',
-        text: 'Fugiat qui aliqua adipisicing labore officia do. Velit do culpa magna veniam quis cillum do anim amet id aute consectetur commodo. Sint sunt consectetur culpa magna duis nisi culpa. Amet pariatur aliquip ea irure ea fugiat. Voluptate tempor exercitation exercitation incididunt exercitation aliqua ipsum proident reprehenderit culpa dolore pariatur elit.',
+        title: 'Meal in the countryside: Potato and mushroom pie ',
+        text: "Lunch in the countryside? Make the most of it by serving your guests some delicious comfort food. Château de Buzet's aromatic complexity and black fruit notes will blend perfectly with the subtle notes of undergrowth in our potato and mushroom pie.",
+      },
+
+      button: 'THANK YOU!',
+    },
+
+    page5: {
+      subtitle: ' Follow ',
+      title: 'LES VIGNERONS DE BUZET',
+      button: 'GO TO OUR WEBSITE ',
+    },
+
+    page404: {
+
+    },
+
+    pageMentions: {
+      title: 'Mentions Légales',
+      date: 'En vigueur au 02/11/2022',
+      contain: {
+        p1: 'Conformément aux dispositions des Articles 6-III et 19 de la Loi n°2004-575 du 21 juin 2004 pour la Confiance dans l’économie numérique, dite L.C.E.N., il est porté à la connaissance des utilisateurs et visiteurs, ci-après l""Utilisateur", du site www.chateaudebuzet.fr , ci-après le "Site", les présentes mentions légales.',
+        p2: 'La connexion et la navigation sur le Site par l’Utilisateur implique acceptation intégrale et sans réserve des présentes mentions légales.',
+        p3: 'Ces dernières sont accessibles sur le Site à la rubrique « Mentions légales ».',
+        subtitle1: 'EDITEUR',
+        p4: "L'édition du Site est assurée par Les Vignerons de Buzet Société coopérative agricole au capital de 514984 euros, immatriculée au Registre du Commerce et des Sociétés de Agen sous le numéro 782162119 dont le siège social est situé au 56 av. des Côtes de Buzet 47160 BUZET-SUR-BAISE,",
+        p5: 'Numéro de téléphone : 0553847430, ',
+        p6: 'Adresse e-mail : contact@vignerons-buzet.fr.',
+        p7: 'N° de TVA intracommunautaire : FR12782162119',
+        subtitle2: 'DIRECTEUR DE LA PUBLICATION ',
+        p8: 'Sébastien Bourguignon',
+        p9: 'Directeur marketing',
+        subtitle3: 'CONCEPTION ET CRÉATION',
+        p10: 'DONOMA',
+        p11: 'www.agence-donoma.fr',
+        subtitle4: 'HEBERGEUR',
+        p12: "L'hébergeur du Site est la société OVH, dont le siège social est situé au 2 rue Kellermann, 59100 ROUBAIX, avec le numéro de téléphone : 0972101007",
+        subtitle5: 'COLLECTE DES DONNEES',
+        p13: 'Le site est exempté de déclaration à la Commission Nationale Informatique et Libertés (CNIL) dans la mesure où il ne collecte aucune donnée concernant les utilisateurs. Toute utilisation, reproduction, diffusion, commercialisation, modification de toute ou partie du Site﻿, sans autorisation de l’Editeur est prohibée et pourra entraînée des actions et poursuites judiciaires telles que notamment prévues par le Code de la propriété intellectuelle et le Code civil.',
+        subtitle6: 'CRÉDITS PHOTOS',
+        p14: 'Adobe Stock',
+        p15: 'Unsplash',
+        subtitle7: 'PROPRIÉTÉ INTELLECTUELLE',
+        p16: 'Toute reproduction totale ou partielle de ce site internet ou de son contenu, y compris des documents téléchargeables et des représentations iconographiques et photographiques, par quelques procédés que ce soient, est interdite au sens de l’article L.122-4 du Code de la propriété intellectuelle. ',
+        p17: 'Les marques de la société, ainsi que celles de nos partenaires, figurant sur le site, sont des marques déposées.',
+        subtitle8: 'ACCÈS AU SITE',
+        p18: 'La société s’engage à tout mettre en œuvre pour assurer la disponibilité du site à tout moment. Elle ne  saurait être tenu responsable en cas d’indisponibilité du site, pour quelque cause que ce soit ou de toutes conséquences directes ou indirectes pouvant résulter de l’utilisation et de la consultation du site.',
+        p19: 'En accédant au site, l’utilisateur reconnait disposer d’un accès à Internet et des capacités techniques. Il reconnait également avoir pris connaissance des présentes mentions légales et s’engage à s’y conformer.',
+        subtitle9: 'MODIFICATION',
+        p20: 'La société se réserve le droit de modifier le contenu de ces mentions légales en fonction des évolutions de la règlementation et des pratiques internes. Il est recommandé de les consulter régulièrement.',
       },
     },
+
     footer: {
-      para: '',
-      link: '',
+      para: 'Alcohol abuse is dangerous for your health, consume in moderation',
+      link: 'Legal notice',
     },
 
     header: {
       subtitle: '',
     },
-
   },
 };
 

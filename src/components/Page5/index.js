@@ -9,7 +9,6 @@ import boutonFacebook from 'src/assets/pictures/bouton-facebook.svg';
 import boutonInstagram from 'src/assets/pictures/bouton-instagram.svg';
 import boutonYoutube from 'src/assets/pictures/bouton-youtube.svg';
 
-
 const Page5 = ({ data }) => {
   const {
     hover, setHover, out, setOut,

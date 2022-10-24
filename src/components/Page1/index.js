@@ -20,7 +20,7 @@ const Page1 = ({ setPageNumber, pageNumber, data, langage }) => {
   const { hover, setHover, out, setOut } = useHover();
 
   useEffect(() => {
-    if (location.pathname === '/buzet') {
+    if (location.pathname === '/histoire') {
       setPageNumber(2);
       setState(VANISH);
     }
@@ -61,8 +61,8 @@ const Page1 = ({ setPageNumber, pageNumber, data, langage }) => {
     left: right,
     right: 'auto',
     width: pageNumber === 1
-      ? buttonWidth(hover, isMobile, langage, 362, 230, 310, 210)
-      : buttonWidth(hover, isMobile, langage, 520, 330, 370, 300),
+      ? buttonWidth(hover, isMobile, langage, 365, 230, 310, 210)
+      : buttonWidth(hover, isMobile, langage, 523, 330, 370, 300),
     config: { duration: duration(), mass: 7, tension: 200, friction: 30 },
   });
   const propsHomePage = useSpring({
@@ -122,7 +122,7 @@ const Page1 = ({ setPageNumber, pageNumber, data, langage }) => {
       >
         { state !== DELETE
             && (
-            <Link to="/buzet" className="button">
+            <Link to="/histoire" className="button">
               <span className={state === VANISH ? 'button--opacity2' : ''}>{data.buttonHome}</span>
             </Link>
             )}

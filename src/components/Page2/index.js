@@ -80,7 +80,7 @@ const Page2 = ({ data, langage }) => {
               }}
               onMouseEnter={() => setHoverNext(true)}
             >
-              <Link className={langage === 'en' ? 'button button--next button--next--en' : 'button button--next'} to="/saveurs">{data.buttonOut}</Link>
+              <Link className={langage === 'en' ? 'button button--next button--next--en' : 'button button--next'} to="/context_degustation">{data.buttonOut}</Link>
             </a.div>
           </nav>
         )}
