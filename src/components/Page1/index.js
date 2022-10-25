@@ -61,8 +61,8 @@ const Page1 = ({ setPageNumber, pageNumber, data, langage }) => {
     left: right,
     right: 'auto',
     width: pageNumber === 1
-      ? buttonWidth(hover, isMobile, langage, 365, 230, 310, 210)
-      : buttonWidth(hover, isMobile, langage, 523, 330, 370, 300),
+      ? buttonWidth(hover, isMobile, langage, 372, 230, 365, 210)
+      : buttonWidth(hover, isMobile, langage, 555, 330, 440, 300),
     config: { duration: duration(), mass: 7, tension: 200, friction: 30 },
   });
   const propsHomePage = useSpring({

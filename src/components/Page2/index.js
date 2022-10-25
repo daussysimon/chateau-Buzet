@@ -24,14 +24,14 @@ const Page2 = ({ data, langage }) => {
     }
   }, [ended]);
   const propsReplay = useSpring({
-    width: hover ? 280 : 260,
+    width: hover ? 440 : 420,
     config: {
       duration: 600, mass: 7, tension: 200, friction: 30,
     },
   });
 
   const propsNext = useSpring({
-    width: hoverNext ? 280 : 260,
+    width: hoverNext ? 440 : 420,
     config: { duration: 600 },
   });
 

@@ -16,28 +16,33 @@ function App() {
   const [pageNumber, setPageNumber] = useState(1);
   const [langage, setLangage] = useState('fr');
   const [association, setAssociation] = useState('');
+
   const location = useLocation();
 
   useEffect(() => {
-    window.addEventListener('load', () => console.log('test'));
     if (location.pathname !== '/') {
       setPageNumber(2);
     }
   }, [location]);
   return (
     <div className="app">
-      <Header pageNumber={pageNumber} langage={langage} setLangage={setLangage} />
+      <Header
+        pageNumber={pageNumber}
+        langage={langage}
+        setLangage={setLangage}
+        data={data[langage].header}
+      />
       <Routes>
         <Route path="/" element={<Page1 setPageNumber={setPageNumber} pageNumber={pageNumber} data={data[langage].page1} langage={langage} />} />
         <Route path="/histoire" element={<Page1 setPageNumber={setPageNumber} pageNumber={pageNumber} data={data[langage].page1} langage={langage} />} />
         <Route path="/degustation" element={<Page2 data={data[langage].page2} langage={langage} />} />
         <Route path="/context_degustation" element={<Page3 setAssociation={setAssociation} data={data[langage].page3} />} />
-        <Route path="/context_degustation/:degustationType" element={<Page4 association={association} data={data[langage].page4} />} />
+        <Route path="/context_degustation/:degustationType" element={<Page4 association={association} data={data[langage].page4} langage={langage} />} />
         <Route path="/socialmedia" element={<Page5 data={data[langage].page5} />} />
         <Route path="/mentions_legales" element={<PageMentions data={data[langage].pageMentions} />} />
-        <Route path="*" element={<Page404 />} />
+        <Route path="*" element={<Page404 data={data[langage].page404} langage={langage} />} />
       </Routes>
-      <Footer pageNumber={pageNumber} />
+      <Footer pageNumber={pageNumber} data={data[langage].footer} />
     </div>
   );
 }

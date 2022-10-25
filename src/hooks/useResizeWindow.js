@@ -17,11 +17,11 @@ const useResizeWindow = (homeRef, pageNumber, langage) => {
     else {
       setTopButton(window.innerHeight - (window.innerHeight * 0.15));
       if (langage === 'en') {
-        setRightHomeButton(window.innerWidth - 450);
+        setRightHomeButton(window.innerWidth - 500);
       }
       else {
         setRightHomeButton(
-          window.innerWidth - 580,
+          window.innerWidth - 620,
         );
       }
     }

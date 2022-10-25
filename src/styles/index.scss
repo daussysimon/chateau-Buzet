@@ -37,10 +37,10 @@ main {
         margin-top: 0;
         font-weight: 100;
         text-align: center;
-        font-size: 5vmax;
+        font-size: 5vw;
       }
       .home__header__slogan {
-        font-size: 1.8vmax;
+        font-size: 1.8vw;
         font-weight: 100;
         margin-top: 20px;
         text-align: center;
@@ -63,11 +63,11 @@ main {
         margin-bottom: 150px;
   
         .presentation__img {
-          height: 107px;
+          height: 100px;
         }
         .presentation__title {
           font-weight: 100;
-          margin-top: 40px;
+          margin-top: 1.2vw;
           font-size: 2vw;
           font-family: vars.$font_second;
           position: relative;
@@ -131,7 +131,7 @@ main {
     display: flex;
     justify-content: center;
     .section__testing {
-      margin: 20px 40px;
+      margin: 1vw 2vmax;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -487,7 +487,7 @@ main {
 .button__container--replay {
   top: 50%;
   right: 50%;
-  transform: translate( 130px , calc(-50% - 40px));
+  transform: translate( 210px , calc(-50% - 40px));
   cursor: pointer;
   &:after {
     content:'\00279D';
@@ -505,7 +505,7 @@ main {
 .button__container--next {
   top: 50%;
   left: 50%;
-  transform: translate(-130px, calc(-50% + 78px));
+  transform: translate(-210px, calc(-50% + 78px));
 }
 
 .button__container--testing {
@@ -525,7 +525,7 @@ main {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  font-size: 28px;
+  font-size: 23px;
   padding: 10px 0 10px 35px;
   background-color: vars.$color4;
   font-family: vars.$font_second;
@@ -540,20 +540,27 @@ main {
 }
 .button--replay {
   justify-content: flex-end;
-  padding-right: 67px;
+  padding-right: 70px;
 }
 .button--replay--en {
-  padding-right: 72px;
+  padding-right: 60px;
 }
 .button--next {
-  padding-left: 85px;
+  padding-left: 160px;
 }
 .button--next--en {
-  padding-left: 98px;
+  padding-left: 180px;
 }
 .button--thx {
   padding-left: 70px;
 }
+.button--thx--en {
+  padding-left: 43px;
+}
+.button--404--en {
+  padding-left: 75px;
+}
+
 .button--visite {
   display: block;
   text-align: center;
@@ -566,7 +573,7 @@ main {
   top: 6px;
   left: 6px;
   opacity: 0;
-  width: 490px;
+  width: 500px;
   background:none;
   border: none;
   box-shadow: none;
@@ -714,6 +721,31 @@ main {
       font-weight: bold;
       &:hover {
         text-decoration: underline;
+      }
+    }
+  }
+  .page3 {
+    .page3__header {
+      .header__title {
+        text-align: center;
+        font-family: vars.$font_second;
+        margin-top: 60px;
+        font-size: 25px;
+      }
+    }
+    .page3__section {
+      margin-top: 50px;
+      .section__testing {
+        .testing__imgContainer {
+          width: 160px;
+          height: 160px;
+        }
+        .testing__title {
+          margin-top: 20px;
+          font-size: 15px;
+          text-align: center;
+          font-weight: 100;
+        }
       }
     }
   }

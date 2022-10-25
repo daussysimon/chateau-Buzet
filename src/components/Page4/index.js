@@ -11,7 +11,7 @@ import rendezvousGourmand from 'src/assets/pictures/degustation/rendezvous-gourm
 import deguBackground from 'src/assets/pictures/deguBackground.png';
 import { useEffect, useState } from 'react';
 
-const Page4 = ({ association, data }) => {
+const Page4 = ({ association, data, langage }) => {
   const navigate = useNavigate();
   const {
     hover, setHover, out, setOut,
@@ -31,7 +31,7 @@ const Page4 = ({ association, data }) => {
   };
   useEffect(() => {
     if (association.length <= 0) {
-      navigate('/saveurs');
+      navigate('/context_degustation');
     }
   }, []);
 
@@ -74,7 +74,7 @@ const Page4 = ({ association, data }) => {
         }}
         onMouseEnter={() => setHover(true)}
       >
-        <Link to="/socialMedia" className="button button--thx">
+        <Link to="/socialMedia" className={langage === 'en' ? 'button button--thx button button--thx--en' : 'button button--thx'}>
           {data.button}
         </Link>
       </a.div>
@@ -88,6 +88,7 @@ Page4.propTypes = {
     title: PropTypes.string.isRequired,
     button: PropTypes.string.isRequired,
   }).isRequired,
+  langage: PropTypes.string.isRequired,
 };
 
 export default Page4;

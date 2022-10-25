@@ -1,10 +1,11 @@
 import { useState, useEffect, useRef } from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import useHover from 'src/hooks/useHover';
 import { useSpring, a } from '@react-spring/web';
 import img404 from 'src/assets/pictures/img404.png';
 
-const Page404 = () => {
+const Page404 = ({ data, langage }) => {
   const ref = useRef(null);
   const [top, setTop] = useState();
   const [left, setLeft] = useState();
@@ -20,10 +21,10 @@ const Page404 = () => {
       setTop(ref.current.getBoundingClientRect().top - 30);
       setLeft(ref.current.getBoundingClientRect().left);
     });
-  }, []);
+  }, [langage]);
 
   const props404 = useSpring({
-    width: hover ? 455 : 435,
+    width: hover ? 405 : 385,
     top: top,
     left: left,
     config: {
@@ -37,8 +38,8 @@ const Page404 = () => {
           <img src={img404} alt="représentation de la bouteille de vin" />
         </div>
         <div className="container__text">
-          <h3 className="text__title"><span>Oups!</span> La page que vous recherchez semble introuvable</h3>
-          <p className="text__para" ref={ref}>Il se peut que l'URL saisie soit mal orthographié ou que la page que vous recherchez n'existe plus</p>
+          <h3 className="text__title"><span>{data.slogan}</span> {data.title}</h3>
+          <p className="text__para" ref={ref}>{data.para}</p>
         </div>
       </div>
       <a.button
@@ -50,10 +51,19 @@ const Page404 = () => {
         }}
         onMouseEnter={() => setHover(true)}
       >
-        <Link to="/" className="button button--404">Retouner á la page d'accueil</Link>
+        <Link to="/" className={langage === 'en' ? 'button button--404 button--404--en' : 'button button--404'}>{data.button}</Link>
       </a.button>
     </main>
   );
+};
+Page404.propTypes = {
+  data: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    slogan: PropTypes.string.isRequired,
+    para: PropTypes.string.isRequired,
+    button: PropTypes.string.isRequired,
+  }).isRequired,
+  langage: PropTypes.string.isRequired,
 };
 
 export default Page404;
