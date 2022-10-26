@@ -526,6 +526,7 @@ main {
   align-items: center;
   justify-content: flex-start;
   font-size: 23px;
+  font-weight: 500;
   padding: 10px 0 10px 35px;
   background-color: vars.$color4;
   font-family: vars.$font_second;
@@ -656,7 +657,24 @@ main {
     }
   }
 }
+.loader__container {
+  height: 100vh;
+  width: 100%;
+  background-color: rgb(250, 248, 239);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 3000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  img {
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+  }
 
+}
 @keyframes opacityWinery {
  from {
     opacity: 0;

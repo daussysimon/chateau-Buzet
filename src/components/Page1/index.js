@@ -9,6 +9,7 @@ import { useSpring, a } from '@react-spring/web';
 import useResizeWindow from 'src/hooks/useResizeWindow';
 import useStateComponent from 'src/hooks/useStateComponent';
 import useHover from 'src/hooks/useHover';
+import loaderGif from 'src/assets/pictures/loader.gif';
 
 const Page1 = ({ setPageNumber, pageNumber, data, langage }) => {
   const homeRef = useRef(null);
@@ -18,8 +19,12 @@ const Page1 = ({ setPageNumber, pageNumber, data, langage }) => {
   const { isMobile, top, right } = useResizeWindow(homeRef, pageNumber, langage);
   const { state, setState, VISIBLE, VANISH, DELETE } = useStateComponent();
   const { hover, setHover, out, setOut } = useHover();
+  const [loading, setloading] = useState(true);
 
   useEffect(() => {
+    window.addEventListener('load', () => {
+      setloading(false);
+    });
     if (location.pathname === '/histoire') {
       setPageNumber(2);
       setState(VANISH);
@@ -76,7 +81,14 @@ const Page1 = ({ setPageNumber, pageNumber, data, langage }) => {
 
   return (
     <>
+      {loading
+          && (
+          <div className="loader__container">
+            <img src={loaderGif} alt="loader" />
+          </div>
+          )}
       <main className="page1">
+
         { state !== DELETE
           && (
           <a.section style={propsHomePage} className="home">
