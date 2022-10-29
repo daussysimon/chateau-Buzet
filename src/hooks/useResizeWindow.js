@@ -3,7 +3,6 @@ import { useEffect, useState } from 'react';
 const useResizeWindow = (homeRef, pageNumber, langage) => {
   const [top, setTopButton] = useState(null);
   const [right, setRightHomeButton] = useState(null);
-  const [isMobile, setIsMobile] = useState(false);
 
   const ButtonPosition = () => {
     if (pageNumber <= 1 && homeRef.current !== null) {
@@ -37,6 +36,6 @@ const useResizeWindow = (homeRef, pageNumber, langage) => {
     });
   }, [pageNumber, langage]);
 
-  return { isMobile, top, right };
+  return { top, right };
 };
 export default useResizeWindow;

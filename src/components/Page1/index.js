@@ -9,13 +9,15 @@ import { useSpring, a } from '@react-spring/web';
 import useResizeWindow from 'src/hooks/useResizeWindow';
 import useStateComponent from 'src/hooks/useStateComponent';
 import useHover from 'src/hooks/useHover';
+import useIsMobile from 'src/hooks/useIsMobile';
 
 const Page1 = ({ setPageNumber, pageNumber, data, langage }) => {
   const homeRef = useRef(null);
   const [slice, setSlice] = useState(false);
   const [ended, setEnded] = useState(false);
   const location = useLocation();
-  const { isMobile, top, right } = useResizeWindow(homeRef, pageNumber, langage);
+  const { top, right } = useResizeWindow(homeRef, pageNumber, langage);
+  const { isMobile } = useIsMobile();
   const { state, setState, VISIBLE, VANISH, DELETE } = useStateComponent();
   const { hover, setHover, out, setOut } = useHover();
 
@@ -55,16 +57,21 @@ const Page1 = ({ setPageNumber, pageNumber, data, langage }) => {
     return 0;
   };
 
-  const propsHome = useSpring({
+  const propsHome = !isMobile ? (useSpring({
     position: 'absolute',
     top: top,
     left: right,
     right: 'auto',
     width: pageNumber === 1
-      ? buttonWidth(hover, isMobile, langage, 372, 230, 365, 210)
+      ? buttonWidth(hover, isMobile, langage, 372, 315, 365, 310)
       : buttonWidth(hover, isMobile, langage, 555, 330, 440, 300),
     config: { duration: duration(), mass: 7, tension: 200, friction: 30 },
-  });
+  })
+  )
+    : (useSpring({
+    })
+    );
+
   const propsHomePage = useSpring({
     opacity: pageNumber <= 1 ? 1 : 0,
     config: !slice ? { duration: 0 } : { duration: 800 },

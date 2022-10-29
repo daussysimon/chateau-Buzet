@@ -12,6 +12,7 @@ import PageMentions from 'src/components/pageMentions';
 import { useEffect, useState, Suspense } from 'react';
 import { Route, Routes, useLocation } from 'react-router-dom';
 import loaderGif from 'src/assets/pictures/loader.gif';
+import 'src/styles/mobileStyle.scss';
 // == Composant
 function App() {
   const [pageNumber, setPageNumber] = useState(1);
