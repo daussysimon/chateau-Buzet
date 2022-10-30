@@ -1,8 +1,10 @@
 import { useEffect, useState } from 'react';
+import useIsMobile from 'src/hooks/useIsMobile';
 
 const useResizeWindow = (homeRef, pageNumber, langage) => {
   const [top, setTopButton] = useState(null);
   const [right, setRightHomeButton] = useState(null);
+  const { isSmallDesktop } = useIsMobile();
 
   const ButtonPosition = () => {
     if (pageNumber <= 1 && homeRef.current !== null) {
@@ -17,6 +19,9 @@ const useResizeWindow = (homeRef, pageNumber, langage) => {
       setTopButton(window.innerHeight - (window.innerHeight * 0.15));
       if (langage === 'en') {
         setRightHomeButton(window.innerWidth - 500);
+      }
+      else if (isSmallDesktop) {
+        setRightHomeButton(window.innerWidth - 550);
       }
       else {
         setRightHomeButton(

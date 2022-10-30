@@ -63,17 +63,18 @@ const Page1 = ({ setPageNumber, pageNumber, data, langage }) => {
     right: 'auto',
     width: pageNumber === 1
       ? buttonWidth(hover, isMobile, langage, 400, 365)
-      : buttonWidth(hover, isMobile, langage, 555, 440),
+      : buttonWidth(hover, isMobile, langage, 600, 440),
     config: { duration: duration(), mass: 7, tension: 200, friction: 30 },
   })
   )
     : (useSpring({
       top: top,
       left: right,
+      right: 'auto',
       width: pageNumber === 1
         ? buttonWidth(hover, isMobile, langage, 250, 365)
-        : buttonWidth(hover, isMobile, langage, 555, 440),
-      config: { duration: 0 },
+        : buttonWidth(hover, isMobile, langage, 420, 440),
+      cconfig: { duration: duration(), mass: 7, tension: 200, friction: 30 },
     })
     );
 
