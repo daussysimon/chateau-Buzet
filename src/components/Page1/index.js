@@ -17,7 +17,7 @@ const Page1 = ({ setPageNumber, pageNumber, data, langage }) => {
   const [ended, setEnded] = useState(false);
   const location = useLocation();
   const { top, right } = useResizeWindow(homeRef, pageNumber, langage);
-  const { isMobile } = useIsMobile();
+  const { isMobile, isVertical } = useIsMobile();
   const { state, setState, VISIBLE, VANISH, DELETE } = useStateComponent();
   const { hover, setHover, out, setOut } = useHover();
 
@@ -63,15 +63,21 @@ const Page1 = ({ setPageNumber, pageNumber, data, langage }) => {
     left: right,
     right: 'auto',
     width: pageNumber === 1
-      ? buttonWidth(hover, isMobile, langage, 372, 315, 365, 310)
-      : buttonWidth(hover, isMobile, langage, 555, 330, 440, 300),
+      ? buttonWidth(hover, isMobile, langage, 372, 365)
+      : buttonWidth(hover, isMobile, langage, 555, 440),
     config: { duration: duration(), mass: 7, tension: 200, friction: 30 },
   })
   )
     : (useSpring({
+      top: top,
+      left: right,
+      width: pageNumber === 1
+        ? buttonWidth(hover, isMobile, langage, 250, 365)
+        : buttonWidth(hover, isMobile, langage, 555, 440),
     })
     );
 
+    console.log(isMobile);
   const propsHomePage = useSpring({
     opacity: pageNumber <= 1 ? 1 : 0,
     config: !slice ? { duration: 0 } : { duration: 800 },
@@ -83,7 +89,7 @@ const Page1 = ({ setPageNumber, pageNumber, data, langage }) => {
 
   return (
     <>
-      <main className="page1">
+      <main className={isVertical || isMobile ? 'page1--mobile page1' : 'page1'}>
 
         { state !== DELETE
           && (
@@ -112,8 +118,7 @@ const Page1 = ({ setPageNumber, pageNumber, data, langage }) => {
           </a.section>
           )}
       </main>
-      {!ended
-      && (
+      {!ended && (
       <a.button
         style={{
           ...propsHome,

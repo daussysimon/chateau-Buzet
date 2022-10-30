@@ -27,6 +27,7 @@ Home.propTypes = {
     slogan: PropTypes.string.isRequired,
     subtitle: PropTypes.string.isRequired,
     text: PropTypes.string.isRequired,
+    buttonHome: PropTypes.string.isRequired,
   }).isRequired,
 };
 export default Home;

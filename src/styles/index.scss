@@ -37,6 +37,7 @@ main {
         margin-top: 0;
         font-weight: 100;
         text-align: center;
+        font-family: vars.$font_second;
         font-size: 5vw;
       }
       .home__header__slogan {
@@ -704,7 +705,7 @@ main {
   }
 }
 
-@media (max-width: 1050px) {
+@media (max-width: 1024px) {
   .header {
     .header__title {
       font-weight: 500;
@@ -744,6 +745,42 @@ main {
       }
     }
   }
+  .page1{
+  .home {
+    .home__container {
+      width: 100%;
+      height: 80%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .container__present {
+        padding: 10px;
+        width: 50%;
+        margin-bottom: 150px;
+      }
+      .container__img {
+        width: 50%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        img{
+          position: relative;
+          width: 80%;
+          height: auto;
+        }
+      }
+      
+    }
+  }  
+  .winery {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
   .page3 {
     .page3__header {
       .header__title {
@@ -827,43 +864,7 @@ main {
           padding: 10px;
           width: 50%;
           margin-bottom: 150px;
-    
-          .presentation__img {
-            height: 60px;
-          }
-          .presentation__title {
-            font-weight: 100;
-            margin-top: 1.2vw;
-            font-size: 2vw;
-            font-family: vars.$font_second;
-            position: relative;
-          }
-          .presentation__para {
-            font-weight: 100;
-            margin-right: 20%;
-            margin-top: 20px ;
-            font-size: 1.2vw;
-            line-height: 1.7em;
-            max-width: 850px;
-          }
         }
-        .container__img {
-          width: 50%;
-          height: 100%;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          img{
-            position: relative;
-            width: 80%;
-            height: auto;
-            max-width: 700px;
-            transform: scale(1.2)  translateY(-70px);
-            bottom: -20px;
-            z-index: 1;
-          }
-        }
-        
       }
     }  
     .winery {
@@ -1017,9 +1018,9 @@ main {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    font-size: 18px;
+    font-size: 15px;
     font-weight: 500;
-    padding: 10px 0 10px 35px;
+    padding: 10px 0 10px 15px;
     background-color: vars.$color4;
     font-family: vars.$font_second;
     color: vars.$color6;

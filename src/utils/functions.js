@@ -1,17 +1,14 @@
 // eslint-disable-next-line max-len
-export const buttonWidth = (hover, isMobile, language, width, mobileWidth, englishWidth, englishMobileWidth) => {
+export const buttonWidth = (hover, isMobile, language, width, englishWidth) => {
   let widthButton = width;
-  if (isMobile) {
-    widthButton = mobileWidth;
-  }
+
   if (language === 'en') {
     widthButton = englishWidth;
-    if (isMobile) {
-      widthButton = englishMobileWidth;
-    }
   }
-  if (hover) {
-    return widthButton + 20;
+  if (isMobile) {
+    if (hover) {
+      return widthButton + 20;
+    }
   }
   return widthButton;
 };
