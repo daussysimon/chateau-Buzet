@@ -12,6 +12,7 @@ import PageMentions from 'src/components/pageMentions';
 import { useEffect, useState, Suspense } from 'react';
 import { Route, Routes, useLocation } from 'react-router-dom';
 import loaderGif from 'src/assets/pictures/loader.gif';
+import useIsMobile from 'src/hooks/useIsMobile';
 import 'src/styles/mobileStyle.scss';
 // == Composant
 function App() {
@@ -20,6 +21,7 @@ function App() {
   const [association, setAssociation] = useState('');
   const [loading, setloading] = useState(false);
   const location = useLocation();
+  const { isMobile } = useIsMobile();
 
   useEffect(() => {
     if (location.pathname !== '/') {
@@ -31,7 +33,7 @@ function App() {
   }, [location]);
 
   return (
-    <div className="app">
+    <div className={isMobile ? 'main main--mobile' : 'main'}>
       <Suspense fallback={(
         <div className="loader__container">
           <img src={loaderGif} alt="loader" />

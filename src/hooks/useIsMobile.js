@@ -1,46 +1,38 @@
 import { useEffect, useState } from 'react';
 
 const useIsMobile = () => {
+  const [isSmallDesktop, setIsSmallDesktop] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
-  const [isVertical, setIsVertical] = useState(false);
 
-  useEffect(() => {
-    if (window.innerWidth <= 850) {
+  const mobileVertical = () => {
+    if (window.innerWidth <= 1024) {
+      setIsSmallDesktop(true);
+    }
+    else {
+      setIsSmallDesktop(false);
+    }
+    if (
+      (window.innerWidth < window.innerHeight && window.innerWidth <= 820)
+      || window.innerWidth <= 700 || window.innerHeight <= 450) {
       setIsMobile(true);
     }
     else {
       setIsMobile(false);
     }
-    if (window.innerWidth <= 1024) {
-      if (window.innerWidth < window.innerHeight) {
-        setIsVertical(true);
-      }
-      else {
-        setIsVertical(false);
-      }
-    }
-    else {
-      setIsVertical(false);
-    }
+  };
+
+  useEffect(() => {
+    mobileVertical();
     window.addEventListener('resize', () => {
-      if (window.innerWidth <= 850) {
-        setIsMobile(true);
-      }
-      else {
-        setIsMobile(false);
-      }
-      if (window.innerWidth <= 1024) {
-        if (window.innerWidth < window.innerHeight) {
-          setIsVertical(true);
-        }
-        else {
-          setIsVertical(false);
-        }
-      }
+      mobileVertical();
+    });
+
+    window.addEventListener('deviceorientation', () => {
+      mobileVertical();
     });
   }, []);
   return {
-    isMobile, isVertical,
+    isMobile, isSmallDesktop,
   };
 };
 export default useIsMobile;

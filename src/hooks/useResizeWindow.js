@@ -34,7 +34,7 @@ const useResizeWindow = (homeRef, pageNumber, langage) => {
     return window.removeEventListener('resize', () => {
       ButtonPosition();
     });
-  }, [pageNumber, langage]);
+  }, [pageNumber, langage, homeRef.current]);
 
   return { top, right };
 };

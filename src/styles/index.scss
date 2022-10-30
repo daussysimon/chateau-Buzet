@@ -526,7 +526,7 @@ main {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  font-size: 23px;
+  font-size: 25px;
   font-weight: 500;
   padding: 10px 0 10px 35px;
   background-color: vars.$color4;
@@ -746,33 +746,37 @@ main {
     }
   }
   .page1{
-  .home {
-    .home__container {
-      width: 100%;
-      height: 80%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      .container__present {
-        padding: 10px;
-        width: 50%;
-        margin-bottom: 150px;
-      }
-      .container__img {
-        width: 50%;
+    .home {
+      .home__container {
+        width: 100%;
         height: 100%;
         display: flex;
-        align-items: center;
         justify-content: center;
-        img{
-          position: relative;
-          width: 80%;
-          height: auto;
+        align-items: center;
+        .container__present {
+          padding: 10px;
+          width: 50%;
+          margin-bottom: 150px;
+        }
+        .container__img {
+          width: 50%;
+          height: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          img{
+            position: relative;
+            height: auto;
+            width: 100%;
+            max-width: 700px;
+            transform: scale(1)  translateY(-70px);
+            bottom: -20px;
+            z-index: 1;
+          }
         }
       }
       
-    }
-  }  
+    }  
   .winery {
     width: 100%;
     height: 100%;
@@ -806,274 +810,16 @@ main {
       }
     }
   }
-}
-
-@media (max-width: 850px) {
-  .header {
-    .header__title {
-      font-weight: 500;
-      font-size: 2.8vh;
-      font-family: vars.$font_second;
-      text-align: center;
-      .title__separator {
-        color: vars.$color4
-      }
-      .title__slogan {
-        margin-top: 10px;
-        font-weight: 100;
-        font-size:  2.8vh;
-        font-family: vars.$font_main;
-        display: block;
-      }
-    }
-  }
-  .footer {
-    height: 40px;
-    color: white;
-    background: vars.$color6;
-    align-items: center;
-    justify-content: space-evenly;
-    font-family: 'Roboto';
-    &__para {
-      text-transform: uppercase;
-      font-weight: 100;
-    }
-    &__link {
-      display: block;
-      position: unset;
-      transform: none;
-      font-weight: bold;
-      &:hover {
-        text-decoration: underline;
-      }
-    }
-  }
-  .page1{
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    .home {
-      .home__container {
-        width: 100%;
-        height: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        .container__present {
-          padding: 10px;
-          width: 50%;
-          margin-bottom: 150px;
-        }
-      }
-    }  
-    .winery {
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      top: 0;
-      left: 0;
-    }
-  }
-  .page3 {
-    .page3__header {
-      .header__title {
-        text-align: center;
-        font-family: vars.$font_second;
-        margin-top: 60px;
-        font-size: 25px;
-      }
-    }
-    .page3__section {
-      margin-top: 50px;
-      .section__testing {
-        .testing__imgContainer {
-          width: 160px;
-          height: 160px;
-        }
-        .testing__title {
-          margin-top: 20px;
-          font-size: 15px;
-          text-align: center;
-          font-weight: 100;
-        }
-      }
-    }
-  }
-  .button__song {
-    position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    left: 5%;
-    bottom: 3%;
-    background-color: White;
-    border: none;
-    color: white;
-    height: 60px;
-    width: 60px;
-    border-radius: 50%;
-    font-size: 2rem;
-    img {
-      height: 50%;
-      width: 50%;
-    }
-  }
-  
-  .button__song--muted {
-    border : solid 2px vars.$color6;
-    span {
-      position: absolute;
-      transform: rotate(-25deg);
-      display: block;
-      height: 4px;
-      width: 60px;
-      background-color: vars.$color6;
-    }
-  }
-  
-  .page__nav {
-    height: calc(100vh - 164px);
-    width: 100%;
-    top: 0;
-    left: 0;
-  }
-  
-  .button__container {
-    border: 2px solid vars.$color6;;
-    position: absolute;
-    z-index: 40;
-    padding: 8px;
-    background-color: rgba(240, 248, 255, 0);
-    &:after {
-      content:'\00279D';
-      display: block;
-      position: absolute;
-      left: 100%;
-      top: 50%;
-      transform: translateY(-50%);
-      font-size: 2rem;
-      font-weight: 100;
-      opacity: 0;
-      transition: 0.6s;
-    }
-  
-    &:hover .button{
-      box-shadow: 1px 1px 4px black;
-    }
-  }
-  
-  .button__container--hover {
-    &:hover:after {
-      opacity: 1;
-    }
-  }
-  
-  .button__container--winery {
-    top: 50%;
-    left: 50%;
-    transform: translate(-125px, -50%);
-  }
-  .button__container--winery--en {
-    transform: translate(-115px, -50%);
-  }
-  .button__container--replay {
-    top: 50%;
-    right: 50%;
-    transform: translate( 210px , calc(-50% - 40px));
-    cursor: pointer;
-    &:after {
-      content:'\00279D';
-      display: block;
-      position: absolute;
-      left: 0;
-      right: 100%;
-      top: 50%;
-      transform: rotate(180deg) translateY(50%);
-      font-size: 2rem;
-      font-weight: 100;
-      opacity: 0;
-    }
-  }
-  .button__container--next {
-    top: 50%;
-    left: 50%;
-    transform: translate(-210px, calc(-50% + 78px));
-  }
-  
-  .button__container--testing {
-    bottom: 7%;
-    left: 80%;
-  }
-  
-  .button__container--visite {
-    position: relative;
-    margin: 5%;
-    &:after {
-      content:'';
-    }
-  }
-  
   .button {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    font-size: 15px;
+    font-size: 16px;
     font-weight: 500;
     padding: 10px 0 10px 15px;
     background-color: vars.$color4;
     font-family: vars.$font_second;
     color: vars.$color6;
     box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.486);
-  }
-  .button--buzet {
-    padding-left: 42px;
-  }
-  .button--winery {
-    padding-left: 60px;
-  }
-  .button--replay {
-    justify-content: flex-end;
-    padding-right: 70px;
-  }
-  .button--replay--en {
-    padding-right: 60px;
-  }
-  .button--next {
-    padding-left: 160px;
-  }
-  .button--next--en {
-    padding-left: 180px;
-  }
-  .button--thx {
-    padding-left: 70px;
-  }
-  .button--thx--en {
-    padding-left: 43px;
-  }
-  .button--404--en {
-    padding-left: 75px;
-  }
-  
-  .button--visite {
-    display: block;
-    text-align: center;
-    padding: 10px 0;
-  }
-  
-  .button--opacity {
-    overflow: hidden;
-    position: absolute;
-    top: 6px;
-    left: 6px;
-    opacity: 0;
-    width: 550px;
-    background:none;
-    border: none;
-    box-shadow: none;
-    animation: opacityWinery 0.8s forwards;
-  }
-  .button--opacity2 {
-   animation: opacityHome 0.8s forwards;
   }
 }

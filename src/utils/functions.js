@@ -5,7 +5,7 @@ export const buttonWidth = (hover, isMobile, language, width, englishWidth) => {
   if (language === 'en') {
     widthButton = englishWidth;
   }
-  if (isMobile) {
+  if (!isMobile) {
     if (hover) {
       return widthButton + 20;
     }

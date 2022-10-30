@@ -17,10 +17,9 @@ const Page1 = ({ setPageNumber, pageNumber, data, langage }) => {
   const [ended, setEnded] = useState(false);
   const location = useLocation();
   const { top, right } = useResizeWindow(homeRef, pageNumber, langage);
-  const { isMobile, isVertical } = useIsMobile();
+  const { isMobile, isSmallDesktop } = useIsMobile();
   const { state, setState, VISIBLE, VANISH, DELETE } = useStateComponent();
   const { hover, setHover, out, setOut } = useHover();
-
   useEffect(() => {
     if (location.pathname === '/histoire') {
       setPageNumber(2);
@@ -57,13 +56,13 @@ const Page1 = ({ setPageNumber, pageNumber, data, langage }) => {
     return 0;
   };
 
-  const propsHome = !isMobile ? (useSpring({
+  const propsHome = !isSmallDesktop ? (useSpring({
     position: 'absolute',
     top: top,
     left: right,
     right: 'auto',
     width: pageNumber === 1
-      ? buttonWidth(hover, isMobile, langage, 372, 365)
+      ? buttonWidth(hover, isMobile, langage, 400, 365)
       : buttonWidth(hover, isMobile, langage, 555, 440),
     config: { duration: duration(), mass: 7, tension: 200, friction: 30 },
   })
@@ -74,10 +73,10 @@ const Page1 = ({ setPageNumber, pageNumber, data, langage }) => {
       width: pageNumber === 1
         ? buttonWidth(hover, isMobile, langage, 250, 365)
         : buttonWidth(hover, isMobile, langage, 555, 440),
+      config: { duration: 0 },
     })
     );
 
-    console.log(isMobile);
   const propsHomePage = useSpring({
     opacity: pageNumber <= 1 ? 1 : 0,
     config: !slice ? { duration: 0 } : { duration: 800 },
@@ -89,7 +88,7 @@ const Page1 = ({ setPageNumber, pageNumber, data, langage }) => {
 
   return (
     <>
-      <main className={isVertical || isMobile ? 'page1--mobile page1' : 'page1'}>
+      <main className="page1">
 
         { state !== DELETE
           && (
