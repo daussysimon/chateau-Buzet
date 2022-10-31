@@ -55,28 +55,16 @@ const Page1 = ({ setPageNumber, pageNumber, data, langage }) => {
     }
     return 0;
   };
-
-  const propsHome = !isSmallDesktop ? (useSpring({
+  const propsHome = useSpring({
     position: 'absolute',
     top: top,
     left: right,
     right: 'auto',
     width: pageNumber === 1
-      ? buttonWidth(hover, isMobile, langage, 400, 365)
-      : buttonWidth(hover, isMobile, langage, 600, 440),
+      ? buttonWidth(hover, isMobile, isSmallDesktop, langage, 340, 210, 310, 195)
+      : buttonWidth(hover, isMobile, isSmallDesktop, langage, 485, 300, 380, 230),
     config: { duration: duration(), mass: 7, tension: 200, friction: 30 },
-  })
-  )
-    : (useSpring({
-      top: top,
-      left: right,
-      right: 'auto',
-      width: pageNumber === 1
-        ? buttonWidth(hover, isMobile, langage, 250, 365)
-        : buttonWidth(hover, isMobile, langage, 420, 440),
-      cconfig: { duration: duration(), mass: 7, tension: 200, friction: 30 },
-    })
-    );
+  });
 
   const propsHomePage = useSpring({
     opacity: pageNumber <= 1 ? 1 : 0,

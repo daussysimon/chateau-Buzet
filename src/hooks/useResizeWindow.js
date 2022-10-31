@@ -1,3 +1,4 @@
+/* eslint-disable no-lonely-if */
 import { useEffect, useState } from 'react';
 import useIsMobile from 'src/hooks/useIsMobile';
 
@@ -16,17 +17,24 @@ const useResizeWindow = (homeRef, pageNumber, langage) => {
       setRightHomeButton(homeRef.current.getBoundingClientRect().left);
     }
     else {
-      setTopButton(window.innerHeight - (window.innerHeight * 0.15));
+      setTopButton(window.innerHeight - 140);
       if (langage === 'en') {
-        setRightHomeButton(window.innerWidth - 500);
-      }
-      else if (isSmallDesktop) {
-        setRightHomeButton(window.innerWidth - 550);
+        if (isSmallDesktop) {
+          setTopButton(window.innerHeight - 130);
+          setRightHomeButton(window.innerWidth - 275);
+        }
+        else {
+          setRightHomeButton(window.innerWidth - 460);
+        }
       }
       else {
-        setRightHomeButton(
-          window.innerWidth - 620,
-        );
+        if (isSmallDesktop) {
+          setTopButton(window.innerHeight - 130);
+          setRightHomeButton(window.innerWidth - 350);
+        }
+        else {
+          setRightHomeButton(window.innerWidth - 560);
+        }
       }
     }
   };
@@ -39,7 +47,7 @@ const useResizeWindow = (homeRef, pageNumber, langage) => {
     return window.removeEventListener('resize', () => {
       ButtonPosition();
     });
-  }, [pageNumber, langage, homeRef.current]);
+  }, [pageNumber, langage, homeRef.current, isSmallDesktop]);
 
   return { top, right };
 };

@@ -37,11 +37,12 @@ main {
         margin-top: 0;
         font-weight: 100;
         text-align: center;
+        font-weight: 800;
         font-family: vars.$font_second;
-        font-size: 5vw;
+        font-size: 9vmin;
       }
       .home__header__slogan {
-        font-size: 1.8vw;
+        font-size: 3vmin;
         font-weight: 100;
         margin-top: 20px;
         text-align: center;
@@ -64,12 +65,13 @@ main {
         margin-bottom: 150px;
   
         .presentation__img {
-          height: 100px;
+          height: 10vmin;
         }
         .presentation__title {
           font-weight: 100;
           margin-top: 1.2vw;
-          font-size: 2vw;
+          font-size: 2.5vmin;
+          font-weight: 800;
           font-family: vars.$font_second;
           position: relative;
         }
@@ -77,7 +79,7 @@ main {
           font-weight: 100;
           margin-right: 20%;
           margin-top: 20px ;
-          font-size: 1.2vw;
+          font-size: 1.8vmin;
           line-height: 1.7em;
           max-width: 850px;
         }
@@ -123,6 +125,7 @@ main {
     .header__title {
       text-align: center;
       font-family: vars.$font_second;
+      font-weight: 800;
       margin-top: 60px;
       font-size: 36px;
     }
@@ -189,6 +192,7 @@ main {
     
     h1 {
       font-family: vars.$font_second;
+      font-weight: 800;
       font-size: 3vw;
       line-height: 3.4vw;
     }
@@ -197,6 +201,7 @@ main {
       margin: 2vw 0 ;
     }
     .association__title {
+      font-weight: 700;
       font-family: vars.$font_second;
       max-width: 850px;
       font-size: 1.9vw;
@@ -218,6 +223,7 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   .page5__container {
     width: 100%;
     img {
@@ -227,7 +233,7 @@ main {
       opacity: 0.5;
     }
     .container__subtitle {
-       font-size: 1.7vw;
+       font-size: 2.5vmin;
        font-size: 100;
        width: 100%;
        text-align: center;
@@ -241,12 +247,14 @@ main {
       width: 100%;
       text-align: center;
       margin-top: 20px;
-      font-size: 2.2vw;
+      font-size: 4vmin;
+      font-weight: 800;
+      font-family: vars.$font_second;
     }
   }
   .page5__nav {
     position: relative;
-    margin: 0 auto;
+    margin:  0 auto 200px auto ;
     display: flex;
     justify-content: space-evenly;
     z-index: 500;
@@ -488,7 +496,7 @@ main {
 .button__container--replay {
   top: 50%;
   right: 50%;
-  transform: translate( 210px , calc(-50% - 40px));
+  transform: translate( 190px , calc(-50% - 40px));
   cursor: pointer;
   &:after {
     content:'\00279D';
@@ -506,7 +514,7 @@ main {
 .button__container--next {
   top: 50%;
   left: 50%;
-  transform: translate(-210px, calc(-50% + 78px));
+  transform: translate(-190px, calc(-50% + 78px));
 }
 
 .button__container--testing {
@@ -527,7 +535,7 @@ main {
   align-items: center;
   justify-content: flex-start;
   font-size: 25px;
-  font-weight: 500;
+  font-weight: 100;
   padding: 10px 0 10px 35px;
   background-color: vars.$color4;
   font-family: vars.$font_second;
@@ -548,10 +556,10 @@ main {
   padding-right: 60px;
 }
 .button--next {
-  padding-left: 160px;
+  padding-left: 150px;
 }
 .button--next--en {
-  padding-left: 180px;
+  padding-left: 155px;
 }
 .button--thx {
   padding-left: 70px;
@@ -600,6 +608,7 @@ main {
     font-weight: 500;
     font-size: 2.8vh;
     font-family: vars.$font_second;
+    font-weight: 800;
     .title__separator {
       color: vars.$color4
     }
@@ -756,7 +765,7 @@ main {
         .container__present {
           padding: 10px;
           width: 50%;
-          margin-bottom: 150px;
+          margin-bottom: 200px;
         }
         .container__img {
           width: 50%;
@@ -766,10 +775,9 @@ main {
           justify-content: center;
           img{
             position: relative;
-            height: auto;
-            width: 100%;
-            max-width: 700px;
-            transform: scale(1)  translateY(-70px);
+            height: 90%;
+            max-height: 600px;
+            transform: scale(1)  translateY(-90px);
             bottom: -20px;
             z-index: 1;
           }
@@ -811,15 +819,77 @@ main {
     }
   }
   .button {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
     font-size: 16px;
     font-weight: 500;
     padding: 10px 0 10px 15px;
-    background-color: vars.$color4;
-    font-family: vars.$font_second;
-    color: vars.$color6;
-    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.486);
+  }
+  .button--opacity {
+    overflow: hidden;
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    opacity: 0;
+    width: 300px;
+    background:none;
+    border: none;
+    box-shadow: none;
+    animation: opacityWinery 0.8s forwards;
+  }
+  .button--thx {
+    padding-left: 45px;
+  }
+  .button--thx--en {
+    padding-left: 25px;
+  }
+  .button--replay {
+    justify-content: flex-end;
+    padding-right: 50px;
+  }
+  .button--replay--en {
+    padding-right: 40px;
+  }
+  .button--next {
+    padding-left: 100px;
+  }
+  .button--next--en {
+    padding-left: 110px;
+  }
+  .page4 {
+    display: flex;
+    .association__aside {
+      width: 50%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      img {
+        display: block;
+        width: 70%;
+        height: auto;
+      }
+    }
+  }
+  .button__container--replay {
+    top: 50%;
+    right: 50%;
+    transform: translate( 130px , calc(-50% - 40px));
+    cursor: pointer;
+    &:after {
+      content:'\00279D';
+      display: block;
+      position: absolute;
+      left: 0;
+      right: 100%;
+      top: 50%;
+      transform: rotate(180deg) translateY(50%);
+      font-size: 2rem;
+      font-weight: 100;
+      opacity: 0;
+    }
+  }
+  .button__container--next {
+    top: 50%;
+    left: 50%;
+    transform: translate(-130px, calc(-50% + 78px));
   }
 }

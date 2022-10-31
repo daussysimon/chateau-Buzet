@@ -26,10 +26,6 @@ const useIsMobile = () => {
     window.addEventListener('resize', () => {
       mobileVertical();
     });
-
-    window.addEventListener('deviceorientation', () => {
-      mobileVertical();
-    });
   }, []);
   return {
     isMobile, isSmallDesktop,

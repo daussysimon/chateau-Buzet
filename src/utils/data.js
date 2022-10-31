@@ -7,13 +7,13 @@ const data = {
       text: `<p>Ouïe, toucher, vue, goût…</p>
       <p>Accordez-vous un instant. Immergez-vous dans l’univers d’exceptions de notre vin Château de Buzet. Libérez vos sens grâce à une expérience de dégustation vivante et multisensorielle. </p>
       Belle dégustation`,
-      buttonHome: "DÉMARRER L’EXPÉRIENCE",
-      buttonWinery: 'ALLER DIRECTEMENT À LA DÉGUSTATION',
-      buttonTesting: 'DÉGUSTER',
+      buttonHome: "Démarrer l'expérience",
+      buttonWinery: 'Aller directement à la dégustation',
+      buttonTesting: 'Déguster',
     },
     page2: {
-      buttonReplay: 'REJOUER L’EXPÉRIENCE',
-      buttonOut: 'SORTIR',
+      buttonReplay: "Rejour l'expérience",
+      buttonOut: 'Sortir',
     },
     page3: {
       title: 'Quel contexte de dégustation associeriez-vous à ce vin ?',
@@ -45,13 +45,13 @@ const data = {
         text: 'Un déjeuner en pleine campagne ? Profitez-en pour proposer à vos convives un plat réconfortant. La complexité aromatique et les notes de fruits noirs du Château de Buzet se mêleront parfaitement aux notes subtiles de sous-bois présentes dans notre Tourte de pommes de terre aux cèpes',
       },
 
-      button: 'MERCI !',
+      button: 'Merci',
     },
 
     page5: {
       subtitle: ' Suivez le collectif ',
-      title: 'NOUS LES VIGNERONS DE BUZET',
-      button: 'VISITER NOTRE SITE',
+      title: 'Nous les vignerons de Buzet',
+      button: 'Visiter notre site',
     },
 
     page404: {
@@ -115,13 +115,13 @@ const data = {
       Unleash your senses in a living, multi-sensory wine tasting experience!
        </p>
        Enjoy!`,
-      buttonHome: 'START THE EXPERIENCE',
-      buttonWinery: 'GO DIRECTLY TO THE TASTING',
-      buttonTesting: 'TASTE',
+      buttonHome: 'Start the expérience',
+      buttonWinery: 'Go directly to the tasting',
+      buttonTesting: 'Taste',
     },
     page2: {
-      buttonReplay: 'REPLAY THE EXPERIENCE',
-      buttonOut: 'EXIT',
+      buttonReplay: 'Replay the experience',
+      buttonOut: 'Exit',
     },
     page3: {
       title: 'What is your drinking occasion or setting?',
@@ -155,13 +155,13 @@ const data = {
         text: "Lunch in the countryside? Make the most of it by serving your guests some delicious comfort food. Château de Buzet's aromatic complexity and black fruit notes will blend perfectly with the subtle notes of undergrowth in our potato and mushroom pie.",
       },
 
-      button: 'THANK YOU!',
+      button: 'Thank you!',
     },
 
     page5: {
       subtitle: ' Follow ',
-      title: 'LES VIGNERONS DE BUZET',
-      button: 'GO TO OUR WEBSITE ',
+      title: 'Les vignerons de Buzet',
+      button: 'Go to your website',
     },
 
     page404: {

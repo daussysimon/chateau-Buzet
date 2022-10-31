@@ -3,19 +3,21 @@ import { Link, useNavigate } from 'react-router-dom';
 import prune from 'src/assets/pictures/prune.png';
 import { useSpring, a } from '@react-spring/web';
 import useHover from 'src/hooks/useHover';
-
+import { buttonWidth } from 'src/utils/functions';
 import cadreException from 'src/assets/pictures/degustation/cadre-exception-nb.jpg';
 import celebration from 'src/assets/pictures/degustation/celebration-nb.jpg';
 import champetre from 'src/assets/pictures/degustation/champetre-nb.jpg';
 import rendezvousGourmand from 'src/assets/pictures/degustation/rendezvous-gourmand-nb.jpg';
 import deguBackground from 'src/assets/pictures/deguBackground.png';
 import { useEffect, useState } from 'react';
+import useIsMobile from 'src/hooks/useIsMobile';
 
 const Page4 = ({ association, data, langage }) => {
   const navigate = useNavigate();
   const {
     hover, setHover, out, setOut,
   } = useHover();
+  const { isMobile, isSmallDesktop } = useIsMobile();
   const [top, setTop] = useState(window.innerWidth - 350);
   const img = (type) => {
     if (type === 'celebration') {
@@ -45,7 +47,7 @@ const Page4 = ({ association, data, langage }) => {
   }, []);
 
   const propsThx = useSpring({
-    width: hover ? 260 : 240,
+    width: buttonWidth(hover, isMobile, isSmallDesktop, langage, 230, 150, 230, 150),
     left: top,
     config: {
       duration: hover || out ? 600 : 0, mass: 7, tension: 200, friction: 30,

@@ -6,12 +6,15 @@ import useStateComponent from 'src/hooks/useStateComponent';
 import { a, useSpring } from '@react-spring/web';
 import PropTypes from 'prop-types';
 import bgVideo2 from 'src/assets/pictures/bgVideo2.jpg';
+import { buttonWidth } from 'src/utils/functions';
+import useIsMobile from 'src/hooks/useIsMobile';
 
 const Page2 = ({ data, langage }) => {
   const [playing, setPlaying] = useState(false);
-  const [ended, setEnded] = useState(false);
+  const [ended, setEnded] = useState(true);
   const [hover, setHover] = useState(false);
   const [hoverNext, setHoverNext] = useState(false);
+  const { isMobile, isSmallDesktop } = useIsMobile();
   const {
     state, setState, VISIBLE, VANISH, DELETE,
   } = useStateComponent();
@@ -24,17 +27,17 @@ const Page2 = ({ data, langage }) => {
     }
   }, [ended]);
   const propsReplay = useSpring({
-    width: hover ? 440 : 420,
+    width: buttonWidth(hover, isMobile, isSmallDesktop, langage, 380, 260, 380, 260),
     config: {
       duration: 600, mass: 7, tension: 200, friction: 30,
     },
   });
-
   const propsNext = useSpring({
-    width: hoverNext ? 440 : 420,
-    config: { duration: 600 },
+    width: buttonWidth(hoverNext, isMobile, isSmallDesktop, langage, 380, 260, 380, 260),
+    config: {
+      duration: 600, mass: 7, tension: 200, friction: 30,
+    },
   });
-
   return (
     <main
       className="main"
