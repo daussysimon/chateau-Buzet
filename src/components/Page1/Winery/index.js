@@ -1,7 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
 import { useSpring, a } from '@react-spring/web';
 import { Link } from 'react-router-dom';
-import videoFr from 'src/assets/videos/videotest.mp4';
+import histoireFr from 'src/assets/videos/histoireEn.mp4';
+import histoireEn from 'src/assets/videos/histoireFr.mp4';
 import useStateComponent from 'src/hooks/useStateComponent';
 import { buttonWidth, className } from 'src/utils/functions';
 import PropTypes from 'prop-types';
@@ -41,7 +42,7 @@ const Winery = ({
        && (
        <div className={state === VANISH ? 'video--vanish' : ''}>
          <Video
-           url={videoFr}
+           url={langage === 'EN' ? histoireEn : histoireFr}
            setPlaying={setPlaying}
            playing={playing}
            setEnded={setEnded}

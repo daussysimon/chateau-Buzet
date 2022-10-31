@@ -10,9 +10,7 @@ import boutonInstagram from 'src/assets/pictures/bouton-instagram.svg';
 import boutonYoutube from 'src/assets/pictures/bouton-youtube.svg';
 
 const Page5 = ({ data }) => {
-  const {
-    hover, setHover, out, setOut,
-  } = useHover();
+  const [hover, setHover, out, setOut] = useHover();
 
   const propsThx = useSpring({
     width: hover ? 400 : 380,

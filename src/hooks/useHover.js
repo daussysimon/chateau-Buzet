@@ -12,8 +12,8 @@ const useHover = () => {
     }
     return () => clearTimeout(time);
   }, [out]);
-  return {
+  return [
     hover, setHover, out, setOut,
-  };
+  ];
 };
 export default useHover;

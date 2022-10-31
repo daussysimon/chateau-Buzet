@@ -14,9 +14,7 @@ import useIsMobile from 'src/hooks/useIsMobile';
 
 const Page4 = ({ association, data, langage }) => {
   const navigate = useNavigate();
-  const {
-    hover, setHover, out, setOut,
-  } = useHover();
+  const [hover, setHover, out, setOut] = useHover();
   const { isMobile, isSmallDesktop } = useIsMobile();
   const [top, setTop] = useState(window.innerWidth - 350);
   const img = (type) => {

@@ -1,20 +1,26 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Video from 'src/components/Video';
-import videoFr from 'src/assets/videos/videotest.mp4';
+import degustationFr from 'src/assets/videos/degustationFr.mp4';
+import degustationEn from 'src/assets/videos/degustationEn.mp4';
 import useStateComponent from 'src/hooks/useStateComponent';
 import { a, useSpring } from '@react-spring/web';
 import PropTypes from 'prop-types';
 import bgVideo2 from 'src/assets/pictures/bgVideo2.jpg';
 import { buttonWidth } from 'src/utils/functions';
 import useIsMobile from 'src/hooks/useIsMobile';
+import useHover from 'src/hooks/useHover';
 
 const Page2 = ({ data, langage }) => {
   const [playing, setPlaying] = useState(false);
-  const [ended, setEnded] = useState(true);
-  const [hover, setHover] = useState(false);
-  const [hoverNext, setHoverNext] = useState(false);
+  const [ended, setEnded] = useState(false);
   const { isMobile, isSmallDesktop } = useIsMobile();
+  const [
+    hover, setHover, out, setOut,
+  ] = useHover();
+  const [
+    hoverNext, setHoverNext, outNext, setOutNext,
+  ] = useHover();
   const {
     state, setState, VISIBLE, VANISH, DELETE,
   } = useStateComponent();
@@ -28,15 +34,16 @@ const Page2 = ({ data, langage }) => {
   }, [ended]);
   const propsReplay = useSpring({
     width: buttonWidth(hover, isMobile, isSmallDesktop, langage, 380, 260, 380, 260),
-    config: {
+    config: hover || out ? {
       duration: 600, mass: 7, tension: 200, friction: 30,
-    },
+    }
+      : {},
   });
   const propsNext = useSpring({
     width: buttonWidth(hoverNext, isMobile, isSmallDesktop, langage, 380, 260, 380, 260),
-    config: {
+    config: hoverNext || outNext ? {
       duration: 600, mass: 7, tension: 200, friction: 30,
-    },
+    } : {},
   });
   return (
     <main
@@ -47,7 +54,7 @@ const Page2 = ({ data, langage }) => {
         && (
           <div className={state === VANISH ? 'video--vanish' : ''}>
             <Video
-              url={videoFr}
+              url={langage === 'EN' ? degustationEn : degustationFr}
               setPlaying={setPlaying}
               playing={playing}
               setEnded={setEnded}
@@ -64,7 +71,7 @@ const Page2 = ({ data, langage }) => {
               style={propsReplay}
               className={hover ? 'button__container button__container--replay button__container--hover' : 'button__container button__container--replay'}
               onMouseLeave={() => {
-                setHover(false);
+                setHover(false); setOut(true);
               }}
               onMouseEnter={() => setHover(true)}
               onClick={() => {
@@ -80,6 +87,7 @@ const Page2 = ({ data, langage }) => {
               className={hoverNext ? 'button__container button__container--next button__container--hover' : 'button__container button__container--next'}
               onMouseLeave={() => {
                 setHoverNext(false);
+                setOutNext(true);
               }}
               onMouseEnter={() => setHoverNext(true)}
             >

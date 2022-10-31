@@ -19,7 +19,7 @@ const Page1 = ({ setPageNumber, pageNumber, data, langage }) => {
   const { top, right } = useResizeWindow(homeRef, pageNumber, langage);
   const { isMobile, isSmallDesktop } = useIsMobile();
   const { state, setState, VISIBLE, VANISH, DELETE } = useStateComponent();
-  const { hover, setHover, out, setOut } = useHover();
+  const [hover, setHover, out, setOut] = useHover();
   useEffect(() => {
     if (location.pathname === '/histoire') {
       setPageNumber(2);
