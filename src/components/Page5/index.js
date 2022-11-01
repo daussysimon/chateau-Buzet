@@ -8,9 +8,11 @@ import wineRight from 'src/assets/pictures/wine-right.png';
 import boutonFacebook from 'src/assets/pictures/bouton-facebook.svg';
 import boutonInstagram from 'src/assets/pictures/bouton-instagram.svg';
 import boutonYoutube from 'src/assets/pictures/bouton-youtube.svg';
+import useIsMobile from 'src/hooks/useIsMobile';
 
 const Page5 = ({ data }) => {
   const [hover, setHover, out, setOut] = useHover();
+  const { isMobile } = useIsMobile();
 
   const propsThx = useSpring({
     width: hover ? 400 : 380,
@@ -22,41 +24,78 @@ const Page5 = ({ data }) => {
   return (
     <main
       className="main page5"
-      style={{ background: `center / contain no-repeat url(${backgroundPage5})` }}
+      style={!isMobile
+        ? { background: `center / contain no-repeat url(${backgroundPage5})` }
+        : { background: `center / 90% 100% no-repeat url(${backgroundPage5})` }}
     >
-      <div className="page5__container">
-        <img src={logoPage5} alt="logo" />
-        <h4 className="container__subtitle"><span>-</span>{data.subtitle}<span>-</span></h4>
-        <h1 className="container__title">{data.title}</h1>
-      </div>
-      <a.div
-        style={propsThx}
-        className={hover ? 'button__container button__container--visite button__container--hover' : 'button__container button__container--visite'}
-        onMouseLeave={() => {
-          setHover(false); setOut(true);
-        }}
-        onMouseEnter={() => setHover(true)}
-      >
-        <a href="https://www.nouslesvigneronsdebuzet.fr" className="button button--visite">
-          {data.button}
-        </a>
-      </a.div>
-      <nav className="page5__nav">
-        <a href="https://www.facebook.com/vigneronsbuzet/" className="nav__link">
-          <img src={boutonFacebook} alt="facebook" />
-        </a>
-        <a href="https://www.instagram.com/vigneronsbuzet" className="nav__link">
-          <img src={boutonInstagram} alt="instagram" />
-        </a>
-        <a href="https://www.youtube.com/vigneronsdebuzet" className="nav__link">
-          <img src={boutonYoutube} alt="youtube" />
-        </a>
-      </nav>
-      <div className="page5__img">
-        <img src={wineLeft} alt="verre de vin" className="img__left" />
-        <img src={wineRight} alt="verre de vin" className="img__right" />
-      </div>
-
+      { !isMobile
+        ? (
+          <>
+            <div className="page5__container">
+              <img src={logoPage5} alt="logo" />
+              <h4 className="container__subtitle"><span>-</span>{data.subtitle}<span>-</span></h4>
+              <h1 className="container__title">{data.title}</h1>
+            </div>
+            <a.div
+              style={propsThx}
+              className={hover ? 'button__container button__container--visite button__container--hover' : 'button__container button__container--visite'}
+              onMouseLeave={() => {
+                setHover(false); setOut(true);
+              }}
+              onMouseEnter={() => setHover(true)}
+            >
+              <a href="https://www.nouslesvigneronsdebuzet.fr" className="button button--visite">
+                {data.button}
+              </a>
+            </a.div>
+            <nav className="page5__nav">
+              <a href="https://www.facebook.com/vigneronsbuzet/" className="nav__link">
+                <img src={boutonFacebook} alt="facebook" />
+              </a>
+              <a href="https://www.instagram.com/vigneronsbuzet" className="nav__link">
+                <img src={boutonInstagram} alt="instagram" />
+              </a>
+              <a href="https://www.youtube.com/vigneronsdebuzet" className="nav__link">
+                <img src={boutonYoutube} alt="youtube" />
+              </a>
+            </nav>
+            <div className="page5__img">
+              <img src={wineLeft} alt="verre de vin" className="img__left" />
+              <img src={wineRight} alt="verre de vin" className="img__right" />
+            </div>
+          </>
+        )
+        : (
+          <div className="page5__container">
+            <img src={logoPage5} alt="logo" />
+            <h4 className="container__subtitle"><span>-</span>{data.subtitle}<span>-</span></h4>
+            <h1 className="container__title">{data.title}</h1>
+            <div className="page5__content">
+              <div className="page5__img">
+                <img src={wineLeft} alt="verre de vin" className="img__left" />
+              </div>
+              <a.div
+                style={propsThx}
+                className="button__container button__container--visite"
+              >
+                <a href="https://www.nouslesvigneronsdebuzet.fr" className="button button--visite">
+                  {data.button}
+                </a>
+              </a.div>
+              <nav className="page5__nav">
+                <a href="https://www.facebook.com/vigneronsbuzet/" className="nav__link">
+                  <img src={boutonFacebook} alt="facebook" />
+                </a>
+                <a href="https://www.instagram.com/vigneronsbuzet" className="nav__link">
+                  <img src={boutonInstagram} alt="instagram" />
+                </a>
+                <a href="https://www.youtube.com/vigneronsdebuzet" className="nav__link">
+                  <img src={boutonYoutube} alt="youtube" />
+                </a>
+              </nav>
+            </div>
+          </div>
+        )}
     </main>
   );
 };

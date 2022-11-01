@@ -28,7 +28,6 @@ function App() {
       setPageNumber(2);
     }
     document.addEventListener('onload', () => {
-      console.log('test');
     });
   }, [location]);
 

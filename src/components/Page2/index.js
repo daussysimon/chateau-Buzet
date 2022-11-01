@@ -48,11 +48,13 @@ const Page2 = ({ data, langage }) => {
   return (
     <main
       className="main"
-      style={{ background: `center / contain no-repeat url(${bgVideo2})` }}
+      style={!isMobile
+        ? { background: `center / contain no-repeat url(${bgVideo2})` }
+        : { background: `center / cover no-repeat url(${bgVideo2})` }}
     >
       { state !== DELETE
         && (
-          <div className={state === VANISH ? 'video--vanish' : ''}>
+          <div className={state === VANISH ? 'video--vanish video__cont' : 'video__cont'}>
             <Video
               url={langage === 'EN' ? degustationEn : degustationFr}
               setPlaying={setPlaying}

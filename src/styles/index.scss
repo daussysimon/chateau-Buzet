@@ -254,7 +254,7 @@ main {
   }
   .page5__nav {
     position: relative;
-    margin:  0 auto 200px auto ;
+    margin:  0 auto 5% auto ;
     display: flex;
     justify-content: space-evenly;
     z-index: 500;
@@ -389,9 +389,11 @@ main {
 }
 
 .video__container {
+  height: 100%;
   width: 100%;
-  height: calc(100vh - 164px);
-  position: relative;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
   .video__play {
     position: absolute;
     cursor: pointer;
@@ -488,10 +490,7 @@ main {
 .button__container--winery {
   top: 50%;
   left: 50%;
-  transform: translate(-125px, -50%);
-}
-.button__container--winery--en {
-  transform: translate(-115px, -50%);
+  transform: translate(-100px, -50%);
 }
 .button__container--replay {
   top: 50%;
@@ -534,6 +533,7 @@ main {
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  height: 100%;
   font-size: 25px;
   font-weight: 100;
   padding: 10px 0 10px 35px;
@@ -543,10 +543,14 @@ main {
   box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.486);
 }
 .button--buzet {
-  padding-left: 42px;
+  font-size: 16px;
+  padding-left: 20px;
 }
 .button--winery {
-  padding-left: 60px;
+  padding-left: 57px;
+}
+.button--winery--en {
+  padding-left: 80px;
 }
 .button--replay {
   justify-content: flex-end;
@@ -583,7 +587,7 @@ main {
   top: 6px;
   left: 6px;
   opacity: 0;
-  width: 550px;
+  width: 250px;
   background:none;
   border: none;
   box-shadow: none;
@@ -690,9 +694,11 @@ main {
 @keyframes opacityWinery {
  from {
     opacity: 0;
+    height: 55px;
   }
   to {
     opacity: 1;
+    height: 50px;
   }
 }
 
@@ -891,5 +897,11 @@ main {
     top: 50%;
     left: 50%;
     transform: translate(-130px, calc(-50% + 78px));
+  }
+  .button--winery {
+    padding-left: 60px;
+  }
+  .button--winery--en {
+    padding-left: 70px;
   }
 }

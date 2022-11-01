@@ -54,6 +54,12 @@ const Page4 = ({ association, data, langage }) => {
 
   return (
     <main className="main page4">
+      {isMobile && (
+        <>
+          <img alt="logo" src={prune} className="association__logo" />
+          <h1>{data.title}</h1>
+        </>
+      )}
       <aside
         className="association__aside"
         style={{ background: `center / contain no-repeat url(${deguBackground})` }}
@@ -61,8 +67,12 @@ const Page4 = ({ association, data, langage }) => {
         <img alt="représentation d'une scene de dégustation" src={img(association)} />
       </aside>
       <section className="association__container">
-        <h1>{data.title}</h1>
-        <img alt="logo" src={prune} className="association__logo" />
+        {!isMobile && (
+          <>
+            <h1>{data.title}</h1>
+            <img alt="logo" src={prune} className="association__logo" />
+          </>
+        )}
         <h3 className="association__title"><strong>{data[association]?.title} :</strong> {data[association]?.subtitle}</h3>
         <p className="association__para">{data[association]?.text} </p>
       </section>

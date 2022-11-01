@@ -17,24 +17,12 @@ const useResizeWindow = (homeRef, pageNumber, langage) => {
       setRightHomeButton(homeRef.current.getBoundingClientRect().left);
     }
     else {
-      setTopButton(window.innerHeight - 140);
+      setTopButton(window.innerHeight - 130);
       if (langage === 'en') {
-        if (isSmallDesktop) {
-          setTopButton(window.innerHeight - 130);
-          setRightHomeButton(window.innerWidth - 275);
-        }
-        else {
-          setRightHomeButton(window.innerWidth - 460);
-        }
+        setRightHomeButton(window.innerWidth - 285);
       }
       else {
-        if (isSmallDesktop) {
-          setTopButton(window.innerHeight - 130);
-          setRightHomeButton(window.innerWidth - 350);
-        }
-        else {
-          setRightHomeButton(window.innerWidth - 560);
-        }
+        setRightHomeButton(window.innerWidth - 350);
       }
     }
   };

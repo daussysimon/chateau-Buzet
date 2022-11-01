@@ -1,5 +1,6 @@
 import bottlePage1 from 'src/assets/pictures/bottle_page1.png';
 import secondLogo from 'src/assets/pictures/second_logo.png';
+import { Link } from 'react-router-dom';
 import { forwardRef } from 'react';
 import PropTypes from 'prop-types';
 
@@ -17,6 +18,17 @@ const Home = forwardRef((props, ref) => (
         <img className="presentation__img" src={secondLogo} alt="preprésente une grappe de raisins" />
         <h3 className="presentation__title">{props.data.subtitle}?</h3>
         <div className="presentation__para" ref={ref} dangerouslySetInnerHTML={{ __html: props.data.text }} />
+        {props.isMobile
+        && (
+        <button
+          className="button__container button__contaier--homeMobile"
+          type="button"
+        >
+          <Link to="/histoire" className="button button--home">
+            {props.data.buttonHome}
+          </Link>
+        </button>
+        )}
       </div>
     </div>
   </>

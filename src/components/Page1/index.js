@@ -14,7 +14,7 @@ import useIsMobile from 'src/hooks/useIsMobile';
 const Page1 = ({ setPageNumber, pageNumber, data, langage }) => {
   const homeRef = useRef(null);
   const [slice, setSlice] = useState(false);
-  const [ended, setEnded] = useState(false);
+  const [ended, setEnded] = useState(true);
   const location = useLocation();
   const { top, right } = useResizeWindow(homeRef, pageNumber, langage);
   const { isMobile, isSmallDesktop } = useIsMobile();
@@ -59,10 +59,11 @@ const Page1 = ({ setPageNumber, pageNumber, data, langage }) => {
     position: 'absolute',
     top: top,
     left: right,
+    height: state !== VISIBLE ? 62 : 72,
     right: 'auto',
     width: pageNumber === 1
       ? buttonWidth(hover, isMobile, isSmallDesktop, langage, 340, 210, 310, 195)
-      : buttonWidth(hover, isMobile, isSmallDesktop, langage, 485, 300, 380, 230),
+      : buttonWidth(hover, isMobile, isSmallDesktop, langage, 300, 300, 240, 240),
     config: { duration: duration(), mass: 7, tension: 200, friction: 30 },
   });
 
@@ -74,7 +75,6 @@ const Page1 = ({ setPageNumber, pageNumber, data, langage }) => {
     opacity: pageNumber <= 1 ? 0 : 1,
     config: !slice ? { duration: 0 } : { duration: 800 },
   });
-
   return (
     <>
       <main className="page1">
@@ -85,6 +85,7 @@ const Page1 = ({ setPageNumber, pageNumber, data, langage }) => {
             <Home
               ref={homeRef}
               data={data}
+              isMobile={isMobile}
             />
           </a.section>
           )}
@@ -100,13 +101,14 @@ const Page1 = ({ setPageNumber, pageNumber, data, langage }) => {
               duration={duration}
               ended={ended}
               setEnded={setEnded}
-              data={data.buttonTesting}
+              data={data}
               langage={langage}
+              isSmallDesktop={isSmallDesktop}
             />
           </a.section>
           )}
       </main>
-      {!ended && (
+      {!ended && !isMobile && (
       <a.button
         style={{
           ...propsHome,
