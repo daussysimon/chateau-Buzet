@@ -10,7 +10,7 @@
     }
     
     main {
-      overflow: hidden;
+      overflow-y: scroll;
       position: relative;
     }
     .page1{
@@ -42,7 +42,6 @@
           height: 90%;
           margin:  auto;
           width: 100%;
-          overflow-y: scroll;
           .container__present {
             display: flex;
             flex-direction: column;

@@ -32,7 +32,7 @@ function App() {
   }, [location]);
 
   return (
-    <div className={isMobile ? 'main main--mobile' : 'main'} style={isMobile ? { height: window.innerHeight - 70 } : {}}>
+    <div className={isMobile ? 'main main--mobile' : 'main'} style={isMobile ? { height: window.innerHeight } : {}}>
       <Suspense fallback={(
         <div className="loader__container">
           <img src={loaderGif} alt="loader" />
