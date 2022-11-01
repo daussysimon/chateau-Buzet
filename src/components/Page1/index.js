@@ -77,7 +77,7 @@ const Page1 = ({ setPageNumber, pageNumber, data, langage }) => {
   });
   return (
     <>
-      <main className="page1">
+      <main className="page1" style={isMobile ? { height: document.body.clientHeight - 70 } : {}}>
 
         { state !== DELETE
           && (

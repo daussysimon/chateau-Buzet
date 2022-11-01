@@ -4,18 +4,18 @@
   .main--mobile {
    
     body {
-      width: 100%;
-      height: 100vh;
       overflow: hidden;
     }
     
     main {
-      overflow-y: scroll;
       position: relative;
+      overflow: hidden;
     }
     .page1{
       width: 100%;
+      
       .home {
+        overflow-y: scroll;
         .home__header {
           margin: 15px 0 0 0 ;
           .home__header__title {
