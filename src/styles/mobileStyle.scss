@@ -1,14 +1,13 @@
 @use 'vars';
 
-
+html {
+  height: -webkit-fill-available
+}
+body{
+  min-height: -webkit-fill-available;
+  min-height:  100vh;
+}
   .main--mobile {
-    html {
-      height: -webkit-fill-available
-    }
-    body{
-      min-height: -webkit-fill-available;
-      min-height:  100vh;
-    }
     main { height: calc(100vh - 70px);}
     .page1{
       .home {
