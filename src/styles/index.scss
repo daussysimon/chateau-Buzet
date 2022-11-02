@@ -4,14 +4,10 @@
 * {
   font-family: vars.$font_main;
 }
-html {
-  height: -webkit-fill-available
-}
 
 body {
   width: 100%;
   height: 100vh;
-  min-height: -webkit-fill-available;
   overflow: hidden;
 }
 

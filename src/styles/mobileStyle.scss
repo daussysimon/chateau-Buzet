@@ -2,8 +2,12 @@
 
 
   .main--mobile {
+    html {
+      height: -webkit-fill-available
+    }
     main {
-      height:  calc(100vh - 70px);
+      min-height: -webkit-fill-available;
+      height:  calc(100% - 70px);
     }
     .page1{
       .home {
