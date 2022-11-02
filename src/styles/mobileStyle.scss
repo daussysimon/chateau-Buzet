@@ -1,14 +1,15 @@
 @use 'vars';
 
 html {
-  height: -webkit-fill-available
+  height: 100%;
 }
 body{
+  height: 100%;
   min-height: -webkit-fill-available;
-  min-height:  100vh;
+  min-height: 100vh;
 }
   .main--mobile {
-    main { height: calc(100vh - 70px);}
+    main { min-height: calc(100vh - 70px)}
     .page1{
       .home {
         overflow-y: scroll;
@@ -36,7 +37,7 @@ body{
           position: relative;
           top: 50%;
           transform: translateY(-50%);
-          height: 90%;
+          height: 75%;
           margin:  auto;
           width: 100%;
           .container__present {
