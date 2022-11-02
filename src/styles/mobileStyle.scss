@@ -2,20 +2,13 @@
 
 
   .main--mobile {
-   
-    body {
-      overflow: hidden;
-    }
-    
     main {
-      position: relative;
-      overflow: hidden;
+      height:  calc(100vh - 70px);
     }
     .page1{
-      width: 100%;
-      
       .home {
         overflow-y: scroll;
+        overflow-x: hidden;
         .home__header {
           margin: 15px 0 0 0 ;
           .home__header__title {
@@ -65,12 +58,12 @@
               font-size: 3vmin;
               line-height: 1.7em;
               max-width: 700px;
-              margin: 10px auto 5px;
+              margin: 10px 0 5px;
             }
           }
           .container__img {
             height: 40%;
-            width: 100%;
+            width: 90%;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -320,7 +313,7 @@
     .button__container--wineryMobile { 
       position: absolute;
       right: 20px;
-      bottom: 40px;
+      bottom: 20px;
       width: 220px;
       padding: 5px;
       text-align: center;
@@ -361,7 +354,7 @@
       padding:  10px 0;
     }
     .button__song {
-      bottom: 45px;
+      bottom: 30px;
       height: 40px;
       width: 40px;
     }

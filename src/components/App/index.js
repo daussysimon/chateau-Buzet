@@ -30,11 +30,9 @@ function App() {
     document.addEventListener('onload', () => {
     });
   }, [location]);
-  
-  console.log(window.innerHeight);
 
   return (
-    <div className={isMobile ? 'main main--mobile' : 'main'} style={isMobile ? { height: document.body.clientHeight } : {}}>
+    <div className={isMobile ? 'main main--mobile' : 'main'}>
       <Suspense fallback={(
         <div className="loader__container">
           <img src={loaderGif} alt="loader" />
