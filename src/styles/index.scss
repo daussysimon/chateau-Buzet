@@ -7,7 +7,7 @@
 
 body {
   width: 100%;
-  height: 100vh;
+  height: 100%;
   overflow: hidden;
 }
 
@@ -18,7 +18,6 @@ main {
 }
 
 .page1{
-  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
