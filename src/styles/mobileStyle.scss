@@ -5,10 +5,11 @@
     html {
       height: -webkit-fill-available
     }
-    main {
+    body{
       min-height: -webkit-fill-available;
-      height:  calc(100% - 70px);
+      min-height:  100vh;
     }
+    main { height: calc(100vh - 70px);}
     .page1{
       .home {
         overflow-y: scroll;
