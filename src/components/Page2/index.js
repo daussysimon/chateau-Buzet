@@ -47,7 +47,7 @@ const Page2 = ({ data, langage }) => {
   });
   return (
     <main
-      className="main"
+      className="main page2"
       style={!isMobile
         ? { background: `center / contain no-repeat url(${bgVideo2})` }
         : { background: `center / cover no-repeat url(${bgVideo2})` }}

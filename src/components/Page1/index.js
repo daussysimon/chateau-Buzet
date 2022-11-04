@@ -10,16 +10,18 @@ import useResizeWindow from 'src/hooks/useResizeWindow';
 import useStateComponent from 'src/hooks/useStateComponent';
 import useHover from 'src/hooks/useHover';
 import useIsMobile from 'src/hooks/useIsMobile';
+import Loader from 'src/components/LoaderLogo';
 
 const Page1 = ({ setPageNumber, pageNumber, data, langage }) => {
   const homeRef = useRef(null);
   const [slice, setSlice] = useState(false);
-  const [ended, setEnded] = useState(true);
+  const [ended, setEnded] = useState(false);
   const location = useLocation();
   const { top, right } = useResizeWindow(homeRef, pageNumber, langage);
   const { isMobile, isSmallDesktop } = useIsMobile();
   const { state, setState, VISIBLE, VANISH, DELETE } = useStateComponent();
   const [hover, setHover, out, setOut] = useHover();
+
   useEffect(() => {
     if (location.pathname === '/histoire') {
       setPageNumber(2);
@@ -77,8 +79,8 @@ const Page1 = ({ setPageNumber, pageNumber, data, langage }) => {
   });
   return (
     <>
-      <main className="page1">
-
+      <main className="page1 main">
+        <Loader />
         { state !== DELETE
           && (
           <a.section style={propsHomePage} className="home">

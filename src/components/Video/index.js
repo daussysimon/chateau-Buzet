@@ -3,6 +3,7 @@ import ReactPlayer from 'react-player';
 import { useEffect, useRef, useState } from 'react';
 import playLogo from 'src/assets/pictures/playLogo.png';
 import songIcon from 'src/assets/pictures/songIcon.png';
+import loaderGiff from 'src/assets/pictures/loader.gif';
 
 const Video = (
   {
@@ -10,6 +11,7 @@ const Video = (
   },
 ) => {
   const [muted, setMuted] = useState(false);
+  const [loader, setLoader] = useState(false);
   const playerRef = useRef(null);
   useEffect(() => {
     if (ended) {
@@ -20,17 +22,34 @@ const Video = (
     }
   }, [ended]);
 
+  useEffect(() => {
+    setInterval(() => {
+      console.log(playerRef.current.getSecondsLoaded());
+    }, 800);
+  }, []);
+
   return (
     <>
+      { loader && (
+      <div className="loader">
+        <img src={loaderGiff} alt="loader" />
+      </div>
+      )}
       <div onClick={() => playing && setPlaying(false)} className="video__container">
         <ReactPlayer
           ref={playerRef}
-          onReady={() => console.log('ready')}
           width="100%"
           height="100%"
           className="video"
           url={url}
           playing={playing}
+          progressInterval={100}
+          muted={muted}
+          fallback={(
+            <div className="loader">
+              <img src={loaderGiff} alt="loader" />
+            </div>
+          )}
           onEnded={() => setEnded(true)}
         />
         {!playing

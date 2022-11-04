@@ -12,13 +12,15 @@ body{
 }
   .main--mobile {
     height: 100%;
+    .main {
+      height: calc(100% - 90px);
+    }
     .page1{
-      height: calc(100% - 70px);
       .home {
         overflow-y: scroll;
         overflow-x: hidden;
         .home__header {
-          margin: 15px 0 0 0 ;
+          margin: 50px 0 0 0 ;
           .home__header__title {
             font-size: 25px;
             margin-top: 4vmin;
@@ -101,7 +103,7 @@ body{
       flex-direction: column;
       justify-content:center;
       color: vars.$color6;
-      overflow-y: scroll !important;
+      overflow-y: scroll !important;s
       .page3__header {
         height: auto;
         .header__img {
@@ -296,15 +298,87 @@ body{
       }
     }
     
-    header {
-      height: 50px;
+    .header {
+      height: 70px;
+      box-shadow: 2px 2px 5px rgb(180, 180, 180);
+      z-index: 600;
       .header__img {
           height: 40px;
+      }
+      .header__burger {
+        height: 40px;
+        width: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        flex-direction: column;
+        margin-right: 30px;
+        span {
+          height: 2px;
+          width: 100%;
+          background-color: vars.$color6;
+          display: block;
+          transition: 0.8s;
+        }
+      
+      }
+      .header__burger--open {
+        justify-content: center;
+        transform-origin: center;
+        margin-right: 20px; 
+
+        span {
+          width: 40px;
+          transform-origin: center;
+          transform: rotate(45deg);
+          
+        }
+        span:last-child {
+          transform: rotate(-45deg);
+          margin-bottom: 2px;
+        }
+      }
+      .nav__mobile {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        z-index: 700;
+        height: 0;
+        overflow: hidden;
+        top: 75px;
+        width: 100%;
+        padding: 20px 0;
+        background-color: white !important;
+        
+        img {
+          height: 250px;
+          display: block;
+        }
+        .span__separator{
+          display: block;
+          width: 40%;
+          height: 2px;
+          background: vars.$color6;
+        }
+        nav {
+          margin: 0;
+        }
+      }
+      .nav__mobile--open {
+        animation: headerAnim 0.8S  forwards;
       }
     }
 
     .footer {
       height: 20px;
+      .footer__para {
+      font-size: 8px;
+      }
+      .footer__link {
+        display: none;
+      }
     }
 
     .button__contaier--homeMobile {
@@ -377,5 +451,14 @@ body{
         background-color: vars.$color6;
       }
     }
+
+    @keyframes  headerAnim {
+      from {
+       height: 0;
+      }
+      to {
+        height: calc(100% - 95px);
+      }
+    }  
     
   }

@@ -104,6 +104,7 @@ const data = {
 
     header: {
       subtitle: 'La renaissance d’un patrimoine millénaire',
+      link: 'Mentions légales',
     },
   },
   en: {
@@ -214,6 +215,7 @@ const data = {
 
     header: {
       subtitle: 'Renaissance of a thousand-year-old heritage',
+      link: 'Legal notice',
     },
   },
 };

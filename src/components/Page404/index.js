@@ -32,7 +32,7 @@ const Page404 = ({ data, langage }) => {
     },
   });
   return (
-    <main className="page404">
+    <main className="main page404">
       <div className="page404__container">
         <div className="container__img">
           <img src={img404} alt="représentation de la bouteille de vin" />
