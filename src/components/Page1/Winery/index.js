@@ -1,8 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { useSpring, a } from '@react-spring/web';
 import { Link } from 'react-router-dom';
-import histoireFr from 'src/assets/videos/histoireEn.mp4';
-import histoireEn from 'src/assets/videos/histoireFr.mp4';
 import useStateComponent from 'src/hooks/useStateComponent';
 import { buttonWidth } from 'src/utils/functions';
 import PropTypes from 'prop-types';
@@ -35,21 +33,18 @@ const Winery = ({
       duration: duration(), mass: 7, tension: 200, friction: 30,
     },
   });
-
   return (
-    <div style={!isMobile
-      ? { background: `center / contain no-repeat url(${bgNav})` }
-      : { background: `65% / cover no-repeat url(${bgNav})` }}
-    >
+    <div>
       { state !== DELETE
        && (
-       <div className={state === VANISH ? 'video--vanish' : ''}>
+       <div className={state === VANISH ? 'video video--vanish' : 'video'} style={{ backgroundColor: 'white' }}>
          <Video
-           url={langage === 'EN' ? histoireEn : histoireFr}
+           url={langage === 'en' ? './videos/histoireEn.mp4' : './videos/histoireFr.mp4'}
            setPlaying={setPlaying}
            playing={playing}
            setEnded={setEnded}
            ended={ended}
+           langage={langage}
          />
          {isMobile
         && (
@@ -67,7 +62,10 @@ const Winery = ({
       { state !== VISIBLE
       && (
       <nav
-        className={state === VANISH ? 'page__nav--appear pave__nav' : 'page__nav'}
+        className={state === VANISH ? 'page__nav--appear page__nav' : 'page__nav'}
+        style={!isMobile
+          ? { background: `center / contain no-repeat url(${bgNav})`, height: 'calc(100vh - 164px)' }
+          : { background: `65% / cover no-repeat url(${bgNav})` }}
       >
         <a.div
           style={buttonStyle}

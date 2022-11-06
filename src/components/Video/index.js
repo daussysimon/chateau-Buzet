@@ -1,9 +1,9 @@
+/* eslint-disable no-undef */
 import PropTypes from 'prop-types';
-import ReactPlayer from 'react-player';
 import { useEffect, useRef, useState } from 'react';
 import playLogo from 'src/assets/pictures/playLogo.png';
 import songIcon from 'src/assets/pictures/songIcon.png';
-import loaderGiff from 'src/assets/pictures/loader.gif';
+import LoaderLogo from 'src/components/LoaderLogo';
 
 const Video = (
   {
@@ -11,52 +11,56 @@ const Video = (
   },
 ) => {
   const [muted, setMuted] = useState(false);
-  const [loader, setLoader] = useState(false);
+  const [loader, setLoader] = useState(true);
+  const [loaded, setLoaded] = useState(0);
   const playerRef = useRef(null);
   useEffect(() => {
     if (ended) {
       setTimeout(() => {
-        playerRef.current.seekTo(0, 'second');
+        playerRef.current.currentTime = 0.2;
         setPlaying(false);
       }, 800);
     }
   }, [ended]);
-
   useEffect(() => {
-    setInterval(() => {
-      console.log(playerRef.current.getSecondsLoaded());
-    }, 800);
-  }, []);
+    setLoader(true);
+    setLoaded(0);
+    const xhr = new XMLHttpRequest();
+    playerRef.current.currentTime = 0.2;
+    playerRef.current.pause();
+    playerRef.current.addEventListener('ended', () => setEnded(true));
+    setPlaying(false);
+    xhr.open('get', url);
+    xhr.responseType = 'blob';
+    xhr.onload = () => {
+      playerRef.current.src = (URL || webkitURL).createObjectURL(xhr.response);
+      playerRef.current.load();
+      setLoader(false);
+    };
+    xhr.send();
+    xhr.addEventListener('progress', (e) => {
+      setLoaded(Math.floor((e.loaded * 100) / e.total));
+    });
+  }, [url]);
 
+  const handlePause = () => {
+    if (playing) {
+      playerRef.current.pause();
+      setPlaying(false);
+    }
+  };
   return (
     <>
-      { loader && (
-      <div className="loader">
-        <img src={loaderGiff} alt="loader" />
-      </div>
-      )}
-      <div onClick={() => playing && setPlaying(false)} className="video__container">
-        <ReactPlayer
-          ref={playerRef}
-          width="100%"
-          height="100%"
-          className="video"
-          url={url}
-          playing={playing}
-          progressInterval={100}
-          muted={muted}
-          fallback={(
-            <div className="loader">
-              <img src={loaderGiff} alt="loader" />
-            </div>
-          )}
-          onEnded={() => setEnded(true)}
-        />
+      { loader && <LoaderLogo loaded={loaded} /> }
+      <div onClick={handlePause} className="video__container">
+        <video ref={playerRef} width="100%" height="100%" muted={muted}><track kind="captions" /></video>
         {!playing
         && (
         <div
           className="video__play"
-          onClick={() => setPlaying(true)}
+          onClick={() => {
+            setPlaying(true); playerRef.current.play();
+          }}
         >
           <img src={playLogo} alt="play" />
         </div>

@@ -97,7 +97,7 @@ body{
         left: 0;
       }
     }
-    
+  
     .page3 {
       display: flex;
       flex-direction: column;
@@ -215,6 +215,7 @@ body{
         }
       }
     }
+
     .page5 {
       display: block;
       width: 100%;
@@ -275,6 +276,61 @@ body{
         margin: auto;
         }
       }
+    }
+    .page404{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: calc(100% - 90px);
+      width: 100%;
+      .page404__container {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        margin-top: 20px;
+        align-items: center;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        padding: 0px ;
+        width: 90%;
+  
+      }
+      .page404__container::-webkit-scrollbar {
+        display: none;
+      }
+      .container__img {
+        height: 40%;
+        width: 90%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        img{
+          display: block;
+          position: relative;
+          height: 100%;
+          width: auto;
+          transform: scale(1.2)  translateY(0px);
+          bottom: 0px;
+          z-index: 1;
+        }
+      }
+      .container__text {
+        margin-top: 40px;
+        height: auto;
+        display: block;
+        width: 80%;
+        .text__title {
+          font-size: 25px;
+          line-height: 30px;
+        }
+        .text__para {
+          font-size: 16px;
+          line-height: 25px;
+          margin-bottom: 10px;
+        }
+        
+      }
+
     }
     .page4::-webkit-scrollbar {
       display: none;
@@ -364,6 +420,7 @@ body{
         }
         nav {
           margin: 0;
+          color: vars.$color6 !important;
         }
       }
       .nav__mobile--open {
@@ -381,6 +438,15 @@ body{
       }
     }
 
+    .loader {
+      img {
+        height: 100px;
+        width: 100px;
+        border-radius: 50%;
+      }
+    
+    }
+
     .button__contaier--homeMobile {
       position: static;
       width: 170px;
@@ -389,6 +455,8 @@ body{
     }
     .button--home {
       font-size: 12px;
+      padding: 10px 10px;
+      display: block;
       text-align: center;
     }
 
@@ -404,6 +472,8 @@ body{
 
     .button--wineryMobile {
       padding: 5px 10px;
+      display: block;
+      text-align: center;
       font-size: 12px;
     }
 
@@ -424,6 +494,21 @@ body{
       width: 220px !important;
       margin: 30px auto;
       text-align: center;
+    }
+
+    .button__container--404{
+      width: 250px !important;
+      display: block;
+      margin: 30px auto;
+      position: static;
+    }
+
+    .button--404 {
+      padding: 10px 10px
+    } 
+    .button--404--en {
+      text-align: center;
+      padding: 10px 39px;
     }
    .button--visite {
     padding-left: 0px;

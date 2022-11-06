@@ -450,12 +450,14 @@ main {
 }
 
 .page__nav {
-  height: calc(100vh - 164px);
   width: 100%;
+  height: calc(100vh - 164px);
   top: 0;
   left: 0;
 }
-
+.page__nav--appear{
+  animation: navVisible 0.6s forwards;
+}
 .button__container {
   border: 2px solid vars.$color6;;
   position: absolute;
@@ -514,12 +516,10 @@ main {
   left: 50%;
   transform: translate(-190px, calc(-50% + 78px));
 }
-
 .button__container--testing {
   bottom: 7%;
   left: 80%;
 }
-
 .button__container--visite {
   position: relative;
   margin: 5%;
@@ -570,8 +570,12 @@ main {
 .button--thx--en {
   padding-left: 43px;
 }
+
+.button--404 {
+  padding-left: 20px;
+}
 .button--404--en {
-  padding-left: 75px;
+  padding-left: 65px;
 }
 
 .button--visite {
@@ -586,7 +590,7 @@ main {
   top: 6px;
   left: 6px;
   opacity: 0;
-  width: 250px;
+  width: 280px;
   background:none;
   border: none;
   box-shadow: none;
@@ -673,18 +677,35 @@ main {
 .loader {
   height: 100vh;
   width: 100%;
-  background-color: rgb(250, 248, 239);
-  position: absolute;
+  background-color: rgb(242, 241, 237);
+  position: fixed;
   top: 0;
   left: 0;
   z-index: 3000;
   display: flex;
   align-items: center;
   justify-content: center;
-  img {
-    height: 200px;
-    width: 200px;
-    border-radius: 50%;
+  .loader__container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    img {
+      height: 150px;
+      width: 150px;
+      border-radius: 50%;
+      opacity: 0.7;
+      border: solid 2px vars.$color4;
+      box-shadow: 0px 0px 1px 5px #ccb0495b;
+    }
+    p{
+      font-size: 30px;
+      margin-top: 20px;
+      color: vars.$color4;
+      font-weight: 800;
+      text-align: center;
+      font-family: vars.$font_second;
+    }
   }
 
 }
@@ -718,6 +739,17 @@ main {
     opacity: 0;
   }
 }
+
+@keyframes navVisible{
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+
 
 @media (max-width: 1024px) {
   .header {

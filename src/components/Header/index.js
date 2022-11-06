@@ -45,7 +45,7 @@ const Header = ({
           <h1 className="header__title">Château Buzet<span className="title__separator"> | </span><span className="title__slogan">{data.subtitle}</span></h1>
           <img src={bottlePage1} alt="logo" />
           <span className="span__separator"> </span>
-          <Link to="/mentions_legales" className="footer__link">{data.link}</Link>
+          <Link to="/mentions_legales" className="footer__link" onClick={() => setBurgerOpen(false)}>{data.link}</Link>
         </div>
       )}
     </header>

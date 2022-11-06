@@ -10,7 +10,6 @@ import useResizeWindow from 'src/hooks/useResizeWindow';
 import useStateComponent from 'src/hooks/useStateComponent';
 import useHover from 'src/hooks/useHover';
 import useIsMobile from 'src/hooks/useIsMobile';
-import Loader from 'src/components/LoaderLogo';
 
 const Page1 = ({ setPageNumber, pageNumber, data, langage }) => {
   const homeRef = useRef(null);
@@ -57,6 +56,7 @@ const Page1 = ({ setPageNumber, pageNumber, data, langage }) => {
     }
     return 0;
   };
+
   const propsHome = useSpring({
     position: 'absolute',
     top: top,
@@ -80,7 +80,6 @@ const Page1 = ({ setPageNumber, pageNumber, data, langage }) => {
   return (
     <>
       <main className="page1 main">
-        <Loader />
         { state !== DELETE
           && (
           <a.section style={propsHomePage} className="home">

@@ -1,8 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Video from 'src/components/Video';
-import degustationFr from 'src/assets/videos/degustationFr.mp4';
-import degustationEn from 'src/assets/videos/degustationEn.mp4';
 import useStateComponent from 'src/hooks/useStateComponent';
 import { a, useSpring } from '@react-spring/web';
 import PropTypes from 'prop-types';
@@ -48,15 +46,13 @@ const Page2 = ({ data, langage }) => {
   return (
     <main
       className="main page2"
-      style={!isMobile
-        ? { background: `center / contain no-repeat url(${bgVideo2})` }
-        : { background: `center / cover no-repeat url(${bgVideo2})` }}
     >
-      { state !== DELETE
+      <div>
+        { state !== DELETE
         && (
           <div className={state === VANISH ? 'video--vanish video__cont' : 'video__cont'}>
             <Video
-              url={langage === 'EN' ? degustationEn : degustationFr}
+              url={langage === 'en' ? './videos/degustationEn.mp4' : './videos/degustationFr.mp4'}
               setPlaying={setPlaying}
               playing={playing}
               setEnded={setEnded}
@@ -64,10 +60,13 @@ const Page2 = ({ data, langage }) => {
             />
           </div>
         )}
-      { state !== VISIBLE
+        { state !== VISIBLE
         && (
           <nav
-            className={state === VANISH ? 'page__nav--appear pave__nav' : 'page__nav'}
+            className={state === VANISH ? 'page__nav--appear page__nav' : 'page__nav'}
+            style={!isMobile
+              ? { background: `center / contain no-repeat url(${bgVideo2})` }
+              : { background: `center / cover no-repeat url(${bgVideo2})` }}
           >
             <a.div
               style={propsReplay}
@@ -97,6 +96,7 @@ const Page2 = ({ data, langage }) => {
             </a.div>
           </nav>
         )}
+      </div>
     </main>
   );
 };

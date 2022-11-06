@@ -41,18 +41,18 @@ const Page404 = ({ data, langage }) => {
           <h3 className="text__title"><span>{data.slogan}</span> {data.title}</h3>
           <p className="text__para" ref={ref}>{data.para}</p>
         </div>
+        <a.button
+          style={{ ...props404 }}
+          className={hover ? 'button__container button__container--404 button__container--hover' : 'button__container button__container--404'}
+          type="button"
+          onMouseLeave={() => {
+            setHover(false); setOut(true);
+          }}
+          onMouseEnter={() => setHover(true)}
+        >
+          <Link to="/" className={langage === 'en' ? 'button button--404 button--404--en' : 'button button--404'}>{data.button}</Link>
+        </a.button>
       </div>
-      <a.button
-        style={{ ...props404 }}
-        className={hover ? 'button__container button__container--hover' : 'button__container'}
-        type="button"
-        onMouseLeave={() => {
-          setHover(false); setOut(true);
-        }}
-        onMouseEnter={() => setHover(true)}
-      >
-        <Link to="/" className={langage === 'en' ? 'button button--404 button--404--en' : 'button button--404'}>{data.button}</Link>
-      </a.button>
     </main>
   );
 };
