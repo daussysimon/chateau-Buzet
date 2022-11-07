@@ -34,6 +34,11 @@ const Video = (
     xhr.responseType = 'blob';
     xhr.onload = () => {
       playerRef.current.src = (URL || webkitURL).createObjectURL(xhr.response);
+      caches.open('writeCache').then((cache) => {
+        cache.add(xhr.response).then(() => {
+          console.log('Cache added');
+        });
+      });
       playerRef.current.load();
       setLoader(false);
     };

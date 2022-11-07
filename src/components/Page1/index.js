@@ -32,7 +32,8 @@ const Page1 = ({ setPageNumber, pageNumber, data, langage }) => {
       setEnded(false);
     }
     return () => {
-      setState(VISIBLE); setEnded(false);
+      setState(VISIBLE);
+      setEnded(false);
     };
   }, [location]);
 
@@ -44,7 +45,7 @@ const Page1 = ({ setPageNumber, pageNumber, data, langage }) => {
         setSlice(false);
       }, 800);
     }
-    return (() => clearTimeout(sliceTimout));
+    return () => clearTimeout(sliceTimout);
   }, [slice]);
 
   const duration = () => {
@@ -63,9 +64,28 @@ const Page1 = ({ setPageNumber, pageNumber, data, langage }) => {
     left: right,
     height: state !== VISIBLE ? 62 : 72,
     right: 'auto',
-    width: pageNumber === 1
-      ? buttonWidth(hover, isMobile, isSmallDesktop, langage, 340, 210, 310, 195)
-      : buttonWidth(hover, isMobile, isSmallDesktop, langage, 300, 300, 240, 240),
+    width:
+      pageNumber === 1
+        ? buttonWidth(
+          hover,
+          isMobile,
+          isSmallDesktop,
+          langage,
+          340,
+          210,
+          310,
+          195,
+        )
+        : buttonWidth(
+          hover,
+          isMobile,
+          isSmallDesktop,
+          langage,
+          300,
+          300,
+          240,
+          240,
+        ),
     config: { duration: duration(), mass: 7, tension: 200, friction: 30 },
   });
 
@@ -80,18 +100,12 @@ const Page1 = ({ setPageNumber, pageNumber, data, langage }) => {
   return (
     <>
       <main className="page1 main">
-        { state !== DELETE
-          && (
+        {state !== DELETE && (
           <a.section style={propsHomePage} className="home">
-            <Home
-              ref={homeRef}
-              data={data}
-              isMobile={isMobile}
-            />
+            <Home ref={homeRef} data={data} isMobile={isMobile} />
           </a.section>
-          )}
-        { state !== VISIBLE
-          && (
+        )}
+        {state !== VISIBLE && (
           <a.section style={propsWineryPage} className="winery">
             <Winery
               style={propsWineryPage}
@@ -107,34 +121,48 @@ const Page1 = ({ setPageNumber, pageNumber, data, langage }) => {
               isSmallDesktop={isSmallDesktop}
             />
           </a.section>
-          )}
+        )}
       </main>
       {!ended && !isMobile && (
-      <a.button
-        style={{
-          ...propsHome,
-        }}
-        className={hover ? 'button__container button__container--hover' : 'button__container'}
-        type="button"
-        onMouseLeave={() => {
-          setHover(false); setOut(true);
-        }}
-        onMouseEnter={() => setHover(true)}
-        onClick={() => {
-          setSlice(true);
-        }}
-      >
-        { state !== DELETE
-            && (
+        <a.button
+          style={{
+            ...propsHome,
+          }}
+          className={
+            hover
+              ? 'button__container button__container--hover'
+              : 'button__container'
+          }
+          type="button"
+          onMouseLeave={() => {
+            setHover(false);
+            setOut(true);
+          }}
+          onMouseEnter={() => setHover(true)}
+          onClick={() => {
+            setSlice(true);
+          }}
+        >
+          {state !== DELETE && (
             <Link to="/histoire" className="button">
-              <span className={state === VANISH ? 'button--opacity2' : ''}>{data.buttonHome}</span>
+              <span className={state === VANISH ? 'button--opacity2' : ''}>
+                {data.buttonHome}
+              </span>
             </Link>
-            )}
-        { state !== VISIBLE
-            && (
-              <Link to="/degustation" className={state === VANISH ? 'button--opacity button button--buzet' : 'button button--buzet'}>{data.buttonWinery}</Link>
-            )}
-      </a.button>
+          )}
+          {state !== VISIBLE && (
+            <Link
+              to="/degustation"
+              className={
+                state === VANISH
+                  ? 'button--opacity button button--buzet'
+                  : 'button button--buzet'
+              }
+            >
+              {data.buttonWinery}
+            </Link>
+          )}
+        </a.button>
       )}
     </>
   );
