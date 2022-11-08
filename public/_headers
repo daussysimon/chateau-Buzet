@@ -1,0 +1,5 @@
+/*
+Cache-Control: private
+Cache-Control: public
+Cache-Control: max-age=31536000
+Cache-Control: must-revalidate
