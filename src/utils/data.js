@@ -5,14 +5,14 @@ const data = {
       slogan: 'La renaissance d’un patrimoine millénaire',
       subtitle: 'Et si vous laissiez vos sens s’épanouir ?',
       text: `<p>Ouïe, toucher, vue, goût…</p>
-      <p>Accordez-vous un instant. Immergez-vous dans l’univers d’exceptions de notre vin Château de Buzet. Libérez vos sens grâce à une expérience de dégustation vivante et multisensorielle. </p>
-      Belle dégustation`,
+      <p>Accordez-vous un instant. Immergez-vous dans l’univers d’exceptions de notre vin Château de Buzet.</p><p> Libérez vos sens grâce à une expérience de dégustation vivante et multisensorielle. </p> 
+      <p> Belle dégustation </p>`,
       buttonHome: "Démarrer l'expérience",
-      buttonWinery: 'Aller directement à la dégustation',
+      buttonWinery: 'Aller directement à la dégustation !',
       buttonTesting: 'Déguster',
     },
     page2: {
-      buttonReplay: "Rejour l'expérience",
+      buttonReplay:"Rejouer l'expérience",
       buttonOut: 'Sortir',
     },
     page3: {
@@ -112,10 +112,9 @@ const data = {
       slogan: 'Renaissance of a thousand-year-old heritage',
       subtitle: 'Why not give free rein to your senses?',
       text: `<p>Smell, touch, sight, taste... </p>
-      <p>Take a moment to yourself immersed in the unique world of our Château de Buzet wine…
-      Unleash your senses in a living, multi-sensory wine tasting experience!
-       </p>
-       Enjoy!`,
+      <p>Take a moment to yourself immersed in the unique world of our Château de Buzet wine… </p>
+      <p>Unleash your senses in a living, multi-sensory wine tasting experience! </p>
+      <p> Enjoy! </p>`,
       buttonHome: 'Start the expérience',
       buttonWinery: 'Go directly to the tasting',
       buttonTesting: 'Taste',

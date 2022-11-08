@@ -44,18 +44,18 @@ const Page5 = ({ data }) => {
               }}
               onMouseEnter={() => setHover(true)}
             >
-              <a href="https://www.nouslesvigneronsdebuzet.fr" className="button button--visite" target="blank">
+              <a href="https://www.nouslesvigneronsdebuzet.fr" className="button button--visite" target="_blanck">
                 {data.button}
               </a>
             </a.div>
             <nav className="page5__nav">
-              <a href="https://www.facebook.com/vigneronsbuzet/" className="nav__link" target="blank">
+              <a href={isMobile ? 'fb://page/vigneronsbuze' : 'https://www.facebook.com/vigneronsbuzet/'} className="nav__link" target="_blanck">
                 <img src={boutonFacebook} alt="facebook" />
               </a>
-              <a href="https://www.instagram.com/vigneronsbuzet" className="nav__link" target="blank">
+              <a href={isMobile ? 'instagram://user?username=vigneronsbuzet' : 'https://www.instagram.com/vigneronsbuzet'} className="nav__link" target="_blanck">
                 <img src={boutonInstagram} alt="instagram" />
               </a>
-              <a href="https://www.youtube.com/vigneronsdebuzet" className="nav__link" target="blank">
+              <a href="https://www.youtube.com/vigneronsdebuzet" className="nav__link" target="_blanck">
                 <img src={boutonYoutube} alt="youtube" />
               </a>
             </nav>

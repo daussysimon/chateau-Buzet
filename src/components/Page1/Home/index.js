@@ -16,7 +16,7 @@ const Home = forwardRef((props, ref) => (
       </div>
       <div className="container__present">
         <img className="presentation__img" src={secondLogo} alt="preprésente une grappe de raisins" />
-        <h3 className="presentation__title">{props.data.subtitle}?</h3>
+        <h3 className="presentation__title">{props.data.subtitle}</h3>
         <div className="presentation__para" ref={ref} dangerouslySetInnerHTML={{ __html: props.data.text }} />
         {props.isMobile
         && (
@@ -41,5 +41,7 @@ Home.propTypes = {
     text: PropTypes.string.isRequired,
     buttonHome: PropTypes.string.isRequired,
   }).isRequired,
+
+  isMobile: PropTypes.bool.isRequired,
 };
 export default Home;
