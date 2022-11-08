@@ -7,13 +7,14 @@ import LoaderLogo from 'src/components/LoaderLogo';
 
 const Video = (
   {
-    url, setEnded, playing, setPlaying, ended,
+    url, setEnded, playing, setPlaying, ended, menuIsOpen,
   },
 ) => {
   const [muted, setMuted] = useState(false);
   const [loader, setLoader] = useState(true);
   const [loaded, setLoaded] = useState(0);
   const playerRef = useRef(null);
+
   useEffect(() => {
     if (ended) {
       setTimeout(() => {
@@ -51,7 +52,7 @@ const Video = (
   };
   return (
     <>
-      { loader && <LoaderLogo loaded={loaded} /> }
+      { loader && !menuIsOpen && <LoaderLogo loaded={loaded} /> }
       <div onClick={handlePause} className="video__container">
         <video ref={playerRef} width="100%" height="100%" muted={muted}><track kind="captions" /></video>
         {!playing
@@ -86,6 +87,7 @@ Video.propTypes = {
   playing: PropTypes.bool.isRequired,
   setPlaying: PropTypes.func.isRequired,
   ended: PropTypes.bool.isRequired,
+  menuIsOpen: PropTypes.bool.isRequired,
 };
 
 export default Video;

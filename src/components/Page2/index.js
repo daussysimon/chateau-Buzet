@@ -9,7 +9,7 @@ import { buttonWidth } from 'src/utils/functions';
 import useIsMobile from 'src/hooks/useIsMobile';
 import useHover from 'src/hooks/useHover';
 
-const Page2 = ({ data, langage }) => {
+const Page2 = ({ data, langage, menuIsOpen }) => {
   const [playing, setPlaying] = useState(false);
   const [ended, setEnded] = useState(false);
   const { isMobile, isSmallDesktop } = useIsMobile();
@@ -57,6 +57,7 @@ const Page2 = ({ data, langage }) => {
               playing={playing}
               setEnded={setEnded}
               ended={ended}
+              menuIsOpen={menuIsOpen}
             />
           </div>
         )}
@@ -106,6 +107,7 @@ Page2.propTypes = {
     buttonOut: PropTypes.string.isRequired,
   }).isRequired,
   langage: PropTypes.string.isRequired,
+  menuIsOpen: PropTypes.bool.isRequired,
 };
 
 export default Page2;

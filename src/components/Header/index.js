@@ -5,7 +5,7 @@ import bottlePage1 from 'src/assets/pictures/bottle_page1.png';
 import { Link } from 'react-router-dom';
 
 const Header = ({
-  pageNumber, langage, setLangage, data, isMobile,
+  pageNumber, langage, setLangage, data, isMobile, setMenuIsOpen,
 }) => {
   const [burgerOpen, setBurgerOpen] = useState(undefined);
   return (
@@ -28,7 +28,9 @@ const Header = ({
         : (
           <div
             className={burgerOpen ? 'header__burger header__burger--open' : 'header__burger'}
-            onClick={() => setBurgerOpen(!burgerOpen)}
+            onClick={() => {
+              setBurgerOpen(!burgerOpen); setMenuIsOpen(!burgerOpen);
+            }}
           >
             <span> </span>
             <span> </span>
@@ -45,7 +47,14 @@ const Header = ({
           <h1 className="header__title">Château Buzet<span className="title__separator"> | </span><span className="title__slogan">{data.subtitle}</span></h1>
           <img src={bottlePage1} alt="logo" />
           <span className="span__separator"> </span>
-          <Link to="/mentions_legales" className="footer__link" onClick={() => setBurgerOpen(false)}>{data.link}</Link>
+          <Link
+            to="/mentions_legales"
+            className="footer__link"
+            onClick={() => {
+              setBurgerOpen(false); setMenuIsOpen(false);
+            }}
+          >{data.link}
+          </Link>
         </div>
       )}
     </header>
@@ -56,6 +65,7 @@ Header.propTypes = {
   pageNumber: PropTypes.number.isRequired,
   langage: PropTypes.string.isRequired,
   setLangage: PropTypes.func.isRequired,
+  setMenuIsOpen: PropTypes.func.isRequired,
   isMobile: PropTypes.bool.isRequired,
   data: PropTypes.shape({
     subtitle: PropTypes.string.isRequired,

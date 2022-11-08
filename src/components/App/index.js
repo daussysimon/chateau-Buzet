@@ -18,6 +18,7 @@ function App() {
   const [pageNumber, setPageNumber] = useState(1);
   const [langage, setLangage] = useState('fr');
   const [association, setAssociation] = useState('');
+  const [menuIsOpen, setMenuIsOpen] = useState(false);
   const location = useLocation();
   const { isMobile } = useIsMobile();
 
@@ -36,11 +37,12 @@ function App() {
         setLangage={setLangage}
         data={data[langage].header}
         isMobile={isMobile}
+        setMenuIsOpen={setMenuIsOpen}
       />
       <Routes>
-        <Route path="/" element={<Page1 setPageNumber={setPageNumber} pageNumber={pageNumber} data={data[langage].page1} langage={langage} />} />
-        <Route path="/histoire" element={<Page1 setPageNumber={setPageNumber} pageNumber={pageNumber} data={data[langage].page1} langage={langage} />} />
-        <Route path="/degustation" element={<Page2 data={data[langage].page2} langage={langage} />} />
+        <Route path="/" element={<Page1 setPageNumber={setPageNumber} pageNumber={pageNumber} data={data[langage].page1} langage={langage} menuIsOpen={menuIsOpen} />} />
+        <Route path="/histoire" element={<Page1 setPageNumber={setPageNumber} pageNumber={pageNumber} data={data[langage].page1} langage={langage} menuIsOpen={menuIsOpen} />} />
+        <Route path="/degustation" element={<Page2 data={data[langage].page2} langage={langage} menuIsOpen={menuIsOpen} />} />
         <Route path="/context_degustation" element={<Page3 setAssociation={setAssociation} data={data[langage].page3} />} />
         <Route path="/context_degustation/:degustationType" element={<Page4 association={association} data={data[langage].page4} langage={langage} />} />
         <Route path="/socialmedia" element={<Page5 data={data[langage].page5} />} />

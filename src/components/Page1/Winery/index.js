@@ -8,7 +8,8 @@ import bgNav from 'src/assets/pictures/bgNav.jpg';
 import Video from 'src/components/Video';
 
 const Winery = ({
-  setHover, setOut, hover, isMobile, isSmallDesktop, duration, ended, setEnded, data, langage,
+  setHover, setOut, hover, isMobile, isSmallDesktop,
+  duration, ended, setEnded, data, langage, menuIsOpen,
 }) => {
   const [playing, setPlaying] = useState(false);
 
@@ -45,6 +46,7 @@ const Winery = ({
            setEnded={setEnded}
            ended={ended}
            langage={langage}
+           menuIsOpen={menuIsOpen}
          />
          {isMobile
         && (
@@ -89,6 +91,7 @@ Winery.propTypes = {
   setOut: PropTypes.func.isRequired,
   hover: PropTypes.bool.isRequired,
   isMobile: PropTypes.bool.isRequired,
+  menuIsOpen: PropTypes.bool.isRequired,
   duration: PropTypes.func.isRequired,
   ended: PropTypes.bool.isRequired,
   setEnded: PropTypes.func.isRequired,

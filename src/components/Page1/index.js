@@ -11,7 +11,7 @@ import useStateComponent from 'src/hooks/useStateComponent';
 import useHover from 'src/hooks/useHover';
 import useIsMobile from 'src/hooks/useIsMobile';
 
-const Page1 = ({ setPageNumber, pageNumber, data, langage }) => {
+const Page1 = ({ setPageNumber, pageNumber, data, langage, menuIsOpen }) => {
   const homeRef = useRef(null);
   const [slice, setSlice] = useState(false);
   const [ended, setEnded] = useState(false);
@@ -57,7 +57,6 @@ const Page1 = ({ setPageNumber, pageNumber, data, langage }) => {
     }
     return 0;
   };
-
   const propsHome = useSpring({
     position: 'absolute',
     top: top,
@@ -108,6 +107,7 @@ const Page1 = ({ setPageNumber, pageNumber, data, langage }) => {
         {state !== VISIBLE && (
           <a.section style={propsWineryPage} className="winery">
             <Winery
+              menuIsOpen={menuIsOpen}
               style={propsWineryPage}
               setHover={setHover}
               setOut={setOut}
@@ -170,6 +170,7 @@ const Page1 = ({ setPageNumber, pageNumber, data, langage }) => {
 
 Page1.propTypes = {
   setPageNumber: PropTypes.func.isRequired,
+  menuIsOpen: PropTypes.bool.isRequired,
   pageNumber: PropTypes.number.isRequired,
   data: PropTypes.object,
   langage: PropTypes.string,
