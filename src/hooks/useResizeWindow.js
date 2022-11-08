@@ -22,7 +22,7 @@ const useResizeWindow = (homeRef, pageNumber, langage) => {
         setRightHomeButton(window.innerWidth - 285);
       }
       else {
-        setRightHomeButton(window.innerWidth - 350);
+        setRightHomeButton(window.innerWidth - 360);
       }
     }
   };

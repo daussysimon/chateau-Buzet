@@ -12,7 +12,7 @@ const data = {
       buttonTesting: 'Déguster',
     },
     page2: {
-      buttonReplay:"Rejouer l'expérience",
+      buttonReplay: "Rejouer l'expérience",
       buttonOut: 'Sortir',
     },
     page3: {
