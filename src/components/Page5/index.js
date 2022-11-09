@@ -9,6 +9,7 @@ import boutonFacebook from 'src/assets/pictures/bouton-facebook.svg';
 import boutonInstagram from 'src/assets/pictures/bouton-instagram.svg';
 import boutonYoutube from 'src/assets/pictures/bouton-youtube.svg';
 import useIsMobile from 'src/hooks/useIsMobile';
+import { useEffect } from 'react';
 
 const Page5 = ({ data }) => {
   const [hover, setHover, out, setOut] = useHover();
@@ -44,7 +45,11 @@ const Page5 = ({ data }) => {
               }}
               onMouseEnter={() => setHover(true)}
             >
-              <a href="https://www.nouslesvigneronsdebuzet.fr" className="button button--visite" target="_blanck">
+              <a
+                onClick={() => window.open('https://www.nouslesvigneronsdebuzet.fr', '_blank')}
+                className="button button--visite"
+                target="_blanck"
+              >
                 {data.button}
               </a>
             </a.div>
