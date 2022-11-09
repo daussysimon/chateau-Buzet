@@ -11,7 +11,7 @@ import useHover from 'src/hooks/useHover';
 
 const Page2 = ({ data, langage, menuIsOpen }) => {
   const [playing, setPlaying] = useState(false);
-  const [ended, setEnded] = useState(false);
+  const [ended, setEnded] = useState(true);
   const { isMobile, isSmallDesktop } = useIsMobile();
   const [
     hover, setHover, out, setOut,
@@ -67,7 +67,7 @@ const Page2 = ({ data, langage, menuIsOpen }) => {
             className={state === VANISH ? 'page__nav--appear page__nav' : 'page__nav'}
             style={!isMobile
               ? { background: `center / contain no-repeat url(${bgVideo2})` }
-              : { background: `center / cover no-repeat url(${bgVideo2})` }}
+              : { background: `top / cover no-repeat url(${bgVideo2})` }}
           >
             <a.div
               style={propsReplay}

@@ -46,7 +46,7 @@ const Winery = ({
            setEnded={setEnded}
            ended={ended}
            langage={langage}
-           menuIsOpen={menuIsOpen}
+           menuIsopen={menuIsOpen}
          />
          {isMobile
         && (

@@ -36,12 +36,12 @@ const Header = ({
             <span> </span>
           </div>
         )}
-      {burgerOpen && (
+      {burgerOpen && isMobile && (
         <div className={burgerOpen ? 'nav__mobile nav__mobile--open' : 'nav__mobile'}>
           <nav className="header__nav">
-            <button style={{ color: '#2A1F00' }} type="button" className={langage === 'fr' ? 'nav__button--selected nav__button' : 'nav__button'} onClick={() => setLangage('fr')}>FR</button>
+            <span className={langage === 'fr' ? 'nav__button--selected nav__button' : 'nav__button'} onClick={() => setLangage('fr')}>FR</span>
             <span className="nav__spleater">/</span>
-            <button style={{ color: '#2A1F00' }} type="button" className={langage === 'en' ? 'nav__button--selected nav__button' : 'nav__button'} onClick={() => setLangage('en')}>EN</button>
+            <span className={langage === 'en' ? 'nav__button--selected nav__button' : 'nav__button'} onClick={() => setLangage('en')}>EN</span>
           </nav>
           <span className="span__separator"> </span>
           <h1 className="header__title">Château Buzet<span className="title__separator"> | </span><span className="title__slogan">{data.subtitle}</span></h1>
