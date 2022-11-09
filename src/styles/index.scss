@@ -17,6 +17,10 @@ main {
   position: relative;
 }
 
+button {
+  color: #2A1F00;
+}
+
 .page1{
   display: flex;
   align-items: center;
@@ -628,6 +632,7 @@ main {
   .header__nav {
     margin-right: 5%;
     font-size: 23px;
+    color: vars.$color6 !important;
     .nav__button {
       border: none;
       background: none;
