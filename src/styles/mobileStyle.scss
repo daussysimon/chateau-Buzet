@@ -103,6 +103,7 @@ body{
       flex-direction: column;
       justify-content:center;
       color: vars.$color6;
+      overflow-y: hidden !important;
 
       .page3__header {
         height: auto;
@@ -119,7 +120,7 @@ body{
         }
       }
       .page3__section {
-        margin: 60px 0 0;
+        margin: 30px 0 0;
         max-width: 580px;
         position: relative;
         left: 50%;
@@ -128,7 +129,7 @@ body{
         justify-content: flex-start;
         align-items: flex-start;
         overflow-x: scroll;
-        overflow-y: hidden;
+        overflow-y: hidden !important;
     
         .section__testing {
           margin-left: 70px;
