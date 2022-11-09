@@ -11,7 +11,7 @@ import useHover from 'src/hooks/useHover';
 
 const Page2 = ({ data, langage, menuIsOpen }) => {
   const [playing, setPlaying] = useState(false);
-  const [ended, setEnded] = useState(true);
+  const [ended, setEnded] = useState(false);
   const { isMobile, isSmallDesktop } = useIsMobile();
   const [
     hover, setHover, out, setOut,
