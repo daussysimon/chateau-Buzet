@@ -103,8 +103,6 @@ body{
       flex-direction: column;
       justify-content:center;
       color: vars.$color6;
-      overflow-y: scroll !important;
-      overflow-x: hidden !important;
 
       .page3__header {
         height: auto;
@@ -121,7 +119,7 @@ body{
         }
       }
       .page3__section {
-        margin: 50px 0 50px;
+        margin: 60px 0 0;
         max-width: 580px;
         position: relative;
         left: 50%;
@@ -130,6 +128,7 @@ body{
         justify-content: flex-start;
         align-items: flex-start;
         overflow-x: scroll;
+        overflow-y: hidden;
     
         .section__testing {
           margin-left: 70px;
@@ -164,11 +163,8 @@ body{
           }
         }
 
-        .section__testing:first-child {
-          margin-left: 140px;
-        }
         .section__testing:last-child {
-          margin-right: 140px;
+          margin-right: 130px;
         }
       }
     }
