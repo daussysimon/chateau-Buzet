@@ -103,7 +103,9 @@ body{
       flex-direction: column;
       justify-content:center;
       color: vars.$color6;
-      overflow-y: scroll !important;s
+      overflow-y: scroll !important;
+      overflow-x: hidden !important;
+
       .page3__header {
         height: auto;
         .header__img {
@@ -227,9 +229,6 @@ body{
       display: block;
       width: 100%;
       overflow: scroll;
-      .page5__content {
-        
-      }
       .page5__container {
           margin-top: 50px;
           height: 100%;
@@ -425,7 +424,7 @@ body{
           height: 2px;
           background: vars.$color6;
         }
-        nav {
+        button {
           margin: 0;
           color: vars.$color6 !important;
         }
