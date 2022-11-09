@@ -55,7 +55,7 @@ const Page5 = ({ data }) => {
               <a href={isMobile ? 'instagram://user?username=vigneronsbuzet' : 'https://www.instagram.com/vigneronsbuzet'} className="nav__link" target="_blanck">
                 <img src={boutonInstagram} alt="instagram" />
               </a>
-              <a href="https://www.youtube.com/vigneronsdebuzet" className="nav__link" target="_blanck">
+              <a href={isMobile ? 'fb://page/vigneronsdebuzet' : 'https://www.youtube.com/vigneronsdebuzet'} className="nav__link" target="_blanck">
                 <img src={boutonYoutube} alt="youtube" />
               </a>
             </nav>
