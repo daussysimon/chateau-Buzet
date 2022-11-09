@@ -634,10 +634,10 @@ main {
       font-weight: 100;
       font-size: 20px;
       padding: 4px;
+      color: vars.$color6 !important;
     }
     .nav__button--selected {
       font-weight: 500;
-      color: vars.$color6;
       &:after {
         content: '';
         display: block;

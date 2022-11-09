@@ -424,10 +424,6 @@ body{
           height: 2px;
           background: vars.$color6;
         }
-        .nav__button {
-          margin: 0;
-          color: vars.$color6 !important;
-        }
       }
       .nav__mobile--open {
         animation: headerAnim 0.8S  forwards;
