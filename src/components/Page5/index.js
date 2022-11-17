@@ -87,7 +87,7 @@ const Page5 = ({ data }) => {
                 </a>
               </a.div>
               <nav className="page5__nav">
-                <a href="fb://page/215916685086874" className="nav__link">
+                <a href="fb://page/?id=215916685086874" className="nav__link">
                   <img src={boutonFacebook} alt="facebook" />
                 </a>
                 <a href="instagram://user?username=vigneronsbuzet" className="nav__link">
