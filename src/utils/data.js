@@ -2,13 +2,13 @@
 const data = {
   fr: {
     page1: {
-      slogan: 'La renaissance d’un patrimoine millénaire',
+      slogan: 'Renaissance d’un patrimoine millénaire',
       subtitle: 'Et si vous laissiez vos sens s’épanouir ?',
       text: `<p>Ouïe, toucher, vue, goût…</p>
-      <p>Accordez-vous un instant. Immergez-vous dans l’univers d’exceptions de notre vin Château de Buzet.</p><p> Libérez vos sens grâce à une expérience de dégustation vivante et multisensorielle. </p> 
+      <p>Accordez-vous un instant. Immergez-vous dans l’univers d’exceptions de notre vin Château de Buzet.</p><p> Libérez vos sens ! Grâce à une expérience de dégustation vivante et multisensorielle. </p> 
       <p> Belle dégustation </p>`,
-      buttonHome: "Démarrer l'expérience",
-      buttonWinery: 'Aller directement à la dégustation !',
+      buttonHome: "Démarrer l'expérience !",
+      buttonWinery: 'Aller directement à la dégustation',
       buttonTesting: 'Déguster',
     },
     page2: {
@@ -25,24 +25,28 @@ const data = {
     page4: {
       title: 'Découvrez votre accord met-vin privilégié',
       celebration: {
-        title: 'Célébration : Tournedos Rossini',
+        title: 'Célébration',
+        plate: 'Tournedos Rossini',
         text: `Faites en sorte que l’accord met et vin marque autant les esprits que l’instant à célébrer en optant pour un Tournedos Rossini.
         La structure tannique et complexe saura relever les arômes et la saveur du bœuf tandis que les notes épicées sublimeront le foie gras poêlé.               
         `,
       },
       gourmand: {
-        title: 'Rendez-vous gourmand : Magret de canard aux pêches et aux épices',
+        title: 'Rendez-vous gourmand',
+        plate: 'Magret de canard aux pêches et aux épices',
         text: `Laissez-vous tenter par une association sucrée/salée.
         Les légères notes boisées de la cuvée Château de Buzet renforceront le côté épicé de ce plat. Le canard étant une viande puissante et savoureuse, il s’accordera parfaitement avec notre Château de Buzet, à la fois puissant et fruité.  
         `,
       },
       exception: {
-        title: 'Cadre d’exception : Planche de charcuterie fine et fromages affinés',
+        title: 'Cadre d’exception',
+        plate: 'Planche de charcuteries fines et fromages affinés',
         text: 'Dans un cadre d’exception, un met en toute simplicité saura sublimer notre Château de Buzet. C’est un vin rouge équilibré avec beaucoup de rondeur dont le gras et la souplesse se marieront à merveille avec l’onctuosité des fromages affinés. Les arômes de fruits présents dans cette cuvée magnifieront les saveurs de charcuteries fines.',
       },
       campagne: {
-        title: 'Repas champêtre : Tourte de pommes de terre aux cèpes',
-        text: 'Un déjeuner en pleine campagne ? Profitez-en pour proposer à vos convives un plat réconfortant. La complexité aromatique et les notes de fruits noirs du Château de Buzet se mêleront parfaitement aux notes subtiles de sous-bois présentes dans notre Tourte de pommes de terre aux cèpes',
+        title: 'Repas champêtre',
+        plate: 'Tourte de pommes de terre aux cèpes',
+        text: 'Un déjeuner en pleine campagne ? Profitez-en pour proposer à vos convives un plat réconfortant. La complexité aromatique et les notes de fruits noirs du Château de Buzet se mêleront parfaitement aux notes subtiles de sous-bois présentes dans notre Tourte de pommes de terre aux cèpes.',
       },
 
       button: 'Merci',
@@ -50,7 +54,7 @@ const data = {
 
     page5: {
       subtitle: ' Suivez le collectif ',
-      title: 'Nous les vignerons de Buzet',
+      title: 'Nous les Vignerons de Buzet',
       button: 'Visiter notre site',
     },
 
@@ -103,7 +107,7 @@ const data = {
     },
 
     header: {
-      subtitle: 'La renaissance d’un patrimoine millénaire',
+      subtitle: 'Renaissance d’un patrimoine millénaire',
       link: 'Mentions légales',
     },
   },
@@ -115,7 +119,7 @@ const data = {
       <p>Take a moment to yourself immersed in the unique world of our Château de Buzet wine… </p>
       <p>Unleash your senses in a living, multi-sensory wine tasting experience! </p>
       <p> Enjoy! </p>`,
-      buttonHome: 'Start the expérience',
+      buttonHome: 'Start the expérience !',
       buttonWinery: 'Go directly to the tasting',
       buttonTesting: 'Taste',
     },
@@ -140,18 +144,21 @@ const data = {
         `,
       },
       gourmand: {
-        title: 'A gourmet meal: Duck breast with peaches and spice ',
+        title: 'A gourmet meal',
+        plate: 'Duck breast with peaches and spice ',
         text: `Why not go for a sweet-and-sour combination?
         Château de Buzet’s light oaky notes will accentuate the spicy character of this dish. As duck meat is strong and flavoursome, it pairs perfectly with our fruity and powerful Château de Buzet.
         
         `,
       },
       exception: {
-        title: 'An exceptional setting: A platter of fine charcuterie and mature cheeses',
+        title: 'An exceptional setting',
+        plate: 'A platter of fine charcuterie and mature cheeses',
         text: "In an exceptional setting, some simple food will be enough to bring out all the flavours of our Château de Buzet. This is a well-balanced red wine with a smooth, round body, whose softness and fat will complement the creaminess of the matured cheeses. The wine's fruity aromas will bring out the flavours of the fine charcuterie.",
       },
       campagne: {
-        title: 'Meal in the countryside: Potato and mushroom pie ',
+        title: 'Meal in the countryside',
+        plate: 'Potato and mushroom pie ',
         text: "Lunch in the countryside? Make the most of it by serving your guests some delicious comfort food. Château de Buzet's aromatic complexity and black fruit notes will blend perfectly with the subtle notes of undergrowth in our potato and mushroom pie.",
       },
 

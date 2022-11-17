@@ -12,11 +12,9 @@ const Winery = ({
   duration, ended, setEnded, data, langage, menuIsOpen,
 }) => {
   const [playing, setPlaying] = useState(false);
-
   const {
     state, setState, VISIBLE, VANISH, DELETE,
   } = useStateComponent();
-
   const buttonRef = useRef(null);
 
   useEffect(() => {
@@ -46,7 +44,7 @@ const Winery = ({
            setEnded={setEnded}
            ended={ended}
            langage={langage}
-           menuIsopen={menuIsOpen}
+           menuIsOpen={menuIsOpen}
          />
          {isMobile
         && (
@@ -95,7 +93,7 @@ Winery.propTypes = {
   duration: PropTypes.func.isRequired,
   ended: PropTypes.bool.isRequired,
   setEnded: PropTypes.func.isRequired,
-  data: PropTypes.string.isRequired,
+  data: PropTypes.object.isRequired,
   langage: PropTypes.string.isRequired,
   isSmallDesktop: PropTypes.bool.isRequired,
 };

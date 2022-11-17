@@ -9,7 +9,6 @@ import boutonFacebook from 'src/assets/pictures/bouton-facebook.svg';
 import boutonInstagram from 'src/assets/pictures/bouton-instagram.svg';
 import boutonYoutube from 'src/assets/pictures/bouton-youtube.svg';
 import useIsMobile from 'src/hooks/useIsMobile';
-import { useEffect } from 'react';
 
 const Page5 = ({ data }) => {
   const [hover, setHover, out, setOut] = useHover();
@@ -54,13 +53,13 @@ const Page5 = ({ data }) => {
               </a>
             </a.div>
             <nav className="page5__nav">
-              <a href={isMobile ? 'fb://page/vigneronsbuze' : 'https://www.facebook.com/vigneronsbuzet/'} className="nav__link" target="_blanck">
+              <a href="https://www.facebook.com/215916685086874/" className="nav__link" target="_blanck">
                 <img src={boutonFacebook} alt="facebook" />
               </a>
-              <a href={isMobile ? 'instagram://user?username=vigneronsbuzet' : 'https://www.instagram.com/vigneronsbuzet'} className="nav__link" target="_blanck">
+              <a href="https://www.instagram.com/vigneronsbuzet" className="nav__link" target="_blanck">
                 <img src={boutonInstagram} alt="instagram" />
               </a>
-              <a href={isMobile ? 'fb://page/vigneronsdebuzet' : 'https://www.youtube.com/vigneronsdebuzet'} className="nav__link" target="_blanck">
+              <a href="https://www.youtube.com/vigneronsdebuzet" className="nav__link" target="_blanck">
                 <img src={boutonYoutube} alt="youtube" />
               </a>
             </nav>
@@ -83,18 +82,18 @@ const Page5 = ({ data }) => {
                 style={propsThx}
                 className="button__container button__container--visite"
               >
-                <a href="https://www.nouslesvigneronsdebuzet.fr" className="button button--visite">
+                <a href="https://www.nouslesvigneronsdebuzet.fr" className="button button--visite" target="_blanck">
                   {data.button}
                 </a>
               </a.div>
               <nav className="page5__nav">
-                <a href="https://www.facebook.com/vigneronsbuzet/" className="nav__link">
+                <a href="fb://page/215916685086874" className="nav__link">
                   <img src={boutonFacebook} alt="facebook" />
                 </a>
-                <a href="https://www.instagram.com/vigneronsbuzet" className="nav__link">
+                <a href="instagram://user?username=vigneronsbuzet" className="nav__link">
                   <img src={boutonInstagram} alt="instagram" />
                 </a>
-                <a href="https://www.youtube.com/vigneronsdebuzet" className="nav__link">
+                <a href="youtube://vigneronsdebuzet" className="nav__link">
                   <img src={boutonYoutube} alt="youtube" />
                 </a>
               </nav>

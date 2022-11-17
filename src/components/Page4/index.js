@@ -73,7 +73,8 @@ const Page4 = ({ association, data, langage }) => {
             <img alt="logo" src={prune} className="association__logo" />
           </>
         )}
-        <h3 className="association__title"><strong>{data[association]?.title} :</strong> {data[association]?.subtitle}</h3>
+        <h3 className="association__title"><strong>{data[association]?.title} </strong> </h3>
+        <p className="association__plate">{data[association]?.plate} </p>
         <p className="association__para">{data[association]?.text} </p>
       </section>
       <a.div

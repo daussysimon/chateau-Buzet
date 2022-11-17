@@ -50,6 +50,7 @@ const Video = (
       setPlaying(false);
     }
   };
+
   return (
     <>
       { loader && !menuIsOpen && <LoaderLogo loaded={loaded} /> }
