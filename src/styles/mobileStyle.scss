@@ -208,14 +208,13 @@ body{
           font-weight: 700;
           font-family: vars.$font_second;
           max-width: 850px;
-          font-size: 25px;
+          font-size: 20px;
           margin: auto;
         
         }
-        .association__plate {
-          
-          font-size: 20px;
-          margin-top: 10px;
+        .association__ {
+          font-size: 18px;
+          margin: auto;
         
         }
         .association__para {
@@ -256,7 +255,7 @@ body{
         }
       }
       .page5__nav {
-        width: 50%;
+        width: 70%;
         position: relative;
         margin:  20px auto ;
         display: flex;
@@ -267,7 +266,7 @@ body{
           &:hover {
             transform: scale(1.1);
           }
-          width: 50px;
+          width: 40px;
           transition: 0.6s;
        
           img{
