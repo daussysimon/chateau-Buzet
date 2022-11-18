@@ -14,9 +14,9 @@ const pageMentions = ({ data }) => (
       <div className="mentions__contain">
         { Object.keys(data.contain).map((key) => {
           if (key.includes('subtitle')) {
-            return <h3 className="contain__title">{data.contain[key]}</h3>;
+            return <h3 className="contain__title" key={key}>{data.contain[key]}</h3>;
           }
-          return <p className="contain__para">{data.contain[key]}</p>;
+          return <p className="contain__para" key={key}>{data.contain[key]}</p>;
         })}
       </div>
     </div>
