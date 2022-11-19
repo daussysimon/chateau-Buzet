@@ -65,7 +65,7 @@ const Winery = ({
         className={state === VANISH ? 'page__nav--appear page__nav' : 'page__nav'}
         style={!isMobile
           ? { background: `center / contain no-repeat url(${bgNav})`, height: 'calc(100vh - 164px)' }
-          : { background: `65% / cover no-repeat url(${bgNav})` }}
+          : { background: `65% / 200% no-repeat url(${bgNav})` }}
       >
         <a.div
           style={buttonStyle}
