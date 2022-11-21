@@ -6,8 +6,8 @@ const data = {
       subtitle: 'Et si vous laissiez vos sens s’épanouir ?',
       text: `<p>Ouïe, toucher, vue, goût…</p>
       <p>Accordez-vous un instant. Immergez-vous dans l’univers d’exceptions de notre vin Château de Buzet.</p><p> Libérez vos sens ! Grâce à une expérience de dégustation vivante et multisensorielle. </p> 
-      <p> Belle dégustation </p>`,
-      buttonHome: "Démarrer l'expérience !",
+      <p> Belle dégustation !</p>`,
+      buttonHome: "Démarrer l'expérience",
       buttonWinery: 'Aller directement à la dégustation',
       buttonTesting: 'Déguster',
     },
@@ -119,7 +119,7 @@ const data = {
       <p>Take a moment to yourself immersed in the unique world of our Château de Buzet wine… </p>
       <p>Unleash your senses in a living, multi-sensory wine tasting experience! </p>
       <p> Enjoy! </p>`,
-      buttonHome: 'Start the expérience !',
+      buttonHome: 'Start the expérience',
       buttonWinery: 'Go directly to the tasting',
       buttonTesting: 'Taste',
     },

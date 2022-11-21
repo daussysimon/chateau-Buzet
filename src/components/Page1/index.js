@@ -70,10 +70,10 @@ const Page1 = ({ setPageNumber, pageNumber, data, langage, menuIsOpen }) => {
           isMobile,
           isSmallDesktop,
           langage,
-          355,
-          225,
-          327,
-          205,
+          340,
+          215,
+          320,
+          195,
         )
         : buttonWidth(
           hover,
