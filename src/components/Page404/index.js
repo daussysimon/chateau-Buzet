@@ -9,9 +9,9 @@ const Page404 = ({ data, langage }) => {
   const ref = useRef(null);
   const [top, setTop] = useState();
   const [left, setLeft] = useState();
-  const {
+  const [
     hover, setHover, out, setOut,
-  } = useHover();
+  ] = useHover();
 
   useEffect(() => {
     setTop(ref.current.getBoundingClientRect().top - 30);

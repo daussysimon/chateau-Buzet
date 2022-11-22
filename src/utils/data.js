@@ -35,7 +35,7 @@ const data = {
         title: 'Rendez-vous gourmand',
         plate: 'Magret de canard aux pêches et aux épices',
         text: `Laissez-vous tenter par une association sucrée/salée.
-        Les légères notes boisées de la cuvée Château de Buzet renforceront le côté épicé de ce plat. Le canard étant une viande puissante et savoureuse, il s’accordera parfaitement avec notre Château de Buzet, à la fois puissant et fruité.  
+        Les légères notes boisées de la cuvée Château de Buzet renforceront le côté épicé de ce plat. Le canard étant une viande puissante et savoureuse, il s’accordera parfaitement avec notre Château de Buzet, à la fois strucutré et fruité.  
         `,
       },
       exception: {
