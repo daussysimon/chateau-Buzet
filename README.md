@@ -6,7 +6,8 @@
 #### Ce site offre au utilisateur la possibilité de vivre une expérience unique grace à une dégustation intéractive.
 #### QRC sur chaque bouteille de vin de la cuvée permet au client de se connecter directement au site.
 #### Une bonne gestion des vidéos permets une expérience optimal.
+### lien vers le site : https://singular-alpaca-d97765.netlify.app/
 
 ## Initialisation du projet :
-  *npm install
-  *npm start
+  * npm install
+  * npm start
